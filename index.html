@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>FreeSASA</title>
+    <meta name="author" content="Simon Mitternacht">
+    <meta name="description" content="Open source C library for solvent accessible surface area (SASA) calculations">
+    <meta name="og:title" content="FreeSASA">
+    <meta name="og:description" content="Open source C library for SASA calculations">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="copyright" href="http://www.gnu.org/licenses/gpl-3.0.en.html">
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>FreeSASA</h1>
+        <p>C-library for calculating Solvent Accessible Surface Areas</p>
+
+        <p class="view"><a href="https://github.com/mittinatten/freesasa" id="github">View the Project on GitHub <small>mittinatten/freesasa</small></a></p>
+        <ul>
+          <li><a href="freesasa-0.5.0.2.tar.gz" id="tarball">Download <strong>v0.5.0.2</strong></a></li>
+          <li><a href="https://github.com/mittinatten/freesasa" id="github">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+<h2>
+  <a id="Quick-start guide" class="anchor" href="#quick-start-guide" aria-hidden="true">
+    <span class="octicon octicon-link"></span></a>
+  Quick-start guide</h2>
+
+<p>Download the <a href="freesasa-0.5.0.2.tar.gz" id="tarball">latest tarball</a>,
+expand it and run
+
+<pre>$ ./configure 
+$ make 
+$ sudo make install</pre> 
+
+This installs the binary <code>freesasa</code> to your
+path, <code>freesasa.h</code> to your include path and the
+library <code>libfreesasa</code> to your lib-path.</p>
+
+<p>If you got the code direclty from the git repo, first
+run <code>autoreconf -i</code> to create the configure script, which
+requires an autotools installation.</p>
+
+<p>After building the package, calling</p>
+
+<pre>$ freesasa -h</pre>
+
+<p>explains how the commandline interface (CLI) can be used.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+<p>The <a href="doxygen/" id="doxygen">Doxygen documentation</a>
+contains info on most CLI options, the C and Python APIs and some
+implementation details.</p>
+
+<p>License: <a href="http://www.gnu.org/licenses/gpl-3.0.en.html" id="license">GPLv3</a>.
+ Copyright: Simon Mitternacht 2013-2015.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mittinatten" id="github-user">mittinatten</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66397346-1', 'auto');
+  ga('send', 'pageview');
+
+  var tarballLink = document.getElementById('tarball');
+  var GitHubLink = document.getElementById('github');
+  var GitHubUserLink = document.getElementById('github-user');
+  var licenseLink = document.getElementById('license');
+  addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click');});
+  addListener(GitHubLink, 'click', function() {ga('send', 'event', 'front-github', 'click');});
+  addListener(GitHubUserLink, 'click', function() {ga('send', 'event', 'front-github-user', 'click');});
+  addListener(licenseLink, 'click', function() {ga('send', 'event', 'front-license', 'click');});
+  function addListener(element, type, callback) {
+    if (element.addEventListener) element.addEventListener(type, callback);
+    else if (element.attachEvent) element.attachEvent('on' + type, callback);
+  }
+
+</script>
+  </body>
+</html>
