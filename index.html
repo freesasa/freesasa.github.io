@@ -79,6 +79,14 @@ implementation details.</p>
 
   ga('create', 'UA-66397346-1', 'auto');
   ga('send', 'pageview');
+
+  var tarballLink = document.getElementById('tarball');
+  addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click');});
+  function addListener(element, type, callback) {
+    if (element.addEventListener) element.addEventListener(type, callback);
+    else if (element.attachEvent) element.attachEvent('on' + type, callback);
+  }
+
 </script>
   </body>
 </html>
