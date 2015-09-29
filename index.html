@@ -81,7 +81,7 @@ implementation details.</p>
   ga('send', 'pageview');
 
   var tarballLink = document.getElementById('tarball');
-  addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click');});
+  addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click', 'frontpage-tarball');});
   function addListener(element, type, callback) {
     if (element.addEventListener) element.addEventListener(type, callback);
     else if (element.attachEvent) element.attachEvent('on' + type, callback);
