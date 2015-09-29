@@ -81,13 +81,7 @@ implementation details.</p>
   ga('send', 'pageview');
 
   var tarballLink = document.getElementById('tarball');
-  var GitHubLink = document.getElementById('github');
-  var GitHubUserLink = document.getElementById('github-user');
-  var licenseLink = document.getElementById('license');
   addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click');});
-  addListener(GitHubLink, 'click', function() {ga('send', 'event', 'front-github', 'click');});
-  addListener(GitHubUserLink, 'click', function() {ga('send', 'event', 'front-github-user', 'click');});
-  addListener(licenseLink, 'click', function() {ga('send', 'event', 'front-license', 'click');});
   function addListener(element, type, callback) {
     if (element.addEventListener) element.addEventListener(type, callback);
     else if (element.attachEvent) element.attachEvent('on' + type, callback);
