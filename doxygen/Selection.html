@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>FreeSASA: Globals</title>
+<title>FreeSASA: Selection syntax</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,10 +50,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -72,23 +72,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li class="current"><a href="globals.html"><span>Globals</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>All</span></a></li>
-      <li><a href="globals_func.html"><span>Functions</span></a></li>
-      <li><a href="globals_vars.html"><span>Variables</span></a></li>
-      <li><a href="globals_type.html"><span>Typedefs</span></a></li>
-      <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
-      <li class="current"><a href="globals_defs.html"><span>Macros</span></a></li>
-    </ul>
-  </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -103,49 +86,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Selection syntax </div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>FREESASA_DEF_LR_N
-: <a class="el" href="freesasa_8h.html#a3f8f799448b8ba0656b3952ed11e422c">freesasa.h</a>
-</li>
-<li>FREESASA_DEF_NUMBER_THREADS
-: <a class="el" href="freesasa_8h.html#a7fedfcf41aa716fd01b74fcec0de3f88">freesasa.h</a>
-</li>
-<li>FREESASA_DEF_PROBE_RADIUS
-: <a class="el" href="freesasa_8h.html#ad2f1afc829fe97c895862ab0328bb1d2">freesasa.h</a>
-</li>
-<li>FREESASA_DEF_SR_N
-: <a class="el" href="freesasa_8h.html#a245e804df26f18bba0c5bd92a7f3f110">freesasa.h</a>
-</li>
-<li>FREESASA_FAIL
-: <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7">freesasa.h</a>
-</li>
-<li>FREESASA_INCLUDE_HETATM
-: <a class="el" href="freesasa_8h.html#a7bb4821825088df6dbc56135fd7e6615">freesasa.h</a>
-</li>
-<li>FREESASA_INCLUDE_HYDROGEN
-: <a class="el" href="freesasa_8h.html#ac307c3222fea17607c171f15dd2319ad">freesasa.h</a>
-</li>
-<li>FREESASA_JOIN_MODELS
-: <a class="el" href="freesasa_8h.html#a85bbc1055bc317df2e96c32bc052129a">freesasa.h</a>
-</li>
-<li>FREESASA_MAX_SELECTION_NAME
-: <a class="el" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de">freesasa.h</a>
-</li>
-<li>FREESASA_SEPARATE_CHAINS
-: <a class="el" href="freesasa_8h.html#addc7c2f809a2729a9d34c48798424faa">freesasa.h</a>
-</li>
-<li>FREESASA_SEPARATE_MODELS
-: <a class="el" href="freesasa_8h.html#a30df097efbeda730cc4b302800dc801c">freesasa.h</a>
-</li>
-<li>FREESASA_SUCCESS
-: <a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec">freesasa.h</a>
-</li>
-<li>FREESASA_WARN
-: <a class="el" href="freesasa_8h.html#a2676e28db2862f2aa6deff22011385ad">freesasa.h</a>
-</li>
+<div class="textblock"><p>FreeSASA uses a subset of the Pymol select commands to give users an easy way of summing up the SASA of groups of atoms. This is done by the function <a class="el" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0" title="Get area of a selection (experimental feature). ">freesasa_select_area()</a> in the C API, <a class="el" href="namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7" title="Sum SASA result over a selection of atoms. ">freesasa.selectArea()</a> in the Python interface and the option <code>--select</code> for the command line tool. All commands are case insensitive. A basic selection has a selection name, a property selector and a list of arguments </p><pre class="fragment">&lt;selection-name&gt;, &lt;selector&gt; &lt;list&gt;
+</pre><p>For example </p><pre class="fragment">aromatic, resn phe+tyr+trp+his+pro
+</pre><p>Several selectors can be joined using boolean logic and parentheses, </p><pre class="fragment">&lt;selection-name&gt;, (&lt;s1&gt; &lt;l1&gt;) and not (&lt;s2&gt; &lt;l2&gt; or &lt;s3&gt; &lt;l3&gt;)
+</pre><p>where s1, s2 and s3 are selectors and l1, l2 and l3 are lists. The operator <code>and</code> has precedence over <code>or</code>, so the second parentheses is necessary but not the first, in the example above.</p>
+<p>The following property selectors are supported</p>
+<ul>
+<li><code>resn</code> Residue names like "ala", "arg", "du", etc</li>
+<li><code>resi</code> Residue index (positive integers)</li>
+<li><code>chain</code> Chain labels (single characters)</li>
+<li><code>name</code> Atom names, such as "ca", "c", "oxt", etc</li>
+<li><code>symbol</code> Element symbols, such as "C", "O", "Se", "Fe", etc.</li>
 </ul>
-</div><!-- contents -->
+<p>A list of residues can be selected using </p><pre class="fragment">resn ala+val+leu+ile+met
+</pre><p>and similarly for the other four selectors. In addition <code>resi</code> and <code>chain</code> support ranges </p><pre class="fragment">resi 1-10
+resi 1-10+20-30+35
+chain A+C-E
+</pre><p>Combining ranges with plus signs, as in the two last lines, is not allowed in Pymol but supported by FreeSASA.</p>
+<p>If a selection list contains elements not found in the molecule that is analyzed, a warning is printed and that part of the list does not contribute to the selection. Not finding an a list element can be because it specifies a residue that does not exist in the particular molecule, or because of typos. The selector does not keep a list of valid elements, residue names, etc. </p>
+</div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

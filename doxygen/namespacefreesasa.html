@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.0.2</span>
+   &#160;<span id="projectnumber">0.5.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -132,6 +132,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a11b73da9dee7fef4b15a478203098147"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">classifyResults</a></td></tr>
 <tr class="memdesc:a11b73da9dee7fef4b15a478203098147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break SASA result down into classes.  <a href="#a11b73da9dee7fef4b15a478203098147">More...</a><br /></td></tr>
 <tr class="separator:a11b73da9dee7fef4b15a478203098147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641e4ee94823234e981f9f1cc08866e7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7">selectArea</a> (commands, structure, result)</td></tr>
+<tr class="memdesc:a641e4ee94823234e981f9f1cc08866e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum SASA result over a selection of atoms.  <a href="#a641e4ee94823234e981f9f1cc08866e7">More...</a><br /></td></tr>
+<tr class="separator:a641e4ee94823234e981f9f1cc08866e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1b4a1cf34b58ebde200b83a8fec997a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a">setVerbosity</a> (verbosity)</td></tr>
 <tr class="memdesc:af1b4a1cf34b58ebde200b83a8fec997a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set global verbosity.  <a href="#af1b4a1cf34b58ebde200b83a8fec997a">More...</a><br /></td></tr>
 <tr class="separator:af1b4a1cf34b58ebde200b83a8fec997a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +164,10 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f">silent</a> = FREESASA_V_SILENT</td></tr>
 <tr class="memdesc:a21b87e6bd24c37d248af14563135f51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">int: Suppress all warnings and errors (used by <a class="el" href="namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a" title="Set global verbosity. ">setVerbosity()</a>) <br /></td></tr>
 <tr class="separator:a21b87e6bd24c37d248af14563135f51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39779baa63e56efce2b098aaec808090"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39779baa63e56efce2b098aaec808090"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a39779baa63e56efce2b098aaec808090">nowarnings</a> = FREESASA_V_NOWARNINGS</td></tr>
+<tr class="memdesc:a39779baa63e56efce2b098aaec808090"><td class="mdescLeft">&#160;</td><td class="mdescRight">int: Suppress all warnings but not errors (used by <a class="el" href="namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a" title="Set global verbosity. ">setVerbosity()</a>) <br /></td></tr>
+<tr class="separator:a39779baa63e56efce2b098aaec808090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11c7971fe3ffaf66e1f8544d7439640"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af11c7971fe3ffaf66e1f8544d7439640"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640">normal</a> = FREESASA_V_NORMAL</td></tr>
 <tr class="memdesc:af11c7971fe3ffaf66e1f8544d7439640"><td class="mdescLeft">&#160;</td><td class="mdescRight">int: Normal verbosity (used by <a class="el" href="namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a" title="Set global verbosity. ">setVerbosity()</a>) <br /></td></tr>
@@ -327,6 +334,55 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 
 </div>
 </div>
+<a class="anchor" id="a641e4ee94823234e981f9f1cc08866e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def freesasa.selectArea </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>commands</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>structure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sum SASA result over a selection of atoms. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commands</td><td>A list of commands with selections using Pymol syntax, e.g. "s1, resn ala+arg" or "s2, chain A and resi 1-5" (see <a class="el" href="Selection.html">Selection syntax</a>). </td></tr>
+    <tr><td class="paramname">structure</td><td>A <a class="el" href="classfreesasa_1_1Structure.html" title="Represents a protein structure, including its atomic radii. ">Structure</a>. </td></tr>
+    <tr><td class="paramname">result</td><td><a class="el" href="classfreesasa_1_1Result.html" title="Stores results from SASA calculation. ">Result</a> from sasa calculation on structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Dictionary with names of selections ("s1","s2",...) as keys, and the corresponding SASA values as values. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>Parser failed (typically syntax error), see library error messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="af1b4a1cf34b58ebde200b83a8fec997a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +400,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <p>Set global verbosity. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">verbosity</td><td>Can have values <a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f" title="int: Suppress all warnings and errors (used by setVerbosity()) ">freesasa.silent</a> or <a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640" title="int: Normal verbosity (used by setVerbosity()) ">freesasa.normal</a> </td></tr>
+    <tr><td class="paramname">verbosity</td><td>Can have values <a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f" title="int: Suppress all warnings and errors (used by setVerbosity()) ">freesasa.silent</a>, <a class="el" href="namespacefreesasa.html#a39779baa63e56efce2b098aaec808090" title="int: Suppress all warnings but not errors (used by setVerbosity()) ">freesasa.nowarnings</a> or <a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640" title="int: Normal verbosity (used by setVerbosity()) ">freesasa.normal</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -371,7 +427,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 </div><div class="memdoc">
 
 <p>Get global verbosity. </p>
-<dl class="section return"><dt>Returns</dt><dd>Verbosity (<a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f" title="int: Suppress all warnings and errors (used by setVerbosity()) ">freesasa.silent</a> or <a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640" title="int: Normal verbosity (used by setVerbosity()) ">freesasa.normal</a>) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Verbosity (<a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f" title="int: Suppress all warnings and errors (used by setVerbosity()) ">freesasa.silent</a>, <a class="el" href="namespacefreesasa.html#a39779baa63e56efce2b098aaec808090" title="int: Suppress all warnings but not errors (used by setVerbosity()) ">freesasa.nowarnings</a> or <a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640" title="int: Normal verbosity (used by setVerbosity()) ">freesasa.normal</a>) </dd></dl>
 
 </div>
 </div>
@@ -422,7 +478,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 29 2015 16:26:29 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

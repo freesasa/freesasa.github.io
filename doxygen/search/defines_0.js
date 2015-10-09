@@ -8,6 +8,7 @@ var searchData=
   ['freesasa_5finclude_5fhetatm',['FREESASA_INCLUDE_HETATM',['../freesasa_8h.html#a7bb4821825088df6dbc56135fd7e6615',1,'freesasa.h']]],
   ['freesasa_5finclude_5fhydrogen',['FREESASA_INCLUDE_HYDROGEN',['../freesasa_8h.html#ac307c3222fea17607c171f15dd2319ad',1,'freesasa.h']]],
   ['freesasa_5fjoin_5fmodels',['FREESASA_JOIN_MODELS',['../freesasa_8h.html#a85bbc1055bc317df2e96c32bc052129a',1,'freesasa.h']]],
+  ['freesasa_5fmax_5fselection_5fname',['FREESASA_MAX_SELECTION_NAME',['../freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de',1,'freesasa.h']]],
   ['freesasa_5fseparate_5fchains',['FREESASA_SEPARATE_CHAINS',['../freesasa_8h.html#addc7c2f809a2729a9d34c48798424faa',1,'freesasa.h']]],
   ['freesasa_5fseparate_5fmodels',['FREESASA_SEPARATE_MODELS',['../freesasa_8h.html#a30df097efbeda730cc4b302800dc801c',1,'freesasa.h']]],
   ['freesasa_5fsuccess',['FREESASA_SUCCESS',['../freesasa_8h.html#a20a8d28b854c714018878383f1c608ec',1,'freesasa.h']]],

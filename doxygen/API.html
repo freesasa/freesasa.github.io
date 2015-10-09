@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.0.2</span>
+   &#160;<span id="projectnumber">0.5.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -103,20 +103,36 @@ Basics</h1>
 <h2><a class="anchor" id="API-PDB"></a>
 Calculate SASA for a PDB file</h2>
 <p>The following explains how to use FreeSASA to calculate the SASA of a fictive PDB file (1abc.pdb). Possible errors are ignored for brevity. Default parameters are used at every step, the section <a class="el" href="API.html#Customizing">Customizing behavior</a> explains how to configure the calculations.</p>
+<h3><a class="anchor" id="API-Read-PDB"></a>
+Open PDB file</h3>
 <p>Begin by opening a file and read a structure from it. The second argument, 0, indicates use default when selecting atoms, i.e. ignore Hydrogens and HETATMs, and only include the first MODEL if there are several.</p>
 <div class="fragment"><div class="line">FILE *fp = fopen(<span class="stringliteral">&quot;1abc.pdb&quot;</span>);</div>
 <div class="line"><a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure = <a class="code" href="freesasa_8h.html#a6e0421a1e8c5a8736d3307a016e89c6c">freesasa_structure_from_pdb</a>(fp,0);</div>
-</div><!-- fragment --><p>Calculate the atomic radii of that structure using the default classifier. The argument <code>NULL</code> here means use the default classifier. A custom classifier can be passed as a pointer to <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a>.</p>
+</div><!-- fragment --><h3><a class="anchor" id="API-Radii"></a>
+Calculate atomic radii</h3>
+<p>Calculate the atomic radii of that structure using the default classifier. The argument <code>NULL</code> here means use the default classifier. A custom classifier can be passed as a pointer to <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> *radii = <a class="code" href="freesasa_8h.html#a4fa16abbaad8c0c12b5b75cd2f932769">freesasa_structure_radius</a>(structure,NULL);</div>
-</div><!-- fragment --><p>Calculate SASA using the structure and radii and print the total area. The argument <code>NULL</code> means use default parameters. User-defined parameters can be defined by passing a pointer to <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a>.</p>
+</div><!-- fragment --><h3><a class="anchor" id="API-Calc"></a>
+Perform calculation</h3>
+<p>Calculate SASA using the structure and radii and print the total area. The argument <code>NULL</code> means use default parameters. User-defined parameters can be defined by passing a pointer to <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a>.</p>
 <div class="fragment"><div class="line"><a class="code" href="structfreesasa__result.html">freesasa_result</a> *result = <a class="code" href="freesasa_8h.html#ab03142a1f5fb58805bb7d90604c53b91">freesasa_calc_structure</a>(structure,radii,NULL);</div>
 <div class="line">printf(<span class="stringliteral">&quot;Total area: %f A2\n&quot;</span>,result-&gt;<a class="code" href="structfreesasa__result.html#afa1bb6cbcea99ae677d9421783d87f93">total</a>);</div>
-</div><!-- fragment --><p>Calculate area of classes (Polar/Apolar/..) and print their values. The argument <code>NULL</code> again means use the default classifier. The type <a class="el" href="structfreesasa__strvp.html" title="Struct used to store n string-value-pairs (strvp) in arrays of doubles and strings. ">freesasa_strvp</a> stores pairs of strings and values, as demonstrated below.</p>
+</div><!-- fragment --><h3><a class="anchor" id="API-Classes"></a>
+Get area of classes of atoms</h3>
+<p>Calculate area of classes (Polar/Apolar/..) and print their values. The argument <code>NULL</code> again means use the default classifier. The type <a class="el" href="structfreesasa__strvp.html" title="Struct used to store n string-value-pairs (strvp) in arrays of doubles and strings. ">freesasa_strvp</a> stores pairs of strings and values, as demonstrated below.</p>
 <div class="fragment"><div class="line"><a class="code" href="structfreesasa__strvp.html">freesasa_strvp</a> *class_area = <a class="code" href="freesasa_8h.html#a3254cab7d28c17265d61e86533fad5e3">freesasa_result_classify</a>(result,structure,NULL);</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; class_area-&gt;<a class="code" href="structfreesasa__strvp.html#a0a5639bc42f3627321dbab94e9ff1d7c">n</a>; ++i)</div>
 <div class="line">    printf(<span class="stringliteral">&quot;%s: %f A2\n&quot;</span>,class_area-&gt;<a class="code" href="structfreesasa__strvp.html#a3e9e89ba524e5ffdb6567989a267922a">string</a>[i],</div>
 <div class="line">           class_area-&gt;<a class="code" href="structfreesasa__strvp.html#a1b3a18bf86640fb1239cee69c3fb19ea">value</a>[i]);</div>
-</div><!-- fragment --><h2><a class="anchor" id="Coordinates"></a>
+</div><!-- fragment --><h3><a class="anchor" id="API-Select"></a>
+Get area of custom groups of atoms</h3>
+<p>Groups of atoms can be defined using <a class="el" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0" title="Get area of a selection (experimental feature). ">freesasa_select_area()</a>, which takes a selection definition uses a subset of the Pymol select syntax (<a class="el" href="Selection.html">Selection syntax</a>).</p>
+<div class="fragment"><div class="line"><span class="keywordtype">double</span> area;</div>
+<div class="line"><span class="keywordtype">char</span> name[<a class="code" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de">FREESASA_MAX_SELECTION_NAME</a>+1];</div>
+<div class="line"><a class="code" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0">freesasa_select_area</a>(<span class="stringliteral">&quot;aromatic, resn phe+tyr+trp+his+pro&quot;</span>,</div>
+<div class="line">                     name,&amp;area,structure,result);</div>
+</div><!-- fragment --><p>The last statement stores the string "aromatic" in <code>name</code> and the SASA integrated over the atoms defined by the selection.</p>
+<h2><a class="anchor" id="Coordinates"></a>
 Coordinates</h2>
 <p>If users wish to supply their own coordinates and radii, these are accepted as arrays of doubles passed to the function <a class="el" href="freesasa_8h.html#a86fdf18625663f7f05914e89754a1a6e" title="Calculates SASA based on a given set of coordinates and radii. ">freesasa_calc_coord()</a>. The coordinate-array should have size 3*n with coordinates in the order <code>x1,y1,z1,x2,y2,z2,...,xn,yn,zn</code>.</p>
 <h2><a class="anchor" id="Error-reporting"></a>
@@ -147,7 +163,7 @@ Specifying atomic radii and classes</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 29 2015 16:26:29 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['selectarea',['selectArea',['../namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7',1,'freesasa']]],
   ['setalgorithm',['setAlgorithm',['../classfreesasa_1_1Parameters.html#a3f0034bcb0f6e95b5f5f7543ea346198',1,'freesasa::Parameters']]],
   ['setnpoints',['setNPoints',['../classfreesasa_1_1Parameters.html#a2142eab5f806a93e106ed209d14a603a',1,'freesasa::Parameters']]],
   ['setnslices',['setNSlices',['../classfreesasa_1_1Parameters.html#ad8ebea940632549c2e7205c724fff331',1,'freesasa::Parameters']]],

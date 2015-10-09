@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.0.2</span>
+   &#160;<span id="projectnumber">0.5.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -181,6 +181,9 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a85bbc1055bc317df2e96c32bc052129a">FREESASA_JOIN_MODELS</a>&#160;&#160;&#160;16</td></tr>
 <tr class="memdesc:a85bbc1055bc317df2e96c32bc052129a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read MODELs as part of one big structure. <br /></td></tr>
 <tr class="separator:a85bbc1055bc317df2e96c32bc052129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de">FREESASA_MAX_SELECTION_NAME</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of a selection name (.  <a href="#a1add316a6fcc7c2ffdbac1d169cd70de">More...</a><br /></td></tr>
+<tr class="separator:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -197,7 +200,8 @@ Enumerations</h2></td></tr>
 <tr class="separator:a617f4a1c86a13ce900462399583e862c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a844352ce587326a78a765f1ec5119fc0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a> { <b>FREESASA_V_NORMAL</b>, 
 <b>FREESASA_V_NOWARNINGS</b>, 
-<b>FREESASA_V_SILENT</b>
+<b>FREESASA_V_SILENT</b>, 
+<b>FREESASA_V_DEBUG</b>
  }</td></tr>
 <tr class="memdesc:a844352ce587326a78a765f1ec5119fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verbosity levels.  <a href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">More...</a><br /></td></tr>
 <tr class="separator:a844352ce587326a78a765f1ec5119fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,6 +233,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3254cab7d28c17265d61e86533fad5e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a3254cab7d28c17265d61e86533fad5e3">freesasa_result_classify</a> (const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result, const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier)</td></tr>
 <tr class="memdesc:a3254cab7d28c17265d61e86533fad5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums up the SASA for groups of atoms defined by a classifier.  <a href="#a3254cab7d28c17265d61e86533fad5e3">More...</a><br /></td></tr>
 <tr class="separator:a3254cab7d28c17265d61e86533fad5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e643f3fdbca95857f58237cba323e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0">freesasa_select_area</a> (const char *command, char *name, double *area, const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result)</td></tr>
+<tr class="memdesc:a05e643f3fdbca95857f58237cba323e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get area of a selection (experimental feature).  <a href="#a05e643f3fdbca95857f58237cba323e0">More...</a><br /></td></tr>
+<tr class="separator:a05e643f3fdbca95857f58237cba323e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a449f4066cf886f3dd7be2d4d56313ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a449f4066cf886f3dd7be2d4d56313ef3">freesasa_strvp_free</a> (<a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a> *strvp)</td></tr>
 <tr class="memdesc:a449f4066cf886f3dd7be2d4d56313ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a <a class="el" href="structfreesasa__strvp.html" title="Struct used to store n string-value-pairs (strvp) in arrays of doubles and strings. ">freesasa_strvp</a> object.  <a href="#a449f4066cf886f3dd7be2d4d56313ef3">More...</a><br /></td></tr>
 <tr class="separator:a449f4066cf886f3dd7be2d4d56313ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,9 +296,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a49dae368f989c9515fd8768c0a9a77f6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a49dae368f989c9515fd8768c0a9a77f6">freesasa_structure_atom_chain</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, int i)</td></tr>
 <tr class="memdesc:a49dae368f989c9515fd8768c0a9a77f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get chain label.  <a href="#a49dae368f989c9515fd8768c0a9a77f6">More...</a><br /></td></tr>
 <tr class="separator:a49dae368f989c9515fd8768c0a9a77f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79025bd4a19f7a326d52b68563cc9254"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a79025bd4a19f7a326d52b68563cc9254">freesasa_structure_atom_symbol</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, int i)</td></tr>
+<tr class="memdesc:a79025bd4a19f7a326d52b68563cc9254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get atom symbol.  <a href="#a79025bd4a19f7a326d52b68563cc9254">More...</a><br /></td></tr>
+<tr class="separator:a79025bd4a19f7a326d52b68563cc9254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1567e3c3c01fea6418406a9dcfa597a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a1567e3c3c01fea6418406a9dcfa597a1">freesasa_structure_model</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
 <tr class="memdesc:a1567e3c3c01fea6418406a9dcfa597a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get model number for structure.  <a href="#a1567e3c3c01fea6418406a9dcfa597a1">More...</a><br /></td></tr>
 <tr class="separator:a1567e3c3c01fea6418406a9dcfa597a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6322fdef5c7b2a04389714c7e1ba4278"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278">freesasa_structure_coord_array</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
+<tr class="memdesc:a6322fdef5c7b2a04389714c7e1ba4278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array of coordinates.  <a href="#a6322fdef5c7b2a04389714c7e1ba4278">More...</a><br /></td></tr>
+<tr class="separator:a6322fdef5c7b2a04389714c7e1ba4278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -315,7 +328,23 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 <h1><a class="anchor" id="The"></a>
 FreeSASA API</h1>
 <p>This header provides the functions and data types necessary to perfrom and analyze a SASA calculation using FreeSASA, including facilities to customize assignment of radii to, and classification of, atoms. There are also functions to access properties of a structure, to allow refined analysis of the results. </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a1add316a6fcc7c2ffdbac1d169cd70de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FREESASA_MAX_SELECTION_NAME&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum length of a selection name (. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0" title="Get area of a selection (experimental feature). ">freesasa_select_area()</a>) </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="a51552cd723c823de3704b0de94142093"></a>
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +375,8 @@ FreeSASA API</h1>
 <ul>
 <li>FREESASA_V_NORMAL: print all errors and warnings.</li>
 <li>FREESASA_V_NOWARNINGS: print only errors.</li>
-<li>FREESASA_V_SILENT: print no errors and warnings. </li>
+<li>FREESASA_V_SILENT: print no errors and warnings.</li>
+<li>FREESASA_V_DEBUG: print all errors, warnigns and debug messages. </li>
 </ul>
 
 </div>
@@ -564,6 +594,70 @@ FreeSASA API</h1>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A new set of string-value-pairs if classifications was successful. NULL if classifier was not compatible with structure or memory allocation failure. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05e643f3fdbca95857f58237cba323e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_select_area </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>area</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>structure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get area of a selection (experimental feature). </p>
+<p>Uses subset of the select syntax from Pymol (name, symbol, resn, resi and chain), the keyword "select" is implicit. All commands are case insensitive. Valid selections would be, for example, </p><pre class="fragment">selection-name, resn ala+arg 
+selection-name, chain a and resi 1+3-20 and not resn gly
+</pre><p>The selection name is obligatory. The range operator '-' has precendence over '+', i.e. </p><pre class="fragment"> resi 1+3-20
+</pre><p>is equivalent to </p><pre class="fragment"> resi 1 or resi 3-20
+</pre><p>The boolean operators <code>and</code>, <code>or</code> and <code>not</code> are supported. The <code>and</code> operator has precedence over <code>or</code>. Parantheses can be used to surround expressions <code>(chain a)</code> and group boolean expressions <code>(chain a or chain b)</code>, but <em>not</em> arguments as in </p><pre class="fragment">chain a+(c-f)  # syntax error
+chain a+c-f    # ok
+</pre><p>After selecting the atoms from the <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093" title="Struct for structure object. ">freesasa_structure</a> pointer specified by the command the area of those atoms is summed up using the <a class="el" href="structfreesasa__result.html" title="Struct to store results of SASA calculation. ">freesasa_result</a> pointer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The selection </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the selection is stored here, it should be able to store a string of length <a class="el" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de" title="The maximum length of a selection name (. ">FREESASA_MAX_SELECTION_NAME</a>. </td></tr>
+    <tr><td class="paramname">area</td><td>The area of the selection is stored here </td></tr>
+    <tr><td class="paramname">structure</td><td>The structure to select from </td></tr>
+    <tr><td class="paramname">result</td><td>The results to integrate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec" title="All is ok. ">FREESASA_SUCCESS</a> upon successful selection. <a class="el" href="freesasa_8h.html#a2676e28db2862f2aa6deff22011385ad" title="Something went wrong, but results might still be meaningful. ">FREESASA_WARN</a> if some illegal selections that could be ignored were encountered (see printed warnings). <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7" title="Something went seriously wrong. ">FREESASA_FAIL</a> if syntax error or memory failure. </dd></dl>
 
 </div>
 </div>
@@ -804,11 +898,14 @@ FreeSASA API</h1>
 </div><div class="memdoc">
 
 <p>Set the global verbosity level. </p>
-<ul>
-<li>v the verbosity level <dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec" title="All is ok. ">FREESASA_SUCCESS</a>. If v is invalid <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7" title="Something went seriously wrong. ">FREESASA_FAIL</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>the verbosity level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec" title="All is ok. ">FREESASA_SUCCESS</a>. If v is invalid <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7" title="Something went seriously wrong. ">FREESASA_FAIL</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0" title="Verbosity levels. ">freesasa_verbosity</a> </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -996,7 +1093,7 @@ FreeSASA API</h1>
 
 <p>Add individual atom to structure. </p>
 <p>A structure can be built by adding atoms one by one. Storing residue numbers as strings allows for non-numeric labels. Will include hydrogens if added (i.e. up to caller to make sure these are excluded if necessesary).</p>
-<p>The three string arguments all have specific lengths, specified by the corresponding PDB ATOM fields. It is important to use the same padding as in the PDB specification (i.e. <code>" CA "</code> instead of <code>"CA"</code> or <code>" CA"</code>). (This might be more flexible in future versions of the library).</p>
+<p>The three string arguments all have specific lengths, specified by the corresponding PDB ATOM fields.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">structure</td><td>The structure to add to. </td></tr>
@@ -1010,7 +1107,7 @@ FreeSASA API</h1>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec" title="All is ok. ">FREESASA_SUCCESS</a> if input valid. <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7" title="Something went seriously wrong. ">FREESASA_FAIL</a> if any of the strings are malformatted or if memoray allocation fails. <a class="el" href="freesasa_8h.html#a2676e28db2862f2aa6deff22011385ad" title="Something went wrong, but results might still be meaningful. ">FREESASA_WARN</a> if the atom type is unknown. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a20a8d28b854c714018878383f1c608ec" title="All is ok. ">FREESASA_SUCCESS</a> on normal execution. <a class="el" href="freesasa_8h.html#a1149a16a96730b744100a33c7fbad3e7" title="Something went seriously wrong. ">FREESASA_FAIL</a> if if memory allocation fails. </dd></dl>
 
 </div>
 </div>
@@ -1310,6 +1407,44 @@ FreeSASA API</h1>
 
 </div>
 </div>
+<a class="anchor" id="a79025bd4a19f7a326d52b68563cc9254"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* freesasa_structure_atom_symbol </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>structure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get atom symbol. </p>
+<p>If the structure was initialized from a PDB file the symbol field of that file is used. Otherwise the symbol is guess from atom and residue name.</p>
+<p>Asserts that index i is within bounds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">structure</td><td>The structure. </td></tr>
+    <tr><td class="paramname">i</td><td>Atom index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Atom symbol (" C", " N", "SE",etc); </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1567e3c3c01fea6418406a9dcfa597a1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1336,11 +1471,37 @@ FreeSASA API</h1>
 
 </div>
 </div>
+<a class="anchor" id="a6322fdef5c7b2a04389714c7e1ba4278"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double* freesasa_structure_coord_array </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>structure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get array of coordinates. </p>
+<p>Size of array is 3*N, order of coordinates <code>x1, y1, z1, ...</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">structure</td><td>The structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of coordinates. NULL if structure empty. Size can be accessed through <a class="el" href="freesasa_8h.html#aca6fabad195a8e475e438f7a85547895" title="Get number of atoms. ">freesasa_structure_n()</a> (multiply by three). </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 29 2015 16:26:29 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

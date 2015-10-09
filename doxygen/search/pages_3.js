@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['python_20bindings',['Python bindings',['../Python.html',1,'']]]
+  ['python_20interface',['Python interface',['../Python.html',1,'']]]
 ];
