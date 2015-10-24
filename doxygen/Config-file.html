@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.1</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Classifier configuration files </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The configuration files read by <a class="el" href="freesasa_8h.html#a3f40dddd26a33063eabdf85a278c275d" title="Generate a classifier from a config-file. ">freesasa_classifier_from_file()</a> should have two sections: <code>types:</code> and <code>atoms:</code>. A few example configurations are available in the directory <code>share/</code>.</p>
+<div class="textblock"><p>The configuration files read by <a class="el" href="freesasa_8h.html#a3f40dddd26a33063eabdf85a278c275d" title="Generate a classifier from a config-file. ">freesasa_classifier_from_file()</a> or the command-line option <code>-c</code> should have two sections: <code>types:</code> and <code>atoms:</code>.</p>
 <p>The types-section defines what types of atoms are available (aliphatic, aromatic, hydroxyl, ...), what the radius of that type is and what class a type belongs to (polar, apolar, ...). The types are just shorthands to associate an atom with a given combination of class and radius. The user is free to define as many types and classes as necessary.</p>
 <p>The atoms-section consists of triplets of residue-name, atom-name (as in the corresponding PDB entries) and type. A prototype file would be</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;types:</div>
@@ -108,12 +108,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;ARG CG C_ALIPHATIC</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;PRO CB C_AROMATIC  # overrides ANY CB</div>
-</div><!-- fragment --><p>The residue type <code>ANY</code> can be used for atoms that are the same in all or most residues (such as backbone atoms). If there is an exception for a given amino acid this can be overridden as is shown for <code>PRO CB</code> in the example. </p>
+</div><!-- fragment --><p>The residue type <code>ANY</code> can be used for atoms that are the same in all or most residues (such as backbone atoms). If there is an exception for a given amino acid this can be overridden as is shown for <code>PRO CB</code> in the example.</p>
+<p>A few example configurations are available in the directory <a href="https://github.com/mittinatten/freesasa/tree/master/share">share/</a>. The configuration-file <a href="https://github.com/mittinatten/freesasa/tree/master/share/protor.config">protor.config</a> is a copy of the default classifier, and can be used to add extra atoms that need to be classified, while keeping the defaults for the standard residues (also see the file <a href="https://github.com/mittinatten/freesasa/tree/master/scripts/">scripts/chemcomp2config.pl</a> for instructions on how to generate configurations for new chemical components semi-automatically). If something common is missing in the default classifier, <a href="https://github.com/mittinatten/freesasa/issues">create an issue</a> on Github so that it can be added.</p>
+<p>FreeSASA also ships with some configuration-files that mimic other popular programs, such as <a href="https://github.com/mittinatten/freesasa/tree/master/share/naccess.config">NACCESS</a> and <a href="https://github.com/mittinatten/freesasa/tree/master/share/dssp.config">DSSP</a>. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Oct 24 2015 16:39:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

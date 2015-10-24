@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.1</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -107,9 +107,9 @@ Basic calculations</h1>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordflow">print</span> <span class="stringliteral">&quot;Total : %.2f A2&quot;</span> % result.totalArea()</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordflow">for</span> key <span class="keywordflow">in</span> area_classes:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">print</span> key, <span class="stringliteral">&quot;: %.2f A2&quot;</span> % area_classes[key]</div>
-</div><!-- fragment --><p>Which would give the following output </p><pre class="fragment">Total : 4779.51 A2
-Polar : 2236.93 A2
-Apolar : 2542.58 A2
+</div><!-- fragment --><p>Which would give the following output </p><pre class="fragment">Total : 4834.72 A2
+Polar : 2515.82 A2
+Apolar : 2318.90 A2
 </pre><p>The following does a high precision L&amp;R calculation</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;result = <a class="code" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">freesasa.calc</a>(structure,</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       <a class="code" href="classfreesasa_1_1Parameters.html">freesasa.Parameters</a>({<span class="stringliteral">&#39;algorithm&#39;</span> : freesasa.LeeRichards,</div>
@@ -119,8 +119,8 @@ Apolar : 2542.58 A2
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                 structure, result)</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordflow">for</span> key <span class="keywordflow">in</span> selections:</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordflow">print</span> key, <span class="stringliteral">&quot;: %.2f A2&quot;</span> % selections[key]</div>
-</div><!-- fragment --><p> which gives the output </p><pre class="fragment">alanine : 122.03 A2
-r1_10 : 655.48 A2
+</div><!-- fragment --><p> which gives the output </p><pre class="fragment">alanine : 118.35 A2
+r1_10 : 643.01 A2
 </pre><h1><a class="anchor" id="Python-classification"></a>
 Customizing atom classification</h1>
 <p>This uses the NACCESS parameters (the file 'naccess.config' is available in the share/ directory of the repository).</p>
@@ -129,38 +129,41 @@ Customizing atom classification</h1>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;result = <a class="code" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">freesasa.calc</a>(structure)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;area_classes = <a class="code" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">freesasa.classifyResults</a>(result,structure,classifier)</div>
 </div><!-- fragment --><p>Classification can be customized also by extending the Classifier interface. The code below is an illustration of a classifier that classes Nitrogens separately, and assigns radii based on element only (and crudely).</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> re</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">class </span>DerivedClassifier(Classifier):</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keyword">def </span>classify(self,residueName,atomName):</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*N&#39;</span>,atomName):</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;Nitrogen&#39;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&#39;Not-nitrogen&#39;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">def </span>radius(self,residueName,atomName):</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*N&#39;</span>,atomName): <span class="comment"># Nitrogen </span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">return</span> 1.6</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*C&#39;</span>,atomName): <span class="comment"># Carbon</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">return</span> 1.7</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*O&#39;</span>,atomName): <span class="comment"># Oxygen</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordflow">return</span> 1.4</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*S&#39;</span>,atomName): <span class="comment"># Sulfur</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> 1.8    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> 0;                     <span class="comment"># everything else (Hydrogen, etc)</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;classifier = DerivedClassifier()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"># use the DerivedClassifier to calculate atom radii</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;structure = <a class="code" href="classfreesasa_1_1Structure.html">freesasa.Structure</a>(<span class="stringliteral">&quot;1ubq.pdb&quot;</span>,classifier)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;result = <a class="code" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">freesasa.calc</a>(structure)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"># use the DerivedClassifier to classify atoms</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;area_classes = <a class="code" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">freesasa.classifyResults</a>(result,structure,classifier)</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> freesasa</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> re</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">class </span>DerivedClassifier(Classifier):</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keyword">def </span>classify(self,residueName,atomName):</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*N&#39;</span>,atomName):</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&#39;Nitrogen&#39;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&#39;Not-nitrogen&#39;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">def </span>radius(self,residueName,atomName):</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*N&#39;</span>,atomName): <span class="comment"># Nitrogen </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">return</span> 1.6</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*C&#39;</span>,atomName): <span class="comment"># Carbon</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">return</span> 1.7</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*O&#39;</span>,atomName): <span class="comment"># Oxygen</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> 1.4</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">if</span> re.match(<span class="stringliteral">&#39;\s*S&#39;</span>,atomName): <span class="comment"># Sulfur</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> 1.8    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> 0;                     <span class="comment"># everything else (Hydrogen, etc)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;classifier = DerivedClassifier()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"># use the DerivedClassifier to calculate atom radii</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;structure = <a class="code" href="classfreesasa_1_1Structure.html">freesasa.Structure</a>(<span class="stringliteral">&quot;1ubq.pdb&quot;</span>,classifier)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;result = <a class="code" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">freesasa.calc</a>(structure)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># use the DerivedClassifier to classify atoms</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;area_classes = <a class="code" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">freesasa.classifyResults</a>(result,structure,classifier)</div>
+</div><!-- fragment --><p>Of course, this example is somewhat contrived, if we only want the integrated area of Nitrogen atoms, the simpler choice would be </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;selection = <a class="code" href="namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7">freesasa.selectArea</a>(<span class="stringliteral">&#39;nitrogen, symbol n&#39;</span>, structure, result)</div>
+</div><!-- fragment --><p>However, extending <a class="el" href="classfreesasa_1_1Classifier.html" title="Assigns class and radius to atom by residue and atom name. ">freesasa.Classifier</a>, as illustrated above, allows classification to arbitrary complexity and also lets us redefine the radii used in the calculation. </p>
+</div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 18:44:44 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Oct 24 2015 16:39:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

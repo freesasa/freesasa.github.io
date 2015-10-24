@@ -9,7 +9,8 @@ var indexSectionsWithContent =
   6: "f",
   7: "f",
   8: "f",
-  9: "cfgps"
+  9: "f",
+  10: "cfgps"
 };
 
 var indexSectionNames =
@@ -22,8 +23,9 @@ var indexSectionNames =
   5: "variables",
   6: "typedefs",
   7: "enums",
-  8: "defines",
-  9: "pages"
+  8: "enumvalues",
+  9: "defines",
+  10: "pages"
 };
 
 var indexSectionLabels =
@@ -36,7 +38,8 @@ var indexSectionLabels =
   5: "Variables",
   6: "Typedefs",
   7: "Enumerations",
-  8: "Macros",
-  9: "Pages"
+  8: "Enumerator",
+  9: "Macros",
+  10: "Pages"
 };
 

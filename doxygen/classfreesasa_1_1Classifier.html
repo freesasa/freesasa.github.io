@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.1</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af5c45bf420aa1709c3236bacb3c74242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a486b496b0c71da026c4133d20e520c93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a486b496b0c71da026c4133d20e520c93"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Classifier.html#a486b496b0c71da026c4133d20e520c93">__dealloc__</a> (self)</td></tr>
-<tr class="memdesc:a486b496b0c71da026c4133d20e520c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor (free internal C objects) <br /></td></tr>
+<tr class="memdesc:a486b496b0c71da026c4133d20e520c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
 <tr class="separator:a486b496b0c71da026c4133d20e520c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd6c34142c7db895c4f3dc1f6cda0a35"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Classifier.html#afd6c34142c7db895c4f3dc1f6cda0a35">classify</a> (self, residueName, atomName)</td></tr>
 <tr class="memdesc:afd6c34142c7db895c4f3dc1f6cda0a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class of atom.  <a href="#afd6c34142c7db895c4f3dc1f6cda0a35">More...</a><br /></td></tr>
@@ -127,10 +127,10 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assigns class and radius to atom by residue and atom name. </p>
-<p>Wraps the C struct <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a>. If not initialized with filename the default classification is used.</p>
+<p>Subclasses derived from <a class="el" href="classfreesasa_1_1Classifier.html" title="Assigns class and radius to atom by residue and atom name. ">Classifier</a> can be used to define custom atomic radii and/or classes. Can also be initialized from a <a class="el" href="Config-file.html">configuration file</a> with a custom classifier.</p>
+<p>Wraps a C <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a>. If initialized without arguments the default classifier is used.</p>
 <p>Residue names should be of the format <code>"ALA"</code>,<code>"ARG"</code>, etc.</p>
-<p>Atom names should be of the format <code>" CA "</code>, <code>" N "</code>, etc. The default classifier requires these to have length 4, but the custom classifiers can handle shorter strings like <code>"CA"</code>,<code>"N"</code>.</p>
-<p>In addition to reading configurations from file, subclasses derived from <a class="el" href="classfreesasa_1_1Classifier.html" title="Assigns class and radius to atom by residue and atom name. ">Classifier</a> can be used to define custom atomic radii and/or classes. </p>
+<p>Atom names should be of the format <code>"CA"</code>, <code>"N"</code>, etc. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="af5c45bf420aa1709c3236bacb3c74242"></a>
 <div class="memitem">
@@ -157,7 +157,8 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>If no file is provided the default classifier is used. The config-file should have the same syntax as described in the C-documentation and exemplified in share directory.</p>
+<p>If no file is provided the default classifier is used.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="Config-file.html">Classifier configuration files</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileName</td><td>Name of file with classifier configuration. </td></tr>
@@ -167,7 +168,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IOError</td><td>Problem opening/reading file </td></tr>
-    <tr><td class="paramname">Exception</td><td>Problem parsing configuration </td></tr>
+    <tr><td class="paramname">Exception</td><td>Problem parsing provided configuration or initializing defaults </td></tr>
   </table>
   </dd>
 </dl>
@@ -205,11 +206,11 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><div class="memdoc">
 
 <p>Class of atom. </p>
-<p>Depending on the configuration these classes can be anything, but typically they will be 'polar' and 'apolar'.</p>
+<p>Depending on the configuration these classes can be anything, but typically they will be 'Polar' and 'Apolar'. Unrecognized atoms will get the class 'Unknown'.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">residueName</td><td>(str) Residue name (<code>"ALA"</code>,<code>"ARG"</code>,...). </td></tr>
-    <tr><td class="paramname">atomName</td><td>(str) Atom name (<code>" CA "</code>,<code>" C  "</code>,...). </td></tr>
+    <tr><td class="paramname">atomName</td><td>(str) Atom name (<code>"CA"</code>,<code>"C"</code>,...). </td></tr>
   </table>
   </dd>
 </dl>
@@ -248,11 +249,11 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><div class="memdoc">
 
 <p>Radius of atom. </p>
-<p>This allows the classifier to be used to calculate the atomic radii used in calculations.</p>
+<p>This allows the classifier to be used to calculate the atomic radii used in calculations. Unknown atoms will get a negative radius.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">residueName</td><td>(str) Residue name (<code>"ALA"</code>,<code>"ARG"</code>,...). </td></tr>
-    <tr><td class="paramname">atomName</td><td>(str) Atom name (" CA "," C  ",...). </td></tr>
+    <tr><td class="paramname">residueName</td><td>(str) Residue name (<code>"ALA"</code>, <code>"ARG"</code>, ...). </td></tr>
+    <tr><td class="paramname">atomName</td><td>(str) Atom name (<code>"CA"</code>, <code>"C"</code>, ...). </td></tr>
   </table>
   </dd>
 </dl>
@@ -267,7 +268,7 @@ def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Oct 24 2015 16:39:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.1</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -117,13 +117,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html#a1ac96bba7e540826259f97b3d482b90f">config</a></td></tr>
 <tr class="memdesc:a1ac96bba7e540826259f97b3d482b90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional configuration to allow flexibility. <br /></td></tr>
 <tr class="separator:a1ac96bba7e540826259f97b3d482b90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79175db3d78bccdfc681220c074d84e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79175db3d78bccdfc681220c074d84e0"></a>
-double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html#a79175db3d78bccdfc681220c074d84e0">radius</a> )(const char *res_name, const char *atom_name, const struct <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *)</td></tr>
-<tr class="memdesc:a79175db3d78bccdfc681220c074d84e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns an atom radius. <br /></td></tr>
+<tr class="memitem:a79175db3d78bccdfc681220c074d84e0"><td class="memItemLeft" align="right" valign="top">double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html#a79175db3d78bccdfc681220c074d84e0">radius</a> )(const char *res_name, const char *atom_name, const struct <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *)</td></tr>
+<tr class="memdesc:a79175db3d78bccdfc681220c074d84e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns an atom radius.  <a href="#a79175db3d78bccdfc681220c074d84e0">More...</a><br /></td></tr>
 <tr class="separator:a79175db3d78bccdfc681220c074d84e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5c1f462273c556687882d845df99eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f5c1f462273c556687882d845df99eb"></a>
 int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html#a0f5c1f462273c556687882d845df99eb">sasa_class</a> )(const char *res_name, const char *atom_name, const struct <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *)</td></tr>
-<tr class="memdesc:a0f5c1f462273c556687882d845df99eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns the class [0,1,...,n_classes-1] of an atom. <br /></td></tr>
+<tr class="memdesc:a0f5c1f462273c556687882d845df99eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns the class [0,1,...,n_classes-1] of an atom, shoul return <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656a38bd3fd2af7bc6bcb9fad27e5e036810" title="Something went wrong, but results might still be meaningful (value will always be negative)...">FREESASA_WARN</a> if atom not recognized. <br /></td></tr>
 <tr class="separator:a0f5c1f462273c556687882d845df99eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedd6dd13cb69bb50ca95044a92117e79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedd6dd13cb69bb50ca95044a92117e79"></a>
 const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html#aedd6dd13cb69bb50ca95044a92117e79">class2str</a> )(int the_class, const struct <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *)</td></tr>
@@ -136,14 +135,30 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct used for calculating classes and radii for atoms given their residue-names ('ALA','ARG',...) and atom-names ('CA','N',...). </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a79175db3d78bccdfc681220c074d84e0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double(* freesasa_classifier::radius) (const char *res_name, const char *atom_name, const struct <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that returns an atom radius. </p>
+<p>Should return negative value if atom not recognized. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="freesasa_8h_source.html">freesasa.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Oct 24 2015 16:39:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

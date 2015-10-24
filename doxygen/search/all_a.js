@@ -10,7 +10,7 @@ var searchData=
   ['setnthreads',['setNThreads',['../classfreesasa_1_1Parameters.html#a53248204c7a346d55971aa4b20b1eb94',1,'freesasa::Parameters']]],
   ['setproberadius',['setProbeRadius',['../classfreesasa_1_1Parameters.html#adef9336fab354a93cc677d5405538643',1,'freesasa::Parameters']]],
   ['setradii',['setRadii',['../classfreesasa_1_1Structure.html#a5140774eec0409020a87e0d17431dd97',1,'freesasa::Structure']]],
-  ['setradiiwithclassifier',['setRadiiWithClassifier',['../classfreesasa_1_1Structure.html#a90be68c86b4a85cac0ce708845f39d8e',1,'freesasa::Structure']]],
+  ['setradiiwithclassifier',['setRadiiWithClassifier',['../classfreesasa_1_1Structure.html#a3ca0f7b4884ec2bd9fc08c7f9119d671',1,'freesasa::Structure']]],
   ['setverbosity',['setVerbosity',['../namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a',1,'freesasa']]],
   ['shrake_5frupley_5fn_5fpoints',['shrake_rupley_n_points',['../structfreesasa__parameters.html#a38040605cf07275820a96d375d2252ef',1,'freesasa_parameters']]],
   ['shrakerupley',['ShrakeRupley',['../namespacefreesasa.html#a9c75fbcf18a518c5235d5d058d9b97da',1,'freesasa']]],

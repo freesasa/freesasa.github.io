@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.5.1</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -118,9 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0eaeefd84466be1f84526b0dacb3a2f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#af0eaeefd84466be1f84526b0dacb3a2f">addAtom</a> (self, <a class="el" href="classfreesasa_1_1Structure.html#a425cf72a5fc1c4975c5e149b21393dd2">atomName</a>, <a class="el" href="classfreesasa_1_1Structure.html#a86d1e116183b6716315b687485778608">residueName</a>, <a class="el" href="classfreesasa_1_1Structure.html#a03d1b07ff8bb0c1477236557be731a30">residueNumber</a>, <a class="el" href="classfreesasa_1_1Structure.html#a117f105d0cb71553d8c3ae96823bcdee">chainLabel</a>, x, y, z)</td></tr>
 <tr class="memdesc:af0eaeefd84466be1f84526b0dacb3a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add atom to structure.  <a href="#af0eaeefd84466be1f84526b0dacb3a2f">More...</a><br /></td></tr>
 <tr class="separator:af0eaeefd84466be1f84526b0dacb3a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90be68c86b4a85cac0ce708845f39d8e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a90be68c86b4a85cac0ce708845f39d8e">setRadiiWithClassifier</a></td></tr>
-<tr class="memdesc:a90be68c86b4a85cac0ce708845f39d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign radii to atoms in structure using a classifier.  <a href="#a90be68c86b4a85cac0ce708845f39d8e">More...</a><br /></td></tr>
-<tr class="separator:a90be68c86b4a85cac0ce708845f39d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca0f7b4884ec2bd9fc08c7f9119d671"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a3ca0f7b4884ec2bd9fc08c7f9119d671">setRadiiWithClassifier</a> (self, classifier)</td></tr>
+<tr class="memdesc:a3ca0f7b4884ec2bd9fc08c7f9119d671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign radii to atoms in structure using a classifier.  <a href="#a3ca0f7b4884ec2bd9fc08c7f9119d671">More...</a><br /></td></tr>
+<tr class="separator:a3ca0f7b4884ec2bd9fc08c7f9119d671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5140774eec0409020a87e0d17431dd97"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a5140774eec0409020a87e0d17431dd97">setRadii</a> (self, radiusArray)</td></tr>
 <tr class="memdesc:a5140774eec0409020a87e0d17431dd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set atomic radii from an array.  <a href="#a5140774eec0409020a87e0d17431dd97">More...</a><br /></td></tr>
 <tr class="separator:a5140774eec0409020a87e0d17431dd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,14 +144,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a117f105d0cb71553d8c3ae96823bcdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfeac22086637ad07acc3acfccf3df1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedfeac22086637ad07acc3acfccf3df1"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#aedfeac22086637ad07acc3acfccf3df1">__dealloc__</a> (self)</td></tr>
-<tr class="memdesc:aedfeac22086637ad07acc3acfccf3df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor (free internal C objects) <br /></td></tr>
+<tr class="memdesc:aedfeac22086637ad07acc3acfccf3df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
 <tr class="separator:aedfeac22086637ad07acc3acfccf3df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a5bca491345bf7b8270be7d0da8e2c17e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bca491345bf7b8270be7d0da8e2c17e"></a>
-dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a5bca491345bf7b8270be7d0da8e2c17e">defaultOptions</a> = {'hetatm' : False, 'hydrogen' : False, 'join-models' : False}</td></tr>
-<tr class="memdesc:a5bca491345bf7b8270be7d0da8e2c17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default ignore HETATM, Hydrogens and only use first model. <br /></td></tr>
+<tr class="memitem:a5bca491345bf7b8270be7d0da8e2c17e"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a5bca491345bf7b8270be7d0da8e2c17e">defaultOptions</a></td></tr>
+<tr class="memdesc:a5bca491345bf7b8270be7d0da8e2c17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default ignore HETATM, Hydrogens, only use first model.  <a href="#a5bca491345bf7b8270be7d0da8e2c17e">More...</a><br /></td></tr>
 <tr class="separator:a5bca491345bf7b8270be7d0da8e2c17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -196,7 +195,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>If PDB file is provided, the structure will be constructed based on the file. If not this simply initializes an empty structure and the other arguments are ignored. In this case atoms will have to be added manually using <a class="el" href="classfreesasa_1_1Structure.html#af0eaeefd84466be1f84526b0dacb3a2f" title="Add atom to structure. ">addAtom()</a>.</p>
+<p>If PDB file is provided, the structure will be constructed based on the file. If not, this simply initializes an empty structure and the other arguments are ignored. In this case atoms will have to be added manually using <a class="el" href="classfreesasa_1_1Structure.html#af0eaeefd84466be1f84526b0dacb3a2f" title="Add atom to structure. ">addAtom()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileName</td><td>(str) PDB file (if None empty structure generated). </td></tr>
@@ -208,7 +207,8 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IOError</td><td>Problem opening/reading file. </td></tr>
-    <tr><td class="paramname">Exception</td><td>Problem parsing PDB file or calculating atomic radii </td></tr>
+    <tr><td class="paramname">Exception</td><td>Problem parsing PDB file or calculating atomic radii. </td></tr>
+    <tr><td class="paramname">Exception</td><td>If option 'halt-at-unknown' selected and unknown atom encountered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -277,12 +277,13 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Add atom to structure. </p>
-<p>This function is meant to be used if the structure was not initialized from a PDB</p>
+<p>This function is meant to be used if the structure was not initialized from a PDB. Default radii will be assigned to each atom. This can be overriden by calling <a class="el" href="classfreesasa_1_1Structure.html#a3ca0f7b4884ec2bd9fc08c7f9119d671" title="Assign radii to atoms in structure using a classifier. ">setRadiiWithClassifier()</a> afterwards.</p>
+<p>There are no restraints on string lengths for the arguments, but the atom won't be added if the default classifier doesn't recognize the atom and also cannot deduce its element from the atom name.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">atomName</td><td>(str) 4-character string with atom name (e.g. <code>" CA "</code>) </td></tr>
-    <tr><td class="paramname">residueName</td><td>(str) 3-character string with residue name (e.g. <code>"ALA"</code>) </td></tr>
-    <tr><td class="paramname">residueNumber</td><td>(str or int) 4-character string with residue number (e.g. `' 12'`) or integer &lt;= 9999. Some PDBs have residue-numbers that aren't regular numbers. Therefore treated as a string primarily. </td></tr>
+    <tr><td class="paramname">atomName</td><td>(str) atom name (e.g. <code>"CA"</code>) </td></tr>
+    <tr><td class="paramname">residueName</td><td>(str) residue name (e.g. <code>"ALA"</code>) </td></tr>
+    <tr><td class="paramname">residueNumber</td><td>(str or int) residue number (e.g. <code>'12'</code>) or integer. Some PDBs have residue-numbers that aren't regular numbers. Therefore treated as a string primarily. </td></tr>
     <tr><td class="paramname">chainLabel</td><td>(str) 1-character string with chain label (e.g. 'A') </td></tr>
     <tr><td class="paramname">x,y,z</td><td>(float) coordinates</td></tr>
   </table>
@@ -290,7 +291,6 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">AssertionError</td><td>string-arguments invalid </td></tr>
     <tr><td class="paramname">Exception</td><td>Residue-number invalid </td></tr>
   </table>
   </dd>
@@ -298,7 +298,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
-<a class="anchor" id="a90be68c86b4a85cac0ce708845f39d8e"></a>
+<a class="anchor" id="a3ca0f7b4884ec2bd9fc08c7f9119d671"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -312,7 +312,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>classifier</em> = <code>None</code>&#160;</td>
+          <td class="paramname"><em>classifier</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -323,7 +323,6 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 
 <p>Assign radii to atoms in structure using a classifier. </p>
-<p>If no classifier is specified default will be used. Over-writes previously assigned radii. Mainly intended to be used when atoms were added individually using <a class="el" href="classfreesasa_1_1Structure.html#af0eaeefd84466be1f84526b0dacb3a2f" title="Add atom to structure. ">addAtom()</a>. When structure is initialized from PDB a classifier can be passed directly to the constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">classifier</td><td>A classifier to use to calculate radii </td></tr>
@@ -366,7 +365,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">AssertionError</td><td>if radiusArray has wrong dimension </td></tr>
+    <tr><td class="paramname">AssertionError</td><td>if radiusArray has wrong dimension, structure not properly initialized, or if the array contains negative radii (not properly classified?) </td></tr>
   </table>
   </dd>
 </dl>
@@ -432,7 +431,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <dl class="section return"><dt>Returns</dt><dd>Radius in Å. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">AssertionError</td><td>if index out of bounds or object not properly initalized </td></tr>
+    <tr><td class="paramname">AssertionError</td><td>if index out of bounds, object not properly initalized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -603,6 +602,36 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
+<h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a5bca491345bf7b8270be7d0da8e2c17e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary freesasa.Structure.defaultOptions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= {         <span class="stringliteral">&#39;hetatm&#39;</span> : <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;            <span class="stringliteral">&#39;hydrogen&#39;</span> : <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;            <span class="stringliteral">&#39;join-models&#39;</span> : <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;            <span class="stringliteral">&#39;skip-unknown&#39;</span> : <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;            <span class="stringliteral">&#39;halt-at-unknown&#39;</span> : <span class="keyword">False</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;            }</div>
+</div><!-- fragment -->
+<p>By default ignore HETATM, Hydrogens, only use first model. </p>
+<p>For unknown atoms try to guess the radius, if this fails, assign radius 0 (to allow changing the radius later). </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>freesasa.pyx</li>
 </ul>
@@ -610,7 +639,7 @@ dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 9 2015 18:36:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Oct 24 2015 16:39:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
