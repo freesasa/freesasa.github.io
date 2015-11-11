@@ -107,9 +107,9 @@ Basic calculations</h1>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordflow">print</span> <span class="stringliteral">&quot;Total : %.2f A2&quot;</span> % result.totalArea()</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordflow">for</span> key <span class="keywordflow">in</span> area_classes:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">print</span> key, <span class="stringliteral">&quot;: %.2f A2&quot;</span> % area_classes[key]</div>
-</div><!-- fragment --><p>Which would give the following output </p><pre class="fragment">Total : 4834.72 A2
-Polar : 2515.82 A2
-Apolar : 2318.90 A2
+</div><!-- fragment --><p>Which would give the following output </p><pre class="fragment">Total : 4804.06 A2
+Polar : 2504.22 A2
+Apolar : 2299.84 A2
 </pre><p>The following does a high precision L&amp;R calculation</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;result = <a class="code" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">freesasa.calc</a>(structure,</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       <a class="code" href="classfreesasa_1_1Parameters.html">freesasa.Parameters</a>({<span class="stringliteral">&#39;algorithm&#39;</span> : freesasa.LeeRichards,</div>
@@ -119,8 +119,8 @@ Apolar : 2318.90 A2
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                 structure, result)</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordflow">for</span> key <span class="keywordflow">in</span> selections:</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordflow">print</span> key, <span class="stringliteral">&quot;: %.2f A2&quot;</span> % selections[key]</div>
-</div><!-- fragment --><p> which gives the output </p><pre class="fragment">alanine : 118.35 A2
-r1_10 : 643.01 A2
+</div><!-- fragment --><p> which gives the output </p><pre class="fragment">alanine : 120.08 A2
+r1_10 : 634.31 A2
 </pre><h1><a class="anchor" id="Python-classification"></a>
 Customizing atom classification</h1>
 <p>This uses the NACCESS parameters (the file 'naccess.config' is available in the share/ directory of the repository).</p>
@@ -163,7 +163,7 @@ Customizing atom classification</h1>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 11 2015 17:37:22 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 11 2015 17:50:38 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
