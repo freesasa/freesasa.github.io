@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.0.1</span>
+   &#160;<span id="projectnumber">0.6.0.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -102,7 +102,7 @@ Basics</h1>
 </ol>
 <h2><a class="anchor" id="API-PDB"></a>
 Calculate SASA for a PDB file</h2>
-<p>The following explains how to use FreeSASA to calculate the SASA of a fictive PDB file (1abc.pdb). At each step one or more error checks should have been done, but theses are ignored here for brevity. See the documentation of each function to see what errors can occur. Default parameters are used at every step, the section <a class="el" href="API.html#Customizing">Customizing behavior</a> explains how to configure the calculations.</p>
+<p>The following explains how to use FreeSASA to calculate the SASA of a fictive PDB file (1abc.pdb). At each step one or more error checks should have been done, but these are ignored here for brevity. See the documentation of each function to see what errors can occur. Default parameters are used at every step, the section <a class="el" href="API.html#Customizing">Customizing behavior</a> explains how to configure the calculations.</p>
 <h3><a class="anchor" id="API-Read-PDB"></a>
 Open PDB file</h3>
 <p>The function <a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a> reads the atom coordinates from a PDB file and assigns a radius to each atom. The second and third arguments can be changed to use a custom <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a> to define radii and to specify options for what to include in the PDB file, respectively.</p>
@@ -151,9 +151,9 @@ Parameters</h2>
 <p>Changing parameters is done by passing a <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a> object with the desired values. It can be initialized to default by</p>
 <div class="fragment"><div class="line"><a class="code" href="structfreesasa__parameters.html">freesasa_parameters</a> param = <a class="code" href="freesasa_8h.html#ae9d9b203cc6df0d1c81afb6c4c15dff8">freesasa_default_parameters</a>;</div>
 </div><!-- fragment --><p>To allow the user to only change the parameters that are non-default.</p>
-<p>The following call would run a high precision Lee &amp; Richards calculation with 200 slices per atom</p>
-<div class="fragment"><div class="line">param.<a class="code" href="structfreesasa__parameters.html#a05f69e9bfea030dba42b19402a7e6b07">alg</a> = <a class="code" href="freesasa_8h.html#a617f4a1c86a13ce900462399583e862ca0d9841ae623e7679f84f2bb311bd12ce">FREESASA_LEE_RICHARDS</a>;</div>
-<div class="line">param.<a class="code" href="structfreesasa__parameters.html#aec8d2517335d90c4cb513162b9a8a687">lee_richards_n_slices</a> = 200;</div>
+<p>The following call would run a high precision Shrake &amp; Rupley calculation with 10000 test points</p>
+<div class="fragment"><div class="line">param.<a class="code" href="structfreesasa__parameters.html#a05f69e9bfea030dba42b19402a7e6b07">alg</a> = <a class="code" href="freesasa_8h.html#a617f4a1c86a13ce900462399583e862cae7e64d18bc061f177318b3015623cb72">FREESASA_SHRAKE_RUPLEY</a>;</div>
+<div class="line">param.<a class="code" href="structfreesasa__parameters.html#aec8d2517335d90c4cb513162b9a8a687">lee_richards_n_slices</a> = 10000;</div>
 <div class="line"><a class="code" href="structfreesasa__result.html">freesasa_result</a> *result = <a class="code" href="freesasa_8h.html#a2b15ffade911e09fcf96f9837ed61333">freesasa_calc_structure</a>(structure,radii,param);</div>
 </div><!-- fragment --><h2><a class="anchor" id="Classification"></a>
 Specifying atomic radii and classes</h2>
@@ -167,7 +167,7 @@ Specifying atomic radii and classes</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 26 2015 19:10:49 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 11 2015 17:37:22 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

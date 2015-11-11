@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.0.1</span>
+   &#160;<span id="projectnumber">0.6.0.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -97,53 +97,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1><a class="anchor" id="CLI-Default"></a>
 Run using defaults</h1>
 <p>In the following we will use the PDB structure 1UBQ as an example. To run a simple SASA calculation using default parameters, simply type: </p><pre class="fragment">$ freesasa 1ubq.pdb
-</pre><p>This generates the following output </p><pre class="fragment">name: 1ubq.pdb
-n_atoms: 602
-algorithm: Shrake &amp; Rupley
-probe-radius: 1.400000 A
-n_thread: 2
-n_testpoint: 100
+</pre><p>This generates the following output </p><pre class="fragment">PARAMETERS
+input             : tests/data/1ubq.pdb
+n_atoms           : 602
+algorithm         : Lee &amp; Richards
+probe-radius      : 1.400
+n_thread          : 2
+n_slices_per_atom : 20
 
-  Total:   4834.72 A2
- Apolar:   2318.90 A2
-  Polar:   2515.82 A2
+RESULTS
+Total   :    4804.06
+Apolar  :    2299.84
+Polar   :    2504.22
 </pre><p>The results are all in the unit Ångström-squared.</p>
 <h1><a class="anchor" id="parameters"></a>
 Changing parameters</h1>
-<p>If higher precision is needed, the command </p><pre class="fragment">$ freesasa -n 1000 1ubq.pdb
-</pre><p>specifies that the calculation should use 1000 test points instead of the default 100. The command </p><pre class="fragment">$ freesasa --lee-richards -n 200 --probe-radius 1.2 --n-threads 4 1ubq.pdb
-</pre><p>instead calculates the SASA using Lee &amp; Richards algorithm with 200 slices per atom, a probe radius of 1.2 Å, using 4 parallel threads to speed things up.</p>
+<p>If higher precision is needed, the command </p><pre class="fragment">$ freesasa -n 100 1ubq.pdb
+</pre><p>specifies that the calculation should use 100 slices per atom instead of the default 20. The command </p><pre class="fragment">$ freesasa --shrake-rupley -n 200 --probe-radius 1.2 --n-threads 4 1ubq.pdb
+</pre><p>instead calculates the SASA using Shrake &amp; Rupley's algorithm with 200 test points, a probe radius of 1.2 Å, using 4 parallel threads to speed things up.</p>
 <p>If the user wants to use their own atomic radii the command </p><pre class="fragment">$ freesasa --config-file &lt;file&gt; 1ubq.pdb
 </pre><p>Reads a configuration from a file and uses it to assign atomic radii. The program will halt if it encounters atoms in the PDB input that are not present in the configuration. See <a class="el" href="Config-file.html">Classifier configuration files</a> for instructions how to write a configuration.</p>
 <h1><a class="anchor" id="Output"></a>
 Other output types</h1>
 <p>To calculate the SASA of each residue in the sequence, or each residue type, the commands </p><pre class="fragment">$ freesasa --foreach-residue --no-log 1ubq.pdb
-SEQ: A    1 MET   50.77
-SEQ: A    2 GLN   77.34
-SEQ: A    3 ILE    0.00
+SEQ A    1 MET :   54.39
+SEQ A    2 GLN :   74.21
+SEQ A    3 ILE :    0.00
 ...
 </pre><p>and </p><pre class="fragment">$ freesasa --foreach-residue-type --no-log 1ubq.pdb
-RES: ALA    118.35
-RES: ARG    546.58
-RES: ASN    165.76
+RES ALA :     120.08
+RES ARG :     540.12
+RES ASN :     166.45
 ...
 </pre><p>to stdout respectively (<code>--no-log</code> suppresses the standard log message).</p>
 <p>The command-line interface can also be used as a PDB filter: </p><pre class="fragment">$ cat 1ubq.pdb | freesasa --no-log --print-as-B-values 
-ATOM      1  N   MET A   1      27.340  24.430   2.614  1.64 17.42
-ATOM      2  CA  MET A   1      26.266  25.413   2.842  1.88 16.22
-ATOM      3  C   MET A   1      26.913  26.639   3.531  1.61  0.00
+ATOM      1  N   MET A   1      27.340  24.430   2.614  1.64 19.52
+ATOM      2  CA  MET A   1      26.266  25.413   2.842  1.88 15.53
+ATOM      3  C   MET A   1      26.913  26.639   3.531  1.61  0.26
 ...
-</pre><p>The output is PDB-file where the temperature factors have been replaced by SASA values, and occupancy numbers by the radius of each atom:</p>
+</pre><p>The output is a PDB-file where the temperature factors have been replaced by SASA values (last column), and occupancy numbers by the radius of each atom (second to last column).</p>
 <p>Only the atoms and models used in the calculation will be present in the output (see <a class="el" href="CLI.html#Input">PDB input</a> for how to modify this).</p>
 <p>To generate all three results at the same time and write them to separate files, run </p><pre class="fragment">$ freesasa --residue-file=1ubq.seq --residue-type-file=1ubq.res --B-value-file=1ubq.b 1ubq.pdb
 </pre><h1><a class="anchor" id="CLI-select"></a>
 Selecting groups of atoms</h1>
 <p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of ASP and ASN </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "asx, resn asp+asn" 1ubq.pdb
 ...
-Selections:
+SELECTIONS
 freesasa: warning: Found no matches to resn 'TRP', typo?
-aromatic:    369.24 A2
-asx:    560.89 A2
+aromatic :     360.38
+asx :     559.46
 </pre><p>This command adds a 'Selection:' section at the end of the output. This particular protein did not have any TRP residues, hence the warning (written to stderr). The warning can be supressed with the flag <code>-w</code>.</p>
 <h1><a class="anchor" id="Input"></a>
 PDB input</h1>
@@ -166,7 +168,7 @@ Separating and joining chains and models</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 26 2015 19:10:49 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 11 2015 17:37:22 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
