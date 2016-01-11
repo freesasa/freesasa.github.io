@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.6.1.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -149,9 +149,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a3f8f799448b8ba0656b3952ed11e422c">FREESASA_DEF_LR_N</a>&#160;&#160;&#160;20</td></tr>
 <tr class="memdesc:a3f8f799448b8ba0656b3952ed11e422c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of slices per atom in L&amp;R. <br /></td></tr>
 <tr class="separator:a3f8f799448b8ba0656b3952ed11e422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fedfcf41aa716fd01b74fcec0de3f88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7fedfcf41aa716fd01b74fcec0de3f88">FREESASA_DEF_NUMBER_THREADS</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a7fedfcf41aa716fd01b74fcec0de3f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of threads.  <a href="#a7fedfcf41aa716fd01b74fcec0de3f88">More...</a><br /></td></tr>
-<tr class="separator:a7fedfcf41aa716fd01b74fcec0de3f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de">FREESASA_MAX_SELECTION_NAME</a>&#160;&#160;&#160;50</td></tr>
 <tr class="memdesc:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of a selection name.  <a href="#a1add316a6fcc7c2ffdbac1d169cd70de">More...</a><br /></td></tr>
 <tr class="separator:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -306,6 +303,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a66e9737f6d48269f6f32422738b85a3f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a66e9737f6d48269f6f32422738b85a3f">FREESASA_DEF_NUMBER_THREADS</a></td></tr>
+<tr class="memdesc:a66e9737f6d48269f6f32422738b85a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of threads.  <a href="#a66e9737f6d48269f6f32422738b85a3f">More...</a><br /></td></tr>
+<tr class="separator:a66e9737f6d48269f6f32422738b85a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9d9b203cc6df0d1c81afb6c4c15dff8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9d9b203cc6df0d1c81afb6c4c15dff8"></a>
 const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#ae9d9b203cc6df0d1c81afb6c4c15dff8">freesasa_default_parameters</a></td></tr>
 <tr class="memdesc:ae9d9b203cc6df0d1c81afb6c4c15dff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default parameters for FreeSASA. <br /></td></tr>
@@ -325,21 +325,6 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 <dl class="section copyright"><dt>Copyright</dt><dd>GPLv3</dd></dl>
 <p>This header provides the functions and data types necessary to perfrom and analyze a SASA calculation using FreeSASA, including facilities to customize assignment of radii to, and classification of, atoms. There are also functions to access properties of a structure, to allow refined analysis of the results. The page <a class="el" href="API.html">FreeSASA API</a> shows how to set up and perform a simple SASA calculation. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a7fedfcf41aa716fd01b74fcec0de3f88"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FREESASA_DEF_NUMBER_THREADS&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default number of threads. </p>
-<p>Value will depend on if library was compiled with or without thread support. (2 with threads, 1 without) </p>
-
-</div>
-</div>
 <a class="anchor" id="a1add316a6fcc7c2ffdbac1d169cd70de"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1822,11 +1807,27 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a66e9737f6d48269f6f32422738b85a3f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int FREESASA_DEF_NUMBER_THREADS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default number of threads. </p>
+<p>Value will depend on if library was compiled with or without thread support. (2 with threads, 1 without) </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 11 2015 18:24:25 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 11 2016 19:35:52 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
