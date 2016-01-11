@@ -17,6 +17,15 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66397346-1', 'auto');
+  ga('send', 'pageview');
+</script>
   <body>
     <div class="wrapper">
       <header>
@@ -25,8 +34,8 @@
 
         <p class="view"><a href="https://github.com/mittinatten/freesasa" id="github">View the Project on GitHub <small>mittinatten/freesasa</small></a></p>
         <ul>
-          <li><a href="freesasa-0.6.1.tar.gz" id="tarball">Download <strong>v0.6.1</strong></a></li>
-          <li><a href="https://github.com/mittinatten/freesasa" id="github">View On <strong>GitHub</strong></a></li>
+          <li><a href="freesasa-0.6.1.2.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');">Download <strong>v0.6.1.2</strong></a></li>
+          <li><a href="https://github.com/mittinatten/freesasa" id="github" onClick="ga('send', 'event', 'github', 'click');">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
@@ -35,7 +44,7 @@
     <span class="octicon octicon-link"></span></a>
   Quick-start guide</h2>
 
-<p>Download the <a href="freesasa-0.6.1.tar.gz" id="tarball">latest tarball</a>,
+<p>Download the <a href="freesasa-0.6.1.2.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');">latest tarball</a>,
 expand it and run
 
 <pre>$ ./configure 
@@ -71,22 +80,5 @@ implementation details.</p>
       </footer>
     </div>
 <script src="javascripts/scale.fix.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-66397346-1', 'auto');
-  ga('send', 'pageview');
-
-  var tarballLink = document.getElementById('tarball');
-  addListener(tarballLink, 'click', function() {ga('send', 'event', 'tarball', 'click');});
-  function addListener(element, type, callback) {
-    if (element.addEventListener) element.addEventListener(type, callback);
-    else if (element.attachEvent) element.attachEvent('on' + type, callback);
-  }
-
-</script>
   </body>
 </html>
