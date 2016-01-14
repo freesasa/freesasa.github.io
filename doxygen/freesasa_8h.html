@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.1.2</span>
+   &#160;<span id="projectnumber">0.6.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -234,6 +234,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a152d5f5d6f38b5bba512c7f5d2feeb88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a152d5f5d6f38b5bba512c7f5d2feeb88">freesasa_log</a> (FILE *log, <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result, const char *name, const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters, const <a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a> *class_sasa)</td></tr>
 <tr class="memdesc:a152d5f5d6f38b5bba512c7f5d2feeb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log calculation results.  <a href="#a152d5f5d6f38b5bba512c7f5d2feeb88">More...</a><br /></td></tr>
 <tr class="separator:a152d5f5d6f38b5bba512c7f5d2feeb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93f8bed0cba7c74b537bd958c9b0784"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#ae93f8bed0cba7c74b537bd958c9b0784">freesasa_write_result</a> (FILE *log, <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result, const char *name, const <a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a> *class_sasa)</td></tr>
+<tr class="memdesc:ae93f8bed0cba7c74b537bd958c9b0784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write results of claculation to file.  <a href="#ae93f8bed0cba7c74b537bd958c9b0784">More...</a><br /></td></tr>
+<tr class="separator:ae93f8bed0cba7c74b537bd958c9b0784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db37bd7fdd1b513e992f0e075eff066"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066">freesasa_write_parameters</a> (FILE *log, const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters)</td></tr>
+<tr class="memdesc:a7db37bd7fdd1b513e992f0e075eff066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print parameters to file.  <a href="#a7db37bd7fdd1b513e992f0e075eff066">More...</a><br /></td></tr>
+<tr class="separator:a7db37bd7fdd1b513e992f0e075eff066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e96bbae0a02282d60468385358f7be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a68e96bbae0a02282d60468385358f7be">freesasa_set_verbosity</a> (<a class="el" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a> v)</td></tr>
 <tr class="memdesc:a68e96bbae0a02282d60468385358f7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global verbosity level.  <a href="#a68e96bbae0a02282d60468385358f7be">More...</a><br /></td></tr>
 <tr class="separator:a68e96bbae0a02282d60468385358f7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -988,14 +994,100 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 </div><div class="memdoc">
 
 <p>Log calculation results. </p>
-<p>Prints log of calculation results to specified file.</p>
+<p>Prints log of calculation to specified file, equivalent of calling first freesasa_parameters_log() and then freesasa_result_log()</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log</td><td>Output-file. </td></tr>
+    <tr><td class="paramname">result</td><td>SASA values. </td></tr>
+    <tr><td class="paramname">parameters</td><td>Parameters to print, if NULL defaults are used </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the protein, if NULL "unknown" used. </td></tr>
+    <tr><td class="paramname">class_sasa</td><td>The SASA values for each class, if NULL only total SASA printed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> on success, <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to file.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae93f8bed0cba7c74b537bd958c9b0784"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_write_result </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>log</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfreesasa__result.html">freesasa_result</a> *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a> *&#160;</td>
+          <td class="paramname"><em>class_sasa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write results of claculation to file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">log</td><td>Output-file. </td></tr>
     <tr><td class="paramname">result</td><td>SASA values. </td></tr>
     <tr><td class="paramname">name</td><td>Name of the protein, if NULL "unknown" used. </td></tr>
-    <tr><td class="paramname">parameters</td><td>Parameters to print, if NULL defaults are used </td></tr>
     <tr><td class="paramname">class_sasa</td><td>The SASA values for each class, if NULL only total SASA printed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> on success, <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to file. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7db37bd7fdd1b513e992f0e075eff066"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_write_parameters </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>log</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a> *&#160;</td>
+          <td class="paramname"><em>parameters</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print parameters to file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameters</td><td>Parameters to print, if NULL defaults are used</td></tr>
   </table>
   </dd>
 </dl>
@@ -1422,6 +1514,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 </div><div class="memdoc">
 
 <p>Create new structure consisting of a selection chains from the provided structure. </p>
+<p>Simply looks for chain labels that match the characters in the provided string.</p>
 <p>Return value is dynamically allocated, should be freed with <a class="el" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd" title="Free structure. ">freesasa_structure_free()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1827,7 +1920,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2016 19:35:52 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 14 2016 16:59:42 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

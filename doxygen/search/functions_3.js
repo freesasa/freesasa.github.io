@@ -34,5 +34,7 @@ var searchData=
   ['freesasa_5fstructure_5fradius',['freesasa_structure_radius',['../freesasa_8h.html#a7094d6710bcd6d6cb064e46dcfaf7765',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fset_5fradius',['freesasa_structure_set_radius',['../freesasa_8h.html#a60e8755d92e724683713b677d2dd89d2',1,'freesasa.h']]],
   ['freesasa_5fstrvp_5ffree',['freesasa_strvp_free',['../freesasa_8h.html#a449f4066cf886f3dd7be2d4d56313ef3',1,'freesasa.h']]],
-  ['freesasa_5fwrite_5fpdb',['freesasa_write_pdb',['../freesasa_8h.html#a3b0cf2ad07476f5d8fbb568e293a6dfb',1,'freesasa.h']]]
+  ['freesasa_5fwrite_5fparameters',['freesasa_write_parameters',['../freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066',1,'freesasa.h']]],
+  ['freesasa_5fwrite_5fpdb',['freesasa_write_pdb',['../freesasa_8h.html#a3b0cf2ad07476f5d8fbb568e293a6dfb',1,'freesasa.h']]],
+  ['freesasa_5fwrite_5fresult',['freesasa_write_result',['../freesasa_8h.html#ae93f8bed0cba7c74b537bd958c9b0784',1,'freesasa.h']]]
 ];

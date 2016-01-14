@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.1.2</span>
+   &#160;<span id="projectnumber">0.6.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="freesasa_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright Simon Mitternacht 2013-2015.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright Simon Mitternacht 2013-2016.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  This file is part of FreeSASA.</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="freesasa_8h.html#a245e804df26f18bba0c5bd92a7f3f110">   63</a></span>&#160;<span class="preprocessor">#define FREESASA_DEF_SR_N 100 </span></div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="freesasa_8h.html#a3f8f799448b8ba0656b3952ed11e422c">   64</a></span>&#160;<span class="preprocessor">#define FREESASA_DEF_LR_N 20 </span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="freesasa_8h.html#a66e9737f6d48269f6f32422738b85a3f">FREESASA_DEF_NUMBER_THREADS</a>; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">const</span> <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="freesasa_8h.html#a66e9737f6d48269f6f32422738b85a3f">FREESASA_DEF_NUMBER_THREADS</a>; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656">   73</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656">freesasa_error_codes</a> {</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e">   74</a></span>&#160;    <a class="code" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e">FREESASA_SUCCESS</a>=0, </div>
@@ -269,104 +269,111 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                     <a class="code" href="structfreesasa__result.html">freesasa_result</a> *result,</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                     <span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<a class="code" href="freesasa_8h.html#a152d5f5d6f38b5bba512c7f5d2feeb88">freesasa_log</a>(FILE *log, </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;             <a class="code" href="structfreesasa__result.html">freesasa_result</a> *result,</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;             <span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;             <span class="keyword">const</span> <a class="code" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters,</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;             <span class="keyword">const</span> <a class="code" href="structfreesasa__strvp.html">freesasa_strvp</a>* class_sasa);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<a class="code" href="freesasa_8h.html#a68e96bbae0a02282d60468385358f7be">freesasa_set_verbosity</a>(<a class="code" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a> v);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<a class="code" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<a class="code" href="freesasa_8h.html#a8dab8911424b379b4036d74eeec8b143">freesasa_get_verbosity</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<a class="code" href="freesasa_8h.html#a273abc767664492dafe3720f4ca74926">freesasa_set_err_out</a>(FILE *err);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<a class="code" href="freesasa_8h.html#a152d5f5d6f38b5bba512c7f5d2feeb88">freesasa_log</a>(FILE *log,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;             <a class="code" href="structfreesasa__result.html">freesasa_result</a> *result,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;             <span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;             <span class="keyword">const</span> <a class="code" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters,</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;             <span class="keyword">const</span> <a class="code" href="structfreesasa__strvp.html">freesasa_strvp</a>* class_sasa);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<a class="code" href="freesasa_8h.html#ae93f8bed0cba7c74b537bd958c9b0784">freesasa_write_result</a>(FILE *log,</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                      <a class="code" href="structfreesasa__result.html">freesasa_result</a> *result,</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                      <span class="keyword">const</span> <a class="code" href="structfreesasa__strvp.html">freesasa_strvp</a>* class_sasa);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keywordtype">int</span> <a class="code" href="freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066">freesasa_write_parameters</a>(FILE *log,</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                              <span class="keyword">const</span> <a class="code" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;FILE *</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<a class="code" href="freesasa_8h.html#a9c5881ee39bea9efc3e0818c6a5de4e0">freesasa_get_err_out</a>();</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<a class="code" href="freesasa_8h.html#a68e96bbae0a02282d60468385358f7be">freesasa_set_verbosity</a>(<a class="code" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a> v);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<a class="code" href="freesasa_8h.html#a09c6cb8b6b5cc438b717b7e690ebe32f">freesasa_structure_new</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<a class="code" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257">freesasa_structure_from_pdb</a>(FILE *pdb,</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                            <span class="keywordtype">int</span> options);</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> **</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<a class="code" href="freesasa_8h.html#aebab3adaa53e9c1f371b1a29c6f4cd5e">freesasa_structure_array</a>(FILE *pdb,</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                         <span class="keywordtype">int</span> *n,</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                         <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                         <span class="keywordtype">int</span> options);</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keywordtype">int</span> </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<a class="code" href="freesasa_8h.html#a62cd8d35cf36c596f0fa33b586a5f42f">freesasa_structure_add_atom</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* atom_name,</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* residue_name,</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* residue_number,</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                            <span class="keywordtype">char</span> chain_label,</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                            <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="keywordtype">int</span> </div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<a class="code" href="freesasa_8h.html#a63b3588a640e46466192724140237571">freesasa_structure_add_atom_wopt</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *atom_name,</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *residue_name,</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *residue_number,</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                                 <span class="keywordtype">char</span> chain_label,</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                                 <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                                 <span class="keywordtype">int</span> options);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<a class="code" href="freesasa_8h.html#a9a2252f330e812368c3309d491c969e9">freesasa_structure_get_chains</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">char</span>* chains);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<a class="code" href="freesasa_8h.html#a6c31ed2f76e8c2690b4c254816c5cef5">freesasa_structure_chain_labels</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<a class="code" href="freesasa_8h.html#aca6fabad195a8e475e438f7a85547895">freesasa_structure_n</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<a class="code" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd">freesasa_structure_free</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>* structure);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span>*</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<a class="code" href="freesasa_8h.html#a7094d6710bcd6d6cb064e46dcfaf7765">freesasa_structure_radius</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;<a class="code" href="freesasa_8h.html#a60e8755d92e724683713b677d2dd89d2">freesasa_structure_set_radius</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, <span class="keyword">const</span> <span class="keywordtype">double</span>* radii);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<a class="code" href="freesasa_8h.html#a76ff50b041fbe028ce853eee038fd418">freesasa_structure_atom_name</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                             <span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<a class="code" href="freesasa_8h.html#a42b0fc94b8d93cc9e351e140e979cd6c">freesasa_structure_atom_res_name</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                                 <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<a class="code" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<a class="code" href="freesasa_8h.html#a8dab8911424b379b4036d74eeec8b143">freesasa_get_verbosity</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<a class="code" href="freesasa_8h.html#a273abc767664492dafe3720f4ca74926">freesasa_set_err_out</a>(FILE *err);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;FILE *</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<a class="code" href="freesasa_8h.html#a9c5881ee39bea9efc3e0818c6a5de4e0">freesasa_get_err_out</a>();</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<a class="code" href="freesasa_8h.html#a09c6cb8b6b5cc438b717b7e690ebe32f">freesasa_structure_new</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<a class="code" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257">freesasa_structure_from_pdb</a>(FILE *pdb,</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                            <span class="keywordtype">int</span> options);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> **</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<a class="code" href="freesasa_8h.html#aebab3adaa53e9c1f371b1a29c6f4cd5e">freesasa_structure_array</a>(FILE *pdb,</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                         <span class="keywordtype">int</span> *n,</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                         <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                         <span class="keywordtype">int</span> options);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keywordtype">int</span> </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<a class="code" href="freesasa_8h.html#a62cd8d35cf36c596f0fa33b586a5f42f">freesasa_structure_add_atom</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* atom_name,</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* residue_name,</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">char</span>* residue_number,</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                            <span class="keywordtype">char</span> chain_label,</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                            <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="keywordtype">int</span> </div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<a class="code" href="freesasa_8h.html#a63b3588a640e46466192724140237571">freesasa_structure_add_atom_wopt</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *atom_name,</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *residue_name,</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                 <span class="keyword">const</span> <span class="keywordtype">char</span> *residue_number,</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                 <span class="keywordtype">char</span> chain_label,</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                                 <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier,</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                 <span class="keywordtype">int</span> options);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>*</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<a class="code" href="freesasa_8h.html#a9a2252f330e812368c3309d491c969e9">freesasa_structure_get_chains</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, </div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">char</span>* chains);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;<a class="code" href="freesasa_8h.html#a6c31ed2f76e8c2690b4c254816c5cef5">freesasa_structure_chain_labels</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;<a class="code" href="freesasa_8h.html#aca6fabad195a8e475e438f7a85547895">freesasa_structure_n</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<a class="code" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd">freesasa_structure_free</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a>* structure);</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span>*</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<a class="code" href="freesasa_8h.html#a7094d6710bcd6d6cb064e46dcfaf7765">freesasa_structure_radius</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<a class="code" href="freesasa_8h.html#a60e8755d92e724683713b677d2dd89d2">freesasa_structure_set_radius</a>(<a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, <span class="keyword">const</span> <span class="keywordtype">double</span>* radii);</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<a class="code" href="freesasa_8h.html#a7a9f892ad9dcb939cc5a4718931416e2">freesasa_structure_atom_res_number</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                   <span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="keywordtype">char</span></div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;<a class="code" href="freesasa_8h.html#a49dae368f989c9515fd8768c0a9a77f6">freesasa_structure_atom_chain</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                              <span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<a class="code" href="freesasa_8h.html#a79025bd4a19f7a326d52b68563cc9254">freesasa_structure_atom_symbol</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                               <span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;<a class="code" href="freesasa_8h.html#a1567e3c3c01fea6418406a9dcfa597a1">freesasa_structure_model</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span>*</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<a class="code" href="freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278">freesasa_structure_coord_array</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;}</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FREESASA_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<a class="code" href="freesasa_8h.html#a76ff50b041fbe028ce853eee038fd418">freesasa_structure_atom_name</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                             <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<a class="code" href="freesasa_8h.html#a42b0fc94b8d93cc9e351e140e979cd6c">freesasa_structure_atom_res_name</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                 <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;<a class="code" href="freesasa_8h.html#a7a9f892ad9dcb939cc5a4718931416e2">freesasa_structure_atom_res_number</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                                   <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="keywordtype">char</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;<a class="code" href="freesasa_8h.html#a49dae368f989c9515fd8768c0a9a77f6">freesasa_structure_atom_chain</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                              <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<a class="code" href="freesasa_8h.html#a79025bd4a19f7a326d52b68563cc9254">freesasa_structure_atom_symbol</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure,</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                               <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;<a class="code" href="freesasa_8h.html#a1567e3c3c01fea6418406a9dcfa597a1">freesasa_structure_model</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span>*</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;<a class="code" href="freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278">freesasa_structure_coord_array</a>(<span class="keyword">const</span> <a class="code" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;}</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FREESASA_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="freesasa_8h_html_a3156ac997be582eda09eaf95c05059f6ad7feacc6a6e708e9b015420714033729"><div class="ttname"><a href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6ad7feacc6a6e708e9b015420714033729">FREESASA_INCLUDE_HETATM</a></div><div class="ttdoc">Include HETATM entries. </div><div class="ttdef"><b>Definition:</b> freesasa.h:86</div></div>
 <div class="ttc" id="freesasa_8h_html_a3156ac997be582eda09eaf95c05059f6ae64a9e8861f70db0ebe832b474cc4107"><div class="ttname"><a href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6ae64a9e8861f70db0ebe832b474cc4107">FREESASA_HALT_AT_UNKNOWN</a></div><div class="ttdoc">Halt reading when unknown atom is encountered. </div><div class="ttdef"><b>Definition:</b> freesasa.h:91</div></div>
 <div class="ttc" id="freesasa_8h_html_a6322fdef5c7b2a04389714c7e1ba4278"><div class="ttname"><a href="freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278">freesasa_structure_coord_array</a></div><div class="ttdeci">const double * freesasa_structure_coord_array(const freesasa_structure *structure)</div><div class="ttdoc">Get array of coordinates. </div></div>
@@ -381,6 +388,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structfreesasa__strvp_html"><div class="ttname"><a href="structfreesasa__strvp.html">freesasa_strvp</a></div><div class="ttdoc">Struct used to store n string-value-pairs (strvp) in arrays of doubles and strings. </div><div class="ttdef"><b>Definition:</b> freesasa.h:132</div></div>
 <div class="ttc" id="freesasa_8h_html_a3254cab7d28c17265d61e86533fad5e3"><div class="ttname"><a href="freesasa_8h.html#a3254cab7d28c17265d61e86533fad5e3">freesasa_result_classify</a></div><div class="ttdeci">freesasa_strvp * freesasa_result_classify(const freesasa_result *result, const freesasa_structure *structure, const freesasa_classifier *classifier)</div><div class="ttdoc">Sums up the SASA for groups of atoms defined by a classifier. </div></div>
 <div class="ttc" id="freesasa_8h_html_a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02"><div class="ttname"><a href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02">FREESASA_FAIL</a></div><div class="ttdoc">Something went seriously wrong (value will always be negative). </div><div class="ttdef"><b>Definition:</b> freesasa.h:75</div></div>
+<div class="ttc" id="freesasa_8h_html_a7db37bd7fdd1b513e992f0e075eff066"><div class="ttname"><a href="freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066">freesasa_write_parameters</a></div><div class="ttdeci">int freesasa_write_parameters(FILE *log, const freesasa_parameters *parameters)</div><div class="ttdoc">Print parameters to file. </div></div>
 <div class="ttc" id="structfreesasa__classifier_html_a0f5c1f462273c556687882d845df99eb"><div class="ttname"><a href="structfreesasa__classifier.html#a0f5c1f462273c556687882d845df99eb">freesasa_classifier::sasa_class</a></div><div class="ttdeci">int(* sasa_class)(const char *res_name, const char *atom_name, const struct freesasa_classifier *)</div><div class="ttdoc">Function that returns the class [0,1,...,n_classes-1] of an atom, shoul return FREESASA_WARN if atom ...</div><div class="ttdef"><b>Definition:</b> freesasa.h:159</div></div>
 <div class="ttc" id="freesasa_8h_html_a844352ce587326a78a765f1ec5119fc0a14bb955f87a173f56ebe03bcdcbca9ec"><div class="ttname"><a href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0a14bb955f87a173f56ebe03bcdcbca9ec">FREESASA_V_DEBUG</a></div><div class="ttdoc">Print all errors, warnings and debug messages. </div><div class="ttdef"><b>Definition:</b> freesasa.h:57</div></div>
 <div class="ttc" id="freesasa_8h_html_a3156ac997be582eda09eaf95c05059f6a1e77faebad308d4c0d2ebb70b0994b58"><div class="ttname"><a href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a1e77faebad308d4c0d2ebb70b0994b58">FREESASA_SEPARATE_MODELS</a></div><div class="ttdoc">Read MODELs as separate structures. </div><div class="ttdef"><b>Definition:</b> freesasa.h:88</div></div>
@@ -425,6 +433,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="freesasa_8h_html_a3f40dddd26a33063eabdf85a278c275d"><div class="ttname"><a href="freesasa_8h.html#a3f40dddd26a33063eabdf85a278c275d">freesasa_classifier_from_file</a></div><div class="ttdeci">freesasa_classifier * freesasa_classifier_from_file(FILE *file)</div><div class="ttdoc">Generate a classifier from a config-file. </div></div>
 <div class="ttc" id="freesasa_8h_html_a66e9737f6d48269f6f32422738b85a3f"><div class="ttname"><a href="freesasa_8h.html#a66e9737f6d48269f6f32422738b85a3f">FREESASA_DEF_NUMBER_THREADS</a></div><div class="ttdeci">const int FREESASA_DEF_NUMBER_THREADS</div><div class="ttdoc">Default number of threads. </div></div>
 <div class="ttc" id="structfreesasa__result_html"><div class="ttname"><a href="structfreesasa__result.html">freesasa_result</a></div><div class="ttdoc">Struct to store results of SASA calculation. </div><div class="ttdef"><b>Definition:</b> freesasa.h:111</div></div>
+<div class="ttc" id="freesasa_8h_html_ae93f8bed0cba7c74b537bd958c9b0784"><div class="ttname"><a href="freesasa_8h.html#ae93f8bed0cba7c74b537bd958c9b0784">freesasa_write_result</a></div><div class="ttdeci">int freesasa_write_result(FILE *log, freesasa_result *result, const char *name, const freesasa_strvp *class_sasa)</div><div class="ttdoc">Write results of claculation to file. </div></div>
 <div class="ttc" id="freesasa_8h_html_a42b0fc94b8d93cc9e351e140e979cd6c"><div class="ttname"><a href="freesasa_8h.html#a42b0fc94b8d93cc9e351e140e979cd6c">freesasa_structure_atom_res_name</a></div><div class="ttdeci">const char * freesasa_structure_atom_res_name(const freesasa_structure *structure, int i)</div><div class="ttdoc">Get residue name. </div></div>
 <div class="ttc" id="freesasa_8h_html_a3156ac997be582eda09eaf95c05059f6"><div class="ttname"><a href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6">freesasa_structure_options</a></div><div class="ttdeci">freesasa_structure_options</div><div class="ttdoc">Options for reading structure from PDB. </div><div class="ttdef"><b>Definition:</b> freesasa.h:85</div></div>
 <div class="ttc" id="structfreesasa__result_html_ae6e423545739e2b1a04e20413e937994"><div class="ttname"><a href="structfreesasa__result.html#ae6e423545739e2b1a04e20413e937994">freesasa_result::sasa</a></div><div class="ttdeci">double * sasa</div><div class="ttdoc">SASA of each atom in Ångström^2. </div><div class="ttdef"><b>Definition:</b> freesasa.h:113</div></div>
@@ -451,7 +460,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2016 19:35:52 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 14 2016 16:59:42 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
