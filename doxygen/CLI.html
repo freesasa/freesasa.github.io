@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.6.1.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -138,7 +138,11 @@ ATOM      3  C   MET A   1      26.913  26.639   3.531  1.61  0.26
 </pre><p>The output is a PDB-file where the temperature factors have been replaced by SASA values (last column), and occupancy numbers by the radius of each atom (second to last column).</p>
 <p>Only the atoms and models used in the calculation will be present in the output (see <a class="el" href="CLI.html#Input">PDB input</a> for how to modify this).</p>
 <p>To generate all three results at the same time and write them to separate files, run </p><pre class="fragment">$ freesasa --residue-file=1ubq.seq --residue-type-file=1ubq.res --B-value-file=1ubq.b 1ubq.pdb
-</pre><h1><a class="anchor" id="CLI-select"></a>
+</pre><h1><a class="anchor" id="Chain-groups"></a>
+Treating chains separately</h1>
+<p>Calculating the SASA of a given chain or group of chains separately from the rest of the structure, can be useful for measuring how buried a chain is in a given structure. The option <code>--chain-groups</code> can be used to do such a separate calculation, calling </p><pre class="fragment">$ freesasa --chain-groups="ABCD+XY" 3wbm.pdb
+</pre><p>produces the regular output for the structure 3WBM, but in addition it runs a separate calculation for the chains A, B, C and D as though X and Y aren't in the structure, and vice versa. These two calculations plus the regular one are output sequentially, separated by a line of '#'-signs.</p>
+<h1><a class="anchor" id="CLI-select"></a>
 Selecting groups of atoms</h1>
 <p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of ASP and ASN </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "asx, resn asp+asn" 1ubq.pdb
 ...
@@ -168,7 +172,7 @@ Separating and joining chains and models</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 11 2015 18:24:25 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 12 2016 21:40:51 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
