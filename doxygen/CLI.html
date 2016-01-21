@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">0.6.2</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -98,16 +98,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Run using defaults</h1>
 <p>In the following we will use the RNA/protein complex PDB structure 3WBM as an example. It has four protein chains A, B, C and D, and two RNA strands X and Y. To run a simple SASA calculation using default parameters, simply type: </p><pre class="fragment">$ freesasa 3wbm.pdb
 </pre><p>This generates the following output </p><pre class="fragment">PARAMETERS
-algorithm         : Lee &amp; Richards
-probe-radius      : 1.400
-n_thread          : 2
-n_slices_per_atom : 20
+algorithm    : Lee &amp; Richards
+probe-radius : 1.400
+threads      : 2
+slices       : 20
 
 INPUT
-input   : 3wbm.pdb
-n_atoms : 3714
+source  : 3wbm.pdb
+chains  : ABCDXY
+atoms   : 3714
 
-RESULTS
+RESULTS (A^2)
 Total   :   25190.77
 Apolar  :   11552.38
 Polar   :   13638.39
@@ -149,22 +150,34 @@ ATOM      3  C   THR A   5     -18.747  26.968  14.116  1.61  0.40
 </pre><p>The output is a PDB-file where the temperature factors have been replaced by SASA values (last column), and occupancy numbers by the radius of each atom (second to last column).</p>
 <p>Only the atoms and models used in the calculation will be present in the output (see <a class="el" href="CLI.html#Input">PDB input</a> for how to modify this).</p>
 <p>To generate all three results at the same time and write them to separate files, run </p><pre class="fragment">$ freesasa --residue-file=3wbm.seq --residue-type-file=3wbm.res --B-value-file=3wbm.b 3wbm.pdb
-</pre><h1><a class="anchor" id="Chain-groups"></a>
-Treating chains separately</h1>
-<p>Calculating the SASA of a given chain or group of chains separately from the rest of the structure, can be useful for measuring how buried a chain is in a given structure. The option <code>--chain-groups</code> can be used to do such a separate calculation, calling </p><pre class="fragment">$ freesasa --chain-groups="ABCD+XY" 3wbm.pdb
+</pre><h1><a class="anchor" id="CLI-select"></a>
+Selecting groups of atoms</h1>
+<p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of the four chains A, B, C and D (just the sum of the areas above). </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "abcd, chain A+B+C+D" 3wbm.pdb
+...
+SELECTIONS
+freesasa: warning: Found no matches to resn 'TRP', typo?
+freesasa: warning: Found no matches to resn 'HIS', typo?
+aromatic :    1196.45
+abcd :   16993.24
+</pre><p>The lines shown above are appended to the regular output. This particular protein did not have any TRP or HIS residues, hence the warnings (written to stderr). The warnings can be supressed with the flag <code>-w</code>.</p>
+<h1><a class="anchor" id="Chain-groups"></a>
+Analyzing groups of chains</h1>
+<p>Calculating the SASA of a given chain or group of chains separately from the rest of the structure, can be useful for measuring how buried a chain is in a given structure. The option <code>--chain-groups</code> can be used to do such a separate calculation, calling </p><pre class="fragment">$ freesasa --chain-groups=ABCD+XY 3wbm.pdb
 </pre><p>produces the regular output for the structure 3WBM, but in addition it runs a separate calculation for the chains A, B, C and D as though X and Y aren't in the structure, and vice versa: </p><pre class="fragment">PARAMETERS
-algorithm         : Lee &amp; Richards
-probe-radius      : 1.400
-n_thread          : 2
-n_slices_per_atom : 20
+algorithm    : Lee &amp; Richards
+probe-radius : 1.400
+threads      : 2
+slices       : 20
 
-#######################
+
+####################
 
 INPUT
-input   : 3wbm.pdb:ABCDXY
-n_atoms : 3714
+source  : 3wbm.pdb
+chains  : ABCDXY
+atoms   : 3714
 
-RESULTS
+RESULTS (A^2)
 Total   :   25190.77
 Apolar  :   11552.38
 Polar   :   13638.39
@@ -175,13 +188,15 @@ CHAIN D :    4904.30
 CHAIN X :    4156.46
 CHAIN Y :    4041.08
 
-#######################
+
+####################
 
 INPUT
-input   : 3wbm.pdb:ABCD
-n_atoms : 2664
+source  : 3wbm.pdb
+chains  : ABCD
+atoms   : 2664
 
-RESULTS
+RESULTS (A^2)
 Total   :   18202.78
 Apolar  :    9799.46
 Polar   :    8403.32
@@ -190,29 +205,21 @@ CHAIN B :    4595.18
 CHAIN C :    4427.11
 CHAIN D :    4937.38
 
-#######################
+
+####################
 
 INPUT
-input   : 3wbm.pdb:XY
-n_atoms : 1050
+source  : 3wbm.pdb
+chains  : XY
+atoms   : 1050
 
-RESULTS
+RESULTS (A^2)
 Total   :    9396.28
 Apolar  :    2743.09
 Polar   :    6653.19
 CHAIN X :    4714.45
 CHAIN Y :    4681.83
-</pre><h1><a class="anchor" id="CLI-select"></a>
-Selecting groups of atoms</h1>
-<p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of the four chains A, B, C and D (just the sum of the areas above). </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "abcd, chain A+B+C+D" 3wbm.pdb
-...
-SELECTIONS
-freesasa: warning: Found no matches to resn 'TRP', typo?
-freesasa: warning: Found no matches to resn 'HIS', typo?
-aromatic :    1196.45
-abcd :   16993.24
-</pre><p>This command adds a 'Selection:' section at the end of the output. This particular protein did not have any TRP or HIS residues, hence the warnings (written to stderr). The warnings can be supressed with the flag <code>-w</code>.</p>
-<h1><a class="anchor" id="Input"></a>
+</pre><h1><a class="anchor" id="Input"></a>
 PDB input</h1>
 <h2><a class="anchor" id="Hetatom-hydrogen"></a>
 Including extra atoms</h2>
@@ -227,13 +234,13 @@ Separating and joining chains and models</h2>
 <li><code>--join-models</code>: Joins all models in the input into one large structure. Useful for biological assembly files were different locations of the same chain in the oligomer are represented by different MODEL entries.</li>
 <li><code>--separate-models</code>: Calculate SASA separately for each model in the input. Useful when the same file contains several conformations of the same molecule.</li>
 <li><code>--separate-chains</code>: Calculate SASA separately for each chain in the input. Can be joined with <code>--separate-models</code> to calculate SASA of each chain in each model.</li>
-<li><code>--chain-groups</code>: Define groups of chains that should be treated as separate entities, can be repeated. If we for example have a tetramer with chains ABCD and want to know how much surface was buried when the dimers AB and CD were joined, we can use the option <code>--chain-groups=AB+CD</code>. The output will contain the SASA for the full molecule and one entry for each of the pairs of chains AB and CD. Can not be combined with <code>--separate-chains</code>. </li>
+<li><code>--chain-groups</code>: see <a class="el" href="CLI.html#Chain-groups">Analyzing groups of chains</a> </li>
 </ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 14 2016 17:02:45 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 21 2016 07:54:26 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
