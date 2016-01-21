@@ -99,7 +99,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The library includes both the algorithm by Lee &amp; Richards and that by Shrake &amp; Rupley. Verification has been done by comparing the results of the two calculations and by visual inspection of the surfaces found by them (and comparing with analytic results in the two-atom case). Both can be parameterized to arbitrary precision, and for high resolution versions of the algorithms, the calculations give identical results.</p>
 <p>FreeSASA assigns a radius and a class to each atom. The atomic radii are by default those defined by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for standard amino acids and nucleic acids, and the van der Waals radius of the element for other atoms. Each atom is also assigned to a class. The default classes are <code>Apolar</code> (carbon) and <code>Polar</code> (all other elements). The program outputs the total SASA and the area of these two classes, if a protein has more than one chain the contribution of each chain is also included in the output.</p>
 <p>Users can provide their own atomic radii and classes, either via configuration files or via the API. The input format for configuration files is described in the <a href="http://freesasa.github.io/doxygen/Config-file.html">online documentation</a>, and the <code>share/</code> directory contains some sample configurations, including one for the NACCESS parameters (<a href="http://www.bioinf.manchester.ac.uk/naccess/">Hubbard &amp; Thornton 1993</a>).</p>
-<p>Versions 0.6.* will be the last pre-release cycle, meaning that focus will be on removing bugs, optimization and documentation. The API and the command line interface will therefore only change in backwards incompatible ways if necessary to resolve serious bugs. No major features will be added before going to 1.0.</p>
 <h2>Compiling and installing </h2>
 <p>FreeSASA can be compiled and installed using the following </p><pre class="fragment">./configure
 make &amp;&amp; make install
@@ -132,7 +131,7 @@ make &amp;&amp; make install
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 21 2016 07:54:26 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 21 2016 08:01:00 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
