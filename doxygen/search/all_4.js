@@ -74,6 +74,6 @@ var searchData=
   ['freesasa_5fwarn',['FREESASA_WARN',['../freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656a38bd3fd2af7bc6bcb9fad27e5e036810',1,'freesasa.h']]],
   ['freesasa_5fwrite_5fparameters',['freesasa_write_parameters',['../freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066',1,'freesasa.h']]],
   ['freesasa_5fwrite_5fpdb',['freesasa_write_pdb',['../freesasa_8h.html#a3b0cf2ad07476f5d8fbb568e293a6dfb',1,'freesasa.h']]],
-  ['freesasa_5fwrite_5fresult',['freesasa_write_result',['../freesasa_8h.html#ae93f8bed0cba7c74b537bd958c9b0784',1,'freesasa.h']]],
+  ['freesasa_5fwrite_5fresult',['freesasa_write_result',['../freesasa_8h.html#a35b339078c19eae002bccf0c306c7448',1,'freesasa.h']]],
   ['freesasa',['FreeSASA',['../md_README.html',1,'']]]
 ];
