@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.0.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p><a href="https://zenodo.org/badge/latestdoi/18467/mittinatten/freesasa">![DOI](https://zenodo.org/badge/18467/mittinatten/freesasa.svg)</a></p>
 <p>C-library for calculating Solvent Accessible Surface Areas.</p>
-<p>License: GPLv3 (see file COPYING). Copyright: Simon Mitternacht 2013-2016.</p>
+<p>License: GPLv3 (see file LICENSE). Copyright: Simon Mitternacht 2013-2016.</p>
 <p>FreeSASA is a C library and command line tool for calculating Solvent Accessible Surface Area (SASA) of biomolecules. It is designed to be very simple to use with defaults, but allows customization of all parameters of the calculation and provides a few different tools to analyze the results as well. Python bindings are also included in the repository.</p>
 <p>The library includes both the algorithm by Lee &amp; Richards and that by Shrake &amp; Rupley. Verification has been done by comparing the results of the two calculations and by visual inspection of the surfaces found by them (and comparing with analytic results in the two-atom case). Both can be parameterized to arbitrary precision, and for high resolution versions of the algorithms, the calculations give identical results.</p>
 <p>FreeSASA assigns a radius and a class to each atom. The atomic radii are by default those defined by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for standard amino acids and nucleic acids, and the van der Waals radius of the element for other atoms. Each atom is also assigned to a class. The default classes are <code>Apolar</code> (carbon) and <code>Polar</code> (all other elements). The program outputs the total SASA and the area of these two classes, if a protein has more than one chain the contribution of each chain is also included in the output.</p>
@@ -126,12 +126,16 @@ make &amp;&amp; make install
 <h2>Compatibility and dependencies </h2>
 <p>The program has been tested successfully with several versions of GNU C Compiler and Clang/LLVM. Building the library only requires standard C and GNU libraries. Developers who want to do testing need to install the Check unit testing framework. Building the full reference manual requires Doxygen (version &gt; 1.8.8). Building the Python bindings requires Cython. Changing the selection parser and lexer requires Flex and Bison. These build options, which add extra dependencies, are disabled by default to simplify installation for users only interested in the command line tool and and/or C Library.</p>
 <h2>Citing FreeSASA </h2>
-<p>To cite FreeSASA, before a proper publication is available, the <a href="https://zenodo.org/badge/latestdoi/18467/mittinatten/freesasa">DOI number from Zenodo</a> can be used. </p>
+<p>FreeSASA can be cited using the following publication</p>
+<ul>
+<li>Simon Mitternacht (2016) FreeSASA: An open source C library for solvent accessible surface area calculations. <em>F1000Research</em> 5:189. (doi: <a href="http://dx.doi.org/10.12688/f1000research.7931.1">10.12688/f1000research.7931.1</a>)</li>
+</ul>
+<p>The <a href="https://zenodo.org/badge/latestdoi/18467/mittinatten/freesasa">DOI numbers from Zenodo</a> can be used to cite a specific version of FreeSASA. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 21 2016 08:01:00 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 29 2016 22:12:01 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
