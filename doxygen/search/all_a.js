@@ -17,5 +17,6 @@ var searchData=
   ['silent',['silent',['../namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f',1,'freesasa']]],
   ['string',['string',['../structfreesasa__strvp.html#a3e9e89ba524e5ffdb6567989a267922a',1,'freesasa_strvp']]],
   ['structure',['Structure',['../classfreesasa_1_1Structure.html',1,'freesasa']]],
-  ['structurearray',['structureArray',['../namespacefreesasa.html#a99652d46934404acfeeb3272910e5122',1,'freesasa']]]
+  ['structurearray',['structureArray',['../namespacefreesasa.html#a99652d46934404acfeeb3272910e5122',1,'freesasa']]],
+  ['structurefrombiopdb',['structureFromBioPDB',['../namespacefreesasa.html#addfd3f46f7e650b5df565920b518ac91',1,'freesasa']]]
 ];

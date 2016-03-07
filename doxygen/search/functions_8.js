@@ -9,5 +9,6 @@ var searchData=
   ['setradii',['setRadii',['../classfreesasa_1_1Structure.html#a5140774eec0409020a87e0d17431dd97',1,'freesasa::Structure']]],
   ['setradiiwithclassifier',['setRadiiWithClassifier',['../classfreesasa_1_1Structure.html#a3ca0f7b4884ec2bd9fc08c7f9119d671',1,'freesasa::Structure']]],
   ['setverbosity',['setVerbosity',['../namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a',1,'freesasa']]],
-  ['structurearray',['structureArray',['../namespacefreesasa.html#a99652d46934404acfeeb3272910e5122',1,'freesasa']]]
+  ['structurearray',['structureArray',['../namespacefreesasa.html#a99652d46934404acfeeb3272910e5122',1,'freesasa']]],
+  ['structurefrombiopdb',['structureFromBioPDB',['../namespacefreesasa.html#addfd3f46f7e650b5df565920b518ac91',1,'freesasa']]]
 ];

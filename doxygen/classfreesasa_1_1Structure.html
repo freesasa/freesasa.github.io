@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0.2</span>
+   &#160;<span id="projectnumber">1.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -142,6 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a117f105d0cb71553d8c3ae96823bcdee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#a117f105d0cb71553d8c3ae96823bcdee">chainLabel</a> (self, i)</td></tr>
 <tr class="memdesc:a117f105d0cb71553d8c3ae96823bcdee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get chain label for given atom.  <a href="#a117f105d0cb71553d8c3ae96823bcdee">More...</a><br /></td></tr>
 <tr class="separator:a117f105d0cb71553d8c3ae96823bcdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaaa7c822ec146cb269c136e7efe8bef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#aeaaa7c822ec146cb269c136e7efe8bef">coord</a> (self, i)</td></tr>
+<tr class="memdesc:aeaaa7c822ec146cb269c136e7efe8bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get coordinates of given atom.  <a href="#aeaaa7c822ec146cb269c136e7efe8bef">More...</a><br /></td></tr>
+<tr class="separator:aeaaa7c822ec146cb269c136e7efe8bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfeac22086637ad07acc3acfccf3df1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedfeac22086637ad07acc3acfccf3df1"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfreesasa_1_1Structure.html#aedfeac22086637ad07acc3acfccf3df1">__dealloc__</a> (self)</td></tr>
 <tr class="memdesc:aedfeac22086637ad07acc3acfccf3df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. <br /></td></tr>
@@ -156,7 +159,8 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a protein structure, including its atomic radii. </p>
 <p>Initialized from PDB-file. Calculates atomic radii using default classifier, or custom one provided as argument to initalizer</p>
-<p>Wraps the C struct freesasa_structure. </p>
+<p>Wraps the C struct freesasa_structure.</p>
+<p>Since it is intended to be a static structure the word 'get' is omitted in the getter-functions. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3268ffc67033ad8647b46bbb141a5c50"></a>
 <div class="memitem">
@@ -326,6 +330,12 @@ Static Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">classifier</td><td>A classifier to use to calculate radii </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AssertionError</td><td>if structure not properly initialized </td></tr>
   </table>
   </dd>
 </dl>
@@ -602,6 +612,47 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aeaaa7c822ec146cb269c136e7efe8bef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def freesasa.Structure.coord </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get coordinates of given atom. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>(int) Atom index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array of x, y, and z coordinates </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AssertionError</td><td>if index out of range or <a class="el" href="classfreesasa_1_1Structure.html" title="Represents a protein structure, including its atomic radii. ">Structure</a> not properly initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a5bca491345bf7b8270be7d0da8e2c17e"></a>
 <div class="memitem">
@@ -639,7 +690,7 @@ Static Public Attributes</h2></td></tr>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 29 2016 22:12:01 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 7 2016 20:08:28 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

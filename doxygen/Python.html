@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0.2</span>
+   &#160;<span id="projectnumber">1.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -158,12 +158,20 @@ Customizing atom classification</h1>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># use the DerivedClassifier to classify atoms</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;area_classes = <a class="code" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">freesasa.classifyResults</a>(result,structure,classifier)</div>
 </div><!-- fragment --><p>Of course, this example is somewhat contrived, if we only want the integrated area of Nitrogen atoms, the simpler choice would be </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;selection = <a class="code" href="namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7">freesasa.selectArea</a>(<span class="stringliteral">&#39;nitrogen, symbol n&#39;</span>, structure, result)</div>
-</div><!-- fragment --><p>However, extending <a class="el" href="classfreesasa_1_1Classifier.html" title="Assigns class and radius to atom by residue and atom name. ">freesasa.Classifier</a>, as illustrated above, allows classification to arbitrary complexity and also lets us redefine the radii used in the calculation. </p>
+</div><!-- fragment --><p>However, extending <a class="el" href="classfreesasa_1_1Classifier.html" title="Assigns class and radius to atom by residue and atom name. ">freesasa.Classifier</a>, as illustrated above, allows classification to arbitrary complexity and also lets us redefine the radii used in the calculation.</p>
+<h1><a class="anchor" id="BioPDB"></a>
+Bio.PDB</h1>
+<p>FreeSASA can also calculate the SASA of a Bio.PDB structure</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">from</span> Bio.PDB <span class="keyword">import</span> PDBParser</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;parser = PDBParser()</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;structure = parser.get_structure(<span class="stringliteral">&quot;Ubiquitin&quot;</span>,<span class="stringliteral">&quot;1ubq.pdb&quot;</span>)</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;result, sasa_classes = <a class="code" href="namespacefreesasa.html#a6bb9ab4d6b3af138cf857dc9af7c22b7">freesasa.calcBioPDB</a>(structure)</div>
+</div><!-- fragment --><p>If one needs more control over the analysis the structure can be converted to a <a class="el" href="classfreesasa_1_1Structure.html" title="Represents a protein structure, including its atomic radii. ">freesasa.Structure</a> using <a class="el" href="namespacefreesasa.html#addfd3f46f7e650b5df565920b518ac91" title="Create a freesasa structure from a Bio.PDB structure. ">freesasa.structureFromBioPDB()</a> and the calculation can be performed the normal way using this structure. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 29 2016 22:12:01 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 7 2016 20:08:28 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
