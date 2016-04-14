@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0.3</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -126,8 +126,13 @@ Changing parameters</h1>
 </pre><p>instead calculates the SASA using Shrake &amp; Rupley's algorithm with 200 test points, a probe radius of 1.2 Å, using 4 parallel threads to speed things up.</p>
 <p>If the user wants to use their own atomic radii the command </p><pre class="fragment">$ freesasa --config-file &lt;file&gt; 3wbm.pdb
 </pre><p>Reads a configuration from a file and uses it to assign atomic radii. The program will halt if it encounters atoms in the PDB input that are not present in the configuration. See <a class="el" href="Config-file.html">Classifier configuration files</a> for instructions how to write a configuration.</p>
+<p>To use the atomic radii from NACCESS call </p><pre class="fragment">$ freesasa --radii=naccess 3wbm.pdb
+</pre><p>Another way to specify a custom set of atomic radii is to store them as occupancies in the input PDB file </p><pre class="fragment">$ freesasa --radius-from-occupancy 3wbm.pdb
+</pre><p>This option allows the user to first use either of the options <code>--print-as-B-values</code> or <code>--B-value-file</code> to write generate a PDB file with the radii used in the calculation, modify the radii of individual atoms in that file, and the recalculate the SASA with these modified radii.</p>
 <h1><a class="anchor" id="Output"></a>
 Other output types</h1>
+<h2><a class="anchor" id="Residue-sasa"></a>
+SASA for each residue(-type)</h2>
 <p>To calculate the SASA of each residue in the sequence, or each residue type, use the following commands (<code>--no-log</code> suppresses the standard output shown above): </p><pre class="fragment">$ freesasa --foreach-residue --no-log 3wbm.pdb
 SEQ A    5 THR :  138.48
 SEQ A    6 PRO :   25.53
@@ -142,15 +147,49 @@ RES A :    1581.57
 RES C :    2967.12
 RES G :    1955.16
 RES U :    1693.68
-</pre><p>The command-line interface can also be used as a PDB filter: </p><pre class="fragment">$ cat 3wbm.pdb | freesasa --no-log --print-as-B-values 
+</pre><h2><a class="anchor" id="Atom-sasa"></a>
+SASA for each atom</h2>
+<p>The command-line interface can also be used as a PDB filter: </p><pre class="fragment">$ cat 3wbm.pdb | freesasa --no-log --print-as-B-values 
 ATOM      1  N   THR A   5     -19.727  29.259  13.573  1.64  9.44
 ATOM      2  CA  THR A   5     -19.209  28.356  14.602  1.88  5.01
 ATOM      3  C   THR A   5     -18.747  26.968  14.116  1.61  0.40
 ...
 </pre><p>The output is a PDB-file where the temperature factors have been replaced by SASA values (last column), and occupancy numbers by the radius of each atom (second to last column).</p>
 <p>Only the atoms and models used in the calculation will be present in the output (see <a class="el" href="CLI.html#Input">PDB input</a> for how to modify this).</p>
+<h2><a class="anchor" id="Combining-sasa"></a>
+Several types of output at once</h2>
 <p>To generate all three results at the same time and write them to separate files, run </p><pre class="fragment">$ freesasa --residue-file=3wbm.seq --residue-type-file=3wbm.res --B-value-file=3wbm.b 3wbm.pdb
-</pre><h1><a class="anchor" id="CLI-select"></a>
+</pre><h2><a class="anchor" id="RSA"></a>
+Relative SASA values</h2>
+<p>The CLI can also produce output similar to the RSA format from NACCESS using the options <code>--rsa</code> and <code>--rsa-file</code>. This format includes both absolute SASA values (ABS) and relative ones (REL) compared to a precalculated reference max value. The only significant difference between FreeSASA's RSA output format and that of NACCESS (except differences in areas due to different atomic radii), is that FreeSASA will print the value "N/A" where NACCESS prints "-99.9". </p><pre class="fragment">$ freesasa 3wbm.pdb --rsa --no-log
+... (header)
+REM RES _ NUM      All-atoms   Total-Side   Main-Chain    Non-polar    All polar
+REM                ABS   REL    ABS   REL    ABS   REL    ABS   REL    ABS   REL
+RES THR A   5   138.48 104.1  99.58 107.4  38.90  96.3  81.59  98.1  56.89 114.0
+RES PRO A   6    25.53  19.3  11.31  11.0  14.23  47.7  21.67  18.7   3.86  23.9
+...
+RES GLY A  15     0.64   0.9   0.00   N/A   0.64   0.9   0.00   0.0   0.64   2.0
+...
+RES   U Y  23   165.16   N/A 165.16   N/A   0.00   N/A  52.01   N/A 113.15   N/A
+RES   C Y  24   165.01   N/A 165.01   N/A   0.00   N/A  46.24   N/A 118.77   N/A
+RES   C Y  25   262.46   N/A 262.46   N/A   0.00   N/A  85.93   N/A 176.52   N/A
+END  Absolute sums over single chains surface
+CHAIN  1 A     3785.5       3062.1        723.3       2051.6       1733.9
+CHAIN  2 B     4342.3       3488.6        853.7       2385.2       1957.1
+CHAIN  3 C     3961.1       3178.5        782.7       2122.4       1838.7
+CHAIN  4 D     4904.3       3926.8        977.5       2572.0       2332.3
+CHAIN  5 X     4156.5       4156.5          0.0       1236.9       2919.6
+CHAIN  6 Y     4041.1       4041.1          0.0       1184.3       2856.8
+END  Absolute sums over all chains
+TOTAL         25190.8      21853.6       3337.2      11552.4      13638.4
+</pre><p>Note that each RES is a single residue, not a residue type as above (i.e. has the same meaning as SEQ above). This unfortunate confusion of labels is due to RSA support being added much later than the other options. Fixing it now would break the interface, and will thus earliest be dealt with in the next major release.</p>
+<p>To calculate the REL values a reference SASA value is needed, calculated using the same atomic radii. At the moment such values are only available for the ProtOr and NACCESS radii (selected using the option <code>--radii</code>), if other radii are used all REL columns will have the value 'N/A'.</p>
+<p>The reference SASA values for residue X are calculated from Ala-X-Ala peptides in a stretched out configuration. The reference configurations are supplied for reference in the directory <code>rsa</code>. Since these are not always the most exposed possible configuration, and because bond lengths and bond angles vary, the relative SASA values will sometimes be larger than 100 %. At the moment there is no interface to supply user-defined reference values.</p>
+<h3><a class="anchor" id="RSA-naccess"></a>
+Using the NACCESS configuration</h3>
+<p>The reference values for the NACCESS configuration in FreeSASA are not exactly the same as those that ship with NACCESS, but have been calculated from scratch using the tripeptides that ship with FreeSASA. Calling </p><pre class="fragment">$ freesasa 3wbm.pdb --rsa-file=3wbm.rsa --radii=naccess --no-log
+</pre><p>will give an RSA file where the ABS columns are identical to NACCESS (run with the flag <code>-b</code>) for the amino acids, and for nucleic acids the definition of backbone differs (no nucleic acid backbone has been defined in FreeSASA). REL values will differ slightly, due to the differences in reference values above.</p>
+<h1><a class="anchor" id="CLI-select"></a>
 Selecting groups of atoms</h1>
 <p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of the four chains A, B, C and D (just the sum of the areas above). </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "abcd, chain A+B+C+D" 3wbm.pdb
 ...
@@ -240,7 +279,7 @@ Separating and joining chains and models</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 7 2016 20:08:28 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 20:35:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

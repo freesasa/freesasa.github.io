@@ -23,6 +23,7 @@ var searchData=
   ['freesasa_5fstructure_5fatom_5fres_5fname',['freesasa_structure_atom_res_name',['../freesasa_8h.html#a42b0fc94b8d93cc9e351e140e979cd6c',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fatom_5fres_5fnumber',['freesasa_structure_atom_res_number',['../freesasa_8h.html#a7a9f892ad9dcb939cc5a4718931416e2',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fatom_5fsymbol',['freesasa_structure_atom_symbol',['../freesasa_8h.html#a79025bd4a19f7a326d52b68563cc9254',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fchain_5fatoms',['freesasa_structure_chain_atoms',['../freesasa_8h.html#a48f0c077a3922093755c0e585238f4a1',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fchain_5flabels',['freesasa_structure_chain_labels',['../freesasa_8h.html#a6c31ed2f76e8c2690b4c254816c5cef5',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fcoord_5farray',['freesasa_structure_coord_array',['../freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278',1,'freesasa.h']]],
   ['freesasa_5fstructure_5ffree',['freesasa_structure_free',['../freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd',1,'freesasa.h']]],
@@ -30,11 +31,18 @@ var searchData=
   ['freesasa_5fstructure_5fget_5fchains',['freesasa_structure_get_chains',['../freesasa_8h.html#a9a2252f330e812368c3309d491c969e9',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fmodel',['freesasa_structure_model',['../freesasa_8h.html#a1567e3c3c01fea6418406a9dcfa597a1',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fn',['freesasa_structure_n',['../freesasa_8h.html#aca6fabad195a8e475e438f7a85547895',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fn_5fchains',['freesasa_structure_n_chains',['../freesasa_8h.html#a77d36bf199239601cc58ecf8f25151ae',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fn_5fresidues',['freesasa_structure_n_residues',['../freesasa_8h.html#a7be454631d35f04ad37880955aacee4f',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fnew',['freesasa_structure_new',['../freesasa_8h.html#a09c6cb8b6b5cc438b717b7e690ebe32f',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fradius',['freesasa_structure_radius',['../freesasa_8h.html#a7094d6710bcd6d6cb064e46dcfaf7765',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fresidue_5fatoms',['freesasa_structure_residue_atoms',['../freesasa_8h.html#a7d9d3573b231550146e4c5d44a331cdd',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fresidue_5fchain',['freesasa_structure_residue_chain',['../freesasa_8h.html#ac0169847c4e45647dd66601b0f7c8d42',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fresidue_5fname',['freesasa_structure_residue_name',['../freesasa_8h.html#a0588d4472c61e31e15a53d4df21d7988',1,'freesasa.h']]],
+  ['freesasa_5fstructure_5fresidue_5fnumber',['freesasa_structure_residue_number',['../freesasa_8h.html#af5e37710014f313ff773d9b6423eefbb',1,'freesasa.h']]],
   ['freesasa_5fstructure_5fset_5fradius',['freesasa_structure_set_radius',['../freesasa_8h.html#a60e8755d92e724683713b677d2dd89d2',1,'freesasa.h']]],
   ['freesasa_5fstrvp_5ffree',['freesasa_strvp_free',['../freesasa_8h.html#a449f4066cf886f3dd7be2d4d56313ef3',1,'freesasa.h']]],
   ['freesasa_5fwrite_5fparameters',['freesasa_write_parameters',['../freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066',1,'freesasa.h']]],
   ['freesasa_5fwrite_5fpdb',['freesasa_write_pdb',['../freesasa_8h.html#a3b0cf2ad07476f5d8fbb568e293a6dfb',1,'freesasa.h']]],
-  ['freesasa_5fwrite_5fresult',['freesasa_write_result',['../freesasa_8h.html#a35b339078c19eae002bccf0c306c7448',1,'freesasa.h']]]
+  ['freesasa_5fwrite_5fresult',['freesasa_write_result',['../freesasa_8h.html#a35b339078c19eae002bccf0c306c7448',1,'freesasa.h']]],
+  ['freesasa_5fwrite_5frsa',['freesasa_write_rsa',['../freesasa_8h.html#a8eea51a737d4195db595b2e87c31876c',1,'freesasa.h']]]
 ];

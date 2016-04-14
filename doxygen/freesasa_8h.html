@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0.3</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -124,11 +124,17 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__result.html">freesasa_result</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to store results of SASA calculation.  <a href="structfreesasa__result.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__residue__sasa.html">freesasa_residue_sasa</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to store SASA values for a named residue.  <a href="structfreesasa__residue__sasa.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__strvp.html">freesasa_strvp</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct used to store n string-value-pairs (strvp) in arrays of doubles and strings.  <a href="structfreesasa__strvp.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct used for calculating classes and radii for atoms given their residue-names ('ALA','ARG',...) and atom-names ('CA','N',...).  <a href="structfreesasa__classifier.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfreesasa__rsa__reference.html">freesasa_rsa_reference</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as reference in generation of RSA file.  <a href="structfreesasa__rsa__reference.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -149,6 +155,14 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a3f8f799448b8ba0656b3952ed11e422c">FREESASA_DEF_LR_N</a>&#160;&#160;&#160;20</td></tr>
 <tr class="memdesc:a3f8f799448b8ba0656b3952ed11e422c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of slices per atom in L&amp;R. <br /></td></tr>
 <tr class="separator:a3f8f799448b8ba0656b3952ed11e422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e74796fee8013e6a5bf66939d0881bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e74796fee8013e6a5bf66939d0881bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a6e74796fee8013e6a5bf66939d0881bf">freesasa_default_classifier</a>&#160;&#160;&#160;<a class="el" href="freesasa_8h.html#a904f4e5089cd63ede9c7ff5956f5de0e">freesasa_protor_classifier</a></td></tr>
+<tr class="memdesc:a6e74796fee8013e6a5bf66939d0881bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a>. <br /></td></tr>
+<tr class="separator:a6e74796fee8013e6a5bf66939d0881bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3bfb40525e9d51ab40fb49c5e89a9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f3bfb40525e9d51ab40fb49c5e89a9f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a4f3bfb40525e9d51ab40fb49c5e89a9f">freesasa_default_rsa</a>&#160;&#160;&#160;<a class="el" href="freesasa_8h.html#af2ed1bb22c28aaaefc5c7561d40a0272">freesasa_protor_rsa</a></td></tr>
+<tr class="memdesc:a4f3bfb40525e9d51ab40fb49c5e89a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default <a class="el" href="structfreesasa__rsa__reference.html" title="Used as reference in generation of RSA file. ">freesasa_rsa_reference</a>. <br /></td></tr>
+<tr class="separator:a4f3bfb40525e9d51ab40fb49c5e89a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a1add316a6fcc7c2ffdbac1d169cd70de">FREESASA_MAX_SELECTION_NAME</a>&#160;&#160;&#160;50</td></tr>
 <tr class="memdesc:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of a selection name.  <a href="#a1add316a6fcc7c2ffdbac1d169cd70de">More...</a><br /></td></tr>
 <tr class="separator:a1add316a6fcc7c2ffdbac1d169cd70de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,7 +201,8 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a8afa439d2b448001a245566a096548ba">FREESASA_JOIN_MODELS</a> =16, 
 <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6ae64a9e8861f70db0ebe832b474cc4107">FREESASA_HALT_AT_UNKNOWN</a> =32, 
-<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a49182be37e3983369ff393f58069c955">FREESASA_SKIP_UNKNOWN</a> =64
+<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a49182be37e3983369ff393f58069c955">FREESASA_SKIP_UNKNOWN</a> =64, 
+<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a6ef59c982036572cfc35aa2ca85b5af9">FREESASA_RADIUS_FROM_OCCUPANCY</a> =128
 <br />
  }</td></tr>
 <tr class="memdesc:a3156ac997be582eda09eaf95c05059f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for reading structure from PDB.  <a href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6">More...</a><br /></td></tr>
@@ -240,6 +255,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7db37bd7fdd1b513e992f0e075eff066"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7db37bd7fdd1b513e992f0e075eff066">freesasa_write_parameters</a> (FILE *log, const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a> *parameters)</td></tr>
 <tr class="memdesc:a7db37bd7fdd1b513e992f0e075eff066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print parameters to file.  <a href="#a7db37bd7fdd1b513e992f0e075eff066">More...</a><br /></td></tr>
 <tr class="separator:a7db37bd7fdd1b513e992f0e075eff066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eea51a737d4195db595b2e87c31876c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a8eea51a737d4195db595b2e87c31876c">freesasa_write_rsa</a> (FILE *output, const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result, const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, const char *name, const <a class="el" href="structfreesasa__rsa__reference.html">freesasa_rsa_reference</a> *reference)</td></tr>
+<tr class="memdesc:a8eea51a737d4195db595b2e87c31876c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print RSA-file.  <a href="#a8eea51a737d4195db595b2e87c31876c">More...</a><br /></td></tr>
+<tr class="separator:a8eea51a737d4195db595b2e87c31876c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e96bbae0a02282d60468385358f7be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a68e96bbae0a02282d60468385358f7be">freesasa_set_verbosity</a> (<a class="el" href="freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0">freesasa_verbosity</a> v)</td></tr>
 <tr class="memdesc:a68e96bbae0a02282d60468385358f7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the global verbosity level.  <a href="#a68e96bbae0a02282d60468385358f7be">More...</a><br /></td></tr>
 <tr class="separator:a68e96bbae0a02282d60468385358f7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,6 +273,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a09c6cb8b6b5cc438b717b7e690ebe32f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a09c6cb8b6b5cc438b717b7e690ebe32f">freesasa_structure_new</a> (void)</td></tr>
 <tr class="memdesc:a09c6cb8b6b5cc438b717b7e690ebe32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate empty structure.  <a href="#a09c6cb8b6b5cc438b717b7e690ebe32f">More...</a><br /></td></tr>
 <tr class="separator:a09c6cb8b6b5cc438b717b7e690ebe32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2400388cae0c527b0a3cd67f1af27cfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd">freesasa_structure_free</a> (<a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
+<tr class="memdesc:a2400388cae0c527b0a3cd67f1af27cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free structure.  <a href="#a2400388cae0c527b0a3cd67f1af27cfd">More...</a><br /></td></tr>
+<tr class="separator:a2400388cae0c527b0a3cd67f1af27cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d7e46a577044c6154861bee291a9257"><td class="memItemLeft" align="right" valign="top"><a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257">freesasa_structure_from_pdb</a> (FILE *pdb, const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a> *classifier, int options)</td></tr>
 <tr class="memdesc:a4d7e46a577044c6154861bee291a9257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init structure with coordinates from pdb-file.  <a href="#a4d7e46a577044c6154861bee291a9257">More...</a><br /></td></tr>
 <tr class="separator:a4d7e46a577044c6154861bee291a9257"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,9 +297,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aca6fabad195a8e475e438f7a85547895"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#aca6fabad195a8e475e438f7a85547895">freesasa_structure_n</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
 <tr class="memdesc:aca6fabad195a8e475e438f7a85547895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of atoms.  <a href="#aca6fabad195a8e475e438f7a85547895">More...</a><br /></td></tr>
 <tr class="separator:aca6fabad195a8e475e438f7a85547895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2400388cae0c527b0a3cd67f1af27cfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd">freesasa_structure_free</a> (<a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
-<tr class="memdesc:a2400388cae0c527b0a3cd67f1af27cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free structure.  <a href="#a2400388cae0c527b0a3cd67f1af27cfd">More...</a><br /></td></tr>
-<tr class="separator:a2400388cae0c527b0a3cd67f1af27cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be454631d35f04ad37880955aacee4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7be454631d35f04ad37880955aacee4f">freesasa_structure_n_residues</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s)</td></tr>
+<tr class="memdesc:a7be454631d35f04ad37880955aacee4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of residues.  <a href="#a7be454631d35f04ad37880955aacee4f">More...</a><br /></td></tr>
+<tr class="separator:a7be454631d35f04ad37880955aacee4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d36bf199239601cc58ecf8f25151ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a77d36bf199239601cc58ecf8f25151ae">freesasa_structure_n_chains</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s)</td></tr>
+<tr class="memdesc:a77d36bf199239601cc58ecf8f25151ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of chains.  <a href="#a77d36bf199239601cc58ecf8f25151ae">More...</a><br /></td></tr>
+<tr class="separator:a77d36bf199239601cc58ecf8f25151ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7094d6710bcd6d6cb064e46dcfaf7765"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7094d6710bcd6d6cb064e46dcfaf7765">freesasa_structure_radius</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
 <tr class="memdesc:a7094d6710bcd6d6cb064e46dcfaf7765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an array of the radii of each atom.  <a href="#a7094d6710bcd6d6cb064e46dcfaf7765">More...</a><br /></td></tr>
 <tr class="separator:a7094d6710bcd6d6cb064e46dcfaf7765"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -300,12 +324,27 @@ Functions</h2></td></tr>
 <tr class="memitem:a79025bd4a19f7a326d52b68563cc9254"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a79025bd4a19f7a326d52b68563cc9254">freesasa_structure_atom_symbol</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, int i)</td></tr>
 <tr class="memdesc:a79025bd4a19f7a326d52b68563cc9254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get atom symbol.  <a href="#a79025bd4a19f7a326d52b68563cc9254">More...</a><br /></td></tr>
 <tr class="separator:a79025bd4a19f7a326d52b68563cc9254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0588d4472c61e31e15a53d4df21d7988"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a0588d4472c61e31e15a53d4df21d7988">freesasa_structure_residue_name</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s, int r_i)</td></tr>
+<tr class="memdesc:a0588d4472c61e31e15a53d4df21d7988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of residue.  <a href="#a0588d4472c61e31e15a53d4df21d7988">More...</a><br /></td></tr>
+<tr class="separator:a0588d4472c61e31e15a53d4df21d7988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e37710014f313ff773d9b6423eefbb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#af5e37710014f313ff773d9b6423eefbb">freesasa_structure_residue_number</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s, int r_i)</td></tr>
+<tr class="memdesc:af5e37710014f313ff773d9b6423eefbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get residue number.  <a href="#af5e37710014f313ff773d9b6423eefbb">More...</a><br /></td></tr>
+<tr class="separator:af5e37710014f313ff773d9b6423eefbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0169847c4e45647dd66601b0f7c8d42"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#ac0169847c4e45647dd66601b0f7c8d42">freesasa_structure_residue_chain</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s, int r_i)</td></tr>
+<tr class="memdesc:ac0169847c4e45647dd66601b0f7c8d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get chain residue belongs to.  <a href="#ac0169847c4e45647dd66601b0f7c8d42">More...</a><br /></td></tr>
+<tr class="separator:ac0169847c4e45647dd66601b0f7c8d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1567e3c3c01fea6418406a9dcfa597a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a1567e3c3c01fea6418406a9dcfa597a1">freesasa_structure_model</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
 <tr class="memdesc:a1567e3c3c01fea6418406a9dcfa597a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get model number for structure.  <a href="#a1567e3c3c01fea6418406a9dcfa597a1">More...</a><br /></td></tr>
 <tr class="separator:a1567e3c3c01fea6418406a9dcfa597a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6322fdef5c7b2a04389714c7e1ba4278"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a6322fdef5c7b2a04389714c7e1ba4278">freesasa_structure_coord_array</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure)</td></tr>
 <tr class="memdesc:a6322fdef5c7b2a04389714c7e1ba4278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array of coordinates.  <a href="#a6322fdef5c7b2a04389714c7e1ba4278">More...</a><br /></td></tr>
 <tr class="separator:a6322fdef5c7b2a04389714c7e1ba4278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9d3573b231550146e4c5d44a331cdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a7d9d3573b231550146e4c5d44a331cdd">freesasa_structure_residue_atoms</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s, int r_i, int *first, int *last)</td></tr>
+<tr class="memdesc:a7d9d3573b231550146e4c5d44a331cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get indices of first and last atoms of a residue.  <a href="#a7d9d3573b231550146e4c5d44a331cdd">More...</a><br /></td></tr>
+<tr class="separator:a7d9d3573b231550146e4c5d44a331cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f0c077a3922093755c0e585238f4a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a48f0c077a3922093755c0e585238f4a1">freesasa_structure_chain_atoms</a> (const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *s, char chain, int *first, int *last)</td></tr>
+<tr class="memdesc:a48f0c077a3922093755c0e585238f4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get indices of first and last atoms of a chain.  <a href="#a48f0c077a3922093755c0e585238f4a1">More...</a><br /></td></tr>
+<tr class="separator:a48f0c077a3922093755c0e585238f4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -316,20 +355,34 @@ Variables</h2></td></tr>
 const <a class="el" href="structfreesasa__parameters.html">freesasa_parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#ae9d9b203cc6df0d1c81afb6c4c15dff8">freesasa_default_parameters</a></td></tr>
 <tr class="memdesc:ae9d9b203cc6df0d1c81afb6c4c15dff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default parameters for FreeSASA. <br /></td></tr>
 <tr class="separator:ae9d9b203cc6df0d1c81afb6c4c15dff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f02e1e55e6f6537da9833a11a0f497"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42f02e1e55e6f6537da9833a11a0f497"></a>
-const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a42f02e1e55e6f6537da9833a11a0f497">freesasa_default_classifier</a></td></tr>
-<tr class="memdesc:a42f02e1e55e6f6537da9833a11a0f497"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default classifier. <br /></td></tr>
-<tr class="separator:a42f02e1e55e6f6537da9833a11a0f497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904f4e5089cd63ede9c7ff5956f5de0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a904f4e5089cd63ede9c7ff5956f5de0e"></a>
+const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a904f4e5089cd63ede9c7ff5956f5de0e">freesasa_protor_classifier</a></td></tr>
+<tr class="memdesc:a904f4e5089cd63ede9c7ff5956f5de0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using ProtOr radii and classes. <br /></td></tr>
+<tr class="separator:a904f4e5089cd63ede9c7ff5956f5de0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03480a1dce0d9355524889d0f6d9d251"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03480a1dce0d9355524889d0f6d9d251"></a>
+const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a03480a1dce0d9355524889d0f6d9d251">freesasa_naccess_classifier</a></td></tr>
+<tr class="memdesc:a03480a1dce0d9355524889d0f6d9d251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using NACCESS radii and classes. <br /></td></tr>
+<tr class="separator:a03480a1dce0d9355524889d0f6d9d251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e94abebfc55994801a8b396d396516a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e94abebfc55994801a8b396d396516a"></a>
 const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#a2e94abebfc55994801a8b396d396516a">freesasa_oons_classifier</a></td></tr>
-<tr class="memdesc:a2e94abebfc55994801a8b396d396516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using OONS classes (used to be default) <br /></td></tr>
+<tr class="memdesc:a2e94abebfc55994801a8b396d396516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using OONS radii and classes. <br /></td></tr>
 <tr class="separator:a2e94abebfc55994801a8b396d396516a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ed1bb22c28aaaefc5c7561d40a0272"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2ed1bb22c28aaaefc5c7561d40a0272"></a>
+const <a class="el" href="structfreesasa__rsa__reference.html">freesasa_rsa_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#af2ed1bb22c28aaaefc5c7561d40a0272">freesasa_protor_rsa</a></td></tr>
+<tr class="memdesc:af2ed1bb22c28aaaefc5c7561d40a0272"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RSA-reference for the ProtOr configuration. <br /></td></tr>
+<tr class="separator:af2ed1bb22c28aaaefc5c7561d40a0272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab344dc30c3dbf010f5555850bd573b7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab344dc30c3dbf010f5555850bd573b7e"></a>
+const <a class="el" href="structfreesasa__rsa__reference.html">freesasa_rsa_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freesasa_8h.html#ab344dc30c3dbf010f5555850bd573b7e">freesasa_naccess_rsa</a></td></tr>
+<tr class="memdesc:ab344dc30c3dbf010f5555850bd573b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RSA-reference for the NACCESS configuration. <br /></td></tr>
+<tr class="separator:ab344dc30c3dbf010f5555850bd573b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions and datatypes for performing and analyzing SASA calculations. </p>
-<dl class="section author"><dt>Author</dt><dd>Simon Mitternacht</dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>GPLv3</dd></dl>
-<p>This header provides the functions and data types necessary to perfrom and analyze a SASA calculation using FreeSASA, including facilities to customize assignment of radii to, and classification of, atoms. There are also functions to access properties of a structure, to allow refined analysis of the results. The page <a class="el" href="API.html">FreeSASA API</a> shows how to set up and perform a simple SASA calculation. </p>
+<dl class="section author"><dt>Author</dt><dd>Simon Mitternacht </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd><a href="md_license.html">MIT License</a></dd></dl>
+<p>This header provides the functions and data types necessary to perform and analyze a SASA calculation using FreeSASA, including facilities to customize assignment of radii to, and classification of, atoms. There are also functions to access properties of a structure, to allow refined analysis of the results. The page <a class="el" href="API.html">FreeSASA API</a> shows how to set up and perform a simple SASA calculation. </p>
+
+<p>Definition in file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a1add316a6fcc7c2ffdbac1d169cd70de"></a>
 <div class="memitem">
@@ -343,6 +396,8 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 
 <p>The maximum length of a selection name. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="freesasa_8h.html#a05e643f3fdbca95857f58237cba323e0" title="Get area of a selection. ">freesasa_select_area()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00084">84</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -359,6 +414,8 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 
 <p>Struct for structure object. </p>
 <p>The struct includes the coordinates and radius of each atom, and its name, residue-name, etc. If it was initiated from a PDB file enough info will be stored so that a PDB-file can be printed using the original one as template (see <a class="el" href="freesasa_8h.html#a3b0cf2ad07476f5d8fbb568e293a6dfb" title="Write SASA values and atomic radii to new PDB-file. ">freesasa_write_pdb()</a>). </p>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00123">123</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -382,6 +439,8 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 <p>Shrake &amp; Rupley's algorithm. </p>
 </td></tr>
 </table>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00028">28</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -414,6 +473,8 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 </td></tr>
 </table>
 
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00034">34</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a73d4ba1da4f773acd1f0eaa60ed96656"></a>
@@ -439,6 +500,8 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 <p>Something went wrong, but results might still be meaningful (value will always be negative). </p>
 </td></tr>
 </table>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00060">60</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +539,12 @@ const <a class="el" href="structfreesasa__classifier.html">freesasa_classifier</
 <tr><td class="fieldname"><a class="anchor" id="a3156ac997be582eda09eaf95c05059f6a49182be37e3983369ff393f58069c955"></a>FREESASA_SKIP_UNKNOWN&#160;</td><td class="fielddoc">
 <p>Skip atom when unknown atom is encountered. </p>
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a3156ac997be582eda09eaf95c05059f6a6ef59c982036572cfc35aa2ca85b5af9"></a>FREESASA_RADIUS_FROM_OCCUPANCY&#160;</td><td class="fielddoc">
+<p>Read atom radius from occupancy field. </p>
+</td></tr>
 </table>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00072">72</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -903,7 +971,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to output. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> else. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to <code>output</code>. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> else. </dd></dl>
 
 </div>
 </div>
@@ -947,7 +1015,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to output. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> else. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to <code>output</code>. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> else. </dd></dl>
 
 </div>
 </div>
@@ -1103,6 +1171,65 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
+<a class="anchor" id="a8eea51a737d4195db595b2e87c31876c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_write_rsa </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>structure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfreesasa__rsa__reference.html">freesasa_rsa_reference</a> *&#160;</td>
+          <td class="paramname"><em>reference</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print RSA-file. </p>
+<p>Uses reference SASA values calculated using the default configuration (ProtOr radii; Carbon is apolar, all other elements polar; probe radius = 1.4 Å). The Ala-X-Ala configurations supplied in the directory <code>rsa</code> were used as input (the reference values themselves are stored statically in the code). At the moment there is no support for outputting RSA files for other configurations.</p>
+<dl class="section remark"><dt>Remarks</dt><dd>This is still an experimental feature, and the interface may still be subject to change without warning.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Output-file </td></tr>
+    <tr><td class="paramname">result</td><td>SASA values </td></tr>
+    <tr><td class="paramname">structure</td><td>The structure </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the protein </td></tr>
+    <tr><td class="paramname">reference</td><td>Reference to calculate RSA from, if NULL defaults are used. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a> on success, <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if problems writing to file, or if <code>structure</code> is inconsistent. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a68e96bbae0a02282d60468385358f7be"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1212,6 +1339,30 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
+<a class="anchor" id="a2400388cae0c527b0a3cd67f1af27cfd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freesasa_structure_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>structure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">structure</td><td>The structure to free. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a4d7e46a577044c6154861bee291a9257"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1251,6 +1402,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 <li><code>options &amp; <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a8afa439d2b448001a245566a096548ba" title="Read MODELs as part of one big structure. ">FREESASA_JOIN_MODELS</a> == 1</code>: Join models.</li>
 <li><code>options &amp; <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a49182be37e3983369ff393f58069c955" title="Skip atom when unknown atom is encountered. ">FREESASA_SKIP_UNKNOWN</a> == 1</code>: Skip unknown atoms.</li>
 <li><code>options &amp; <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6ae64a9e8861f70db0ebe832b474cc4107" title="Halt reading when unknown atom is encountered. ">FREESASA_HALT_AT_UNKNOWN</a> == 1</code>: Halt at unknown atom and return NULL. Overrides <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a49182be37e3983369ff393f58069c955" title="Skip atom when unknown atom is encountered. ">FREESASA_SKIP_UNKNOWN</a>.</li>
+<li><code>options &amp; <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a6ef59c982036572cfc35aa2ca85b5af9" title="Read atom radius from occupancy field. ">FREESASA_RADIUS_FROM_OCCUPANCY</a> == 1</code>: Read atomic radii from Occupancy field in PDB file.</li>
 </ul>
 <p>If a more fine-grained control over which atoms to include is needed, the PDB-file needs to be modified before calling this function, or atoms can be added manually one by one using <a class="el" href="freesasa_8h.html#a62cd8d35cf36c596f0fa33b586a5f42f" title="Add individual atom to structure using default behavior. ">freesasa_structure_add_atom()</a> or <a class="el" href="freesasa_8h.html#a63b3588a640e46466192724140237571" title="Add individual atom to structure. ">freesasa_structure_add_atom_wopt()</a>.</p>
 <p>Return value is dynamically allocated, should be freed with <a class="el" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd" title="Free structure. ">freesasa_structure_free()</a>.</p>
@@ -1307,10 +1459,10 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 <p>Returns dynamically allocated array of size n. Its members should be freed using <a class="el" href="freesasa_8h.html#a2400388cae0c527b0a3cd67f1af27cfd" title="Free structure. ">freesasa_structure_free()</a> and the array itself with free().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pdb</td><td>Input PDB-file.</td></tr>
-    <tr><td class="paramname">n</td><td>Number of structures found are written to this integer.</td></tr>
-    <tr><td class="paramname">classifier</td><td>A classifier to calculate atomic radii.</td></tr>
-    <tr><td class="paramname">options</td><td>Bitfield. Either or both of <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a1e77faebad308d4c0d2ebb70b0994b58" title="Read MODELs as separate structures. ">FREESASA_SEPARATE_MODELS</a> and <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a9c5bf83da4fe40e4ee8fb7e451dcb2bf" title="Read separate chains as separate structures. ">FREESASA_SEPARATE_CHAINS</a> can be used to generate one structure per model and one structure per chain, respectively (will return NULL if neither is specified). See <a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a> for documentation on options for deciding what atoms to include (<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a8afa439d2b448001a245566a096548ba" title="Read MODELs as part of one big structure. ">FREESASA_JOIN_MODELS</a> is not supported here).</td></tr>
+    <tr><td class="paramname">pdb</td><td>Input PDB-file. </td></tr>
+    <tr><td class="paramname">n</td><td>Number of structures found are written to this integer. </td></tr>
+    <tr><td class="paramname">classifier</td><td>A classifier to calculate atomic radii. </td></tr>
+    <tr><td class="paramname">options</td><td>Bitfield. Either or both of <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a1e77faebad308d4c0d2ebb70b0994b58" title="Read MODELs as separate structures. ">FREESASA_SEPARATE_MODELS</a> and <a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a9c5bf83da4fe40e4ee8fb7e451dcb2bf" title="Read separate chains as separate structures. ">FREESASA_SEPARATE_CHAINS</a> can be used to generate one structure per model and one structure per chain, respectively (will return NULL if neither is specified). See <a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a> for documentation on options for deciding what atoms to include (<a class="el" href="freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a8afa439d2b448001a245566a096548ba" title="Read MODELs as part of one big structure. ">FREESASA_JOIN_MODELS</a> is not supported here). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1389,7 +1541,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
     <tr><td class="paramname">chain_label</td><td>Any character to label chain, typically <code>'A'</code>, <code>'B'</code>, etc. </td></tr>
     <tr><td class="paramname">x</td><td>x-coordinate of atom. </td></tr>
     <tr><td class="paramname">y</td><td>y-coordinate of atom. </td></tr>
-    <tr><td class="paramname">z</td><td>z-coordinate of atom.</td></tr>
+    <tr><td class="paramname">z</td><td>z-coordinate of atom. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1585,27 +1737,54 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
-<a class="anchor" id="a2400388cae0c527b0a3cd67f1af27cfd"></a>
+<a class="anchor" id="a7be454631d35f04ad37880955aacee4f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void freesasa_structure_free </td>
+          <td class="memname">int freesasa_structure_n_residues </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
-          <td class="paramname"><em>structure</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Free structure. </p>
+<p>Get number of residues. </p>
+<p>Calculated crudely by determining the number of unique combinations of residue number and chain label contained in the structure. If residues are mingled i.e. atoms of the same residue are in non-contiguous regions of the file, this function might be off.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">structure</td><td>The structure to free. </td></tr>
+    <tr><td class="paramname">s</td><td>A structure. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of residues. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a77d36bf199239601cc58ecf8f25151ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_structure_n_chains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get number of chains. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>A structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of chains in the structure. </dd></dl>
 
 </div>
 </div>
@@ -1856,6 +2035,114 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
+<a class="anchor" id="a0588d4472c61e31e15a53d4df21d7988"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* freesasa_structure_residue_name </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r_i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get name of residue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The structure. </td></tr>
+    <tr><td class="paramname">r_i</td><td>Residue index (in whole structure) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Name of residue </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5e37710014f313ff773d9b6423eefbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* freesasa_structure_residue_number </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r_i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get residue number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The structure. </td></tr>
+    <tr><td class="paramname">r_i</td><td>Residue index (in whole structure). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Residue number as string. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac0169847c4e45647dd66601b0f7c8d42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char freesasa_structure_residue_chain </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r_i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get chain residue belongs to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The structure. </td></tr>
+    <tr><td class="paramname">r_i</td><td>Residue index (in whole structure). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chain label. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1567e3c3c01fea6418406a9dcfa597a1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1908,6 +2195,106 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 
 </div>
 </div>
+<a class="anchor" id="a7d9d3573b231550146e4c5d44a331cdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_structure_residue_atoms </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r_i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get indices of first and last atoms of a residue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>A structure. </td></tr>
+    <tr><td class="paramname">r_i</td><td>Residue index. </td></tr>
+    <tr><td class="paramname">first</td><td>First atom of residue <code>r_i</code> will be stored here. </td></tr>
+    <tr><td class="paramname">last</td><td>Last atom of residue <code>r_i</code> will be stored here. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a>. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if index <code>r_i</code> is invalid. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48f0c077a3922093755c0e585238f4a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freesasa_structure_chain_atoms </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="freesasa_8h.html#a51552cd723c823de3704b0de94142093">freesasa_structure</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>chain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get indices of first and last atoms of a chain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>A structure. </td></tr>
+    <tr><td class="paramname">chain</td><td>The chain label. </td></tr>
+    <tr><td class="paramname">first</td><td>First atom of <code>chain</code> will be stored here. </td></tr>
+    <tr><td class="paramname">last</td><td>Last atom of <code>chain</code> will be stored here. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656ab94bbc2fe5a37309ef49d4ba1e41288e" title="All is ok (value will always be zero). ">FREESASA_SUCCESS</a>. <a class="el" href="freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656aee6a25681197fe7898776680b2469a02" title="Something went seriously wrong (value will always be negative). ">FREESASA_FAIL</a> if <code>chain</code> not found. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="a66e9737f6d48269f6f32422738b85a3f"></a>
 <div class="memitem">
@@ -1928,7 +2315,7 @@ selection_name, chain a and resi 1+3-20 and not resn gly
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 7 2016 20:08:28 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 20:35:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

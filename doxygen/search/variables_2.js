@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['debug',['debug',['../namespacefreesasa.html#aec3675a845cd4f38e76f2eee9111cedc',1,'freesasa']]],
-  ['defaultoptions',['defaultOptions',['../classfreesasa_1_1Structure.html#a5bca491345bf7b8270be7d0da8e2c17e',1,'freesasa::Structure']]],
-  ['defaultparameters',['defaultParameters',['../namespacefreesasa.html#af09309d59db501c29a40288f42c15f88',1,'freesasa']]],
-  ['defaultstructurearrayoptions',['defaultStructureArrayOptions',['../namespacefreesasa.html#a43391125465711aa303bb6d38a2ef8dd',1,'freesasa']]]
+  ['class2str',['class2str',['../structfreesasa__classifier.html#aedd6dd13cb69bb50ca95044a92117e79',1,'freesasa_classifier']]],
+  ['config',['config',['../structfreesasa__classifier.html#a1ac96bba7e540826259f97b3d482b90f',1,'freesasa_classifier']]]
 ];

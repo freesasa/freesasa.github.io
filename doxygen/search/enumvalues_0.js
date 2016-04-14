@@ -6,6 +6,7 @@ var searchData=
   ['freesasa_5finclude_5fhydrogen',['FREESASA_INCLUDE_HYDROGEN',['../freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a6335dcf1e1606b0576e46e2c099e0790',1,'freesasa.h']]],
   ['freesasa_5fjoin_5fmodels',['FREESASA_JOIN_MODELS',['../freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a8afa439d2b448001a245566a096548ba',1,'freesasa.h']]],
   ['freesasa_5flee_5frichards',['FREESASA_LEE_RICHARDS',['../freesasa_8h.html#a617f4a1c86a13ce900462399583e862ca0d9841ae623e7679f84f2bb311bd12ce',1,'freesasa.h']]],
+  ['freesasa_5fradius_5ffrom_5foccupancy',['FREESASA_RADIUS_FROM_OCCUPANCY',['../freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a6ef59c982036572cfc35aa2ca85b5af9',1,'freesasa.h']]],
   ['freesasa_5fseparate_5fchains',['FREESASA_SEPARATE_CHAINS',['../freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a9c5bf83da4fe40e4ee8fb7e451dcb2bf',1,'freesasa.h']]],
   ['freesasa_5fseparate_5fmodels',['FREESASA_SEPARATE_MODELS',['../freesasa_8h.html#a3156ac997be582eda09eaf95c05059f6a1e77faebad308d4c0d2ebb70b0994b58',1,'freesasa.h']]],
   ['freesasa_5fshrake_5frupley',['FREESASA_SHRAKE_RUPLEY',['../freesasa_8h.html#a617f4a1c86a13ce900462399583e862cae7e64d18bc061f177318b3015623cb72',1,'freesasa.h']]],

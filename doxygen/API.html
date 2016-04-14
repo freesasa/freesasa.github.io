@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">1.0.3</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="Basic-API"></a>
 Basics</h1>
-<p>The API is found in the header <a href="freesasa_8h.html">freesasa.h</a> and this is the only header installed by <code>make install</code>. The other source-files and headers in the repository are for internal use, and are not present here, but are thoroughly documented in the source itself.</p>
+<p>The API is found in the header <a href="freesasa_8h.html">freesasa.h</a> and this is the only header installed by <code>make install</code>. The other source-files and headers in the repository are for internal use, and are not present here, but are documented in the source itself. The file <a href="example_8c_source.html">example.c</a> contains a simple program that illustrates how to use the API to read a PDB file from <code>stdin</code> and calculate and print the SASA.</p>
 <p>To calculate the SASA of a structure, there are two main options:</p>
 <ol type="1">
 <li>Initialize a structure from a PDB-file, using either the default classifier or a custom one to determine the radius of each atom, and then run the calculation.</li>
@@ -133,7 +133,7 @@ Get area of custom groups of atoms</h3>
 Coordinates</h2>
 <p>If users wish to supply their own coordinates and radii, these are accepted as arrays of doubles passed to the function <a class="el" href="freesasa_8h.html#a86fdf18625663f7f05914e89754a1a6e" title="Calculates SASA based on a given set of coordinates and radii. ">freesasa_calc_coord()</a>. The coordinate-array should have size 3*n with coordinates in the order <code>x1,y1,z1,x2,y2,z2,...,xn,yn,zn</code>.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> coord[] = {<span class="comment">/* x */</span> 1.0, <span class="comment">/* y */</span> 2.0, <span class="comment">/* z */</span> 3.0};</div>
-<div class="line"><span class="keywordtype">double</span> <a class="code" href="structfreesasa__classifier.html#a79175db3d78bccdfc681220c074d84e0">radius</a>[] = {2.0};</div>
+<div class="line"><span class="keywordtype">double</span> radius[] = {2.0};</div>
 <div class="line"><a class="code" href="structfreesasa__result.html">freesasa_result</a> *result = <a class="code" href="freesasa_8h.html#a86fdf18625663f7f05914e89754a1a6e">freesasa_calc_coord</a>(coord, radius, 1, NULL);</div>
 </div><!-- fragment --><h2><a class="anchor" id="Error-handling"></a>
 Error-handling</h2>
@@ -159,7 +159,7 @@ Parameters</h2>
 Specifying atomic radii and classes</h2>
 <p>The type <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a> has function pointers to functions that take residue and atom names as argument (pairs such as "ALA","CA"), and returns a radius or a class (polar, apolar, etc). The classifier can be passed to <a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a>, <a class="el" href="freesasa_8h.html#aebab3adaa53e9c1f371b1a29c6f4cd5e" title="Init array of structures from PDB. ">freesasa_structure_array()</a> or <a class="el" href="freesasa_8h.html#a63b3588a640e46466192724140237571" title="Add individual atom to structure. ">freesasa_structure_add_atom_wopt()</a> to customize the radii assigned to atoms, which can then be used to calculate the SASA of the structure. It can also be used in <a class="el" href="freesasa_8h.html#a3254cab7d28c17265d61e86533fad5e3" title="Sums up the SASA for groups of atoms defined by a classifier. ">freesasa_result_classify()</a> to get the SASA integrated over the different classes of atoms, i.e. the SASA of all polar atoms, etc.</p>
 <p>Users of the API can provide their own classification by writing their own functions and providing them via a <a class="el" href="structfreesasa__classifier.html" title="Struct used for calculating classes and radii for atoms given their residue-names (&#39;ALA&#39;...">freesasa_classifier</a> object. A classifier-configuration can also be read from a file using <a class="el" href="freesasa_8h.html#a3f40dddd26a33063eabdf85a278c275d" title="Generate a classifier from a config-file. ">freesasa_classifier_from_file()</a> (see <a class="el" href="Config-file.html">Classifier configuration files</a>).</p>
-<p>The default classifier is available through the const variable <a class="el" href="freesasa_8h.html#a42f02e1e55e6f6537da9833a11a0f497" title="The default classifier. ">freesasa_default_classifier</a>. This uses the radii, defined in the paper by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for the standard amino acids (20 regular plus SEC, PYL, ASX and GLX), for some capping groups (ACE/NH2) and the nucleic acids. If the element can't be determined or is unknown, a negative radius is returned. It classes all carbons as <em>apolar</em> and all other known atoms as <em>polar</em>.</p>
+<p>The default classifier is available through the const variable <a class="el" href="freesasa_8h.html#a6e74796fee8013e6a5bf66939d0881bf" title="Default freesasa_classifier. ">freesasa_default_classifier</a>. This uses the radii, defined in the paper by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for the standard amino acids (20 regular plus SEC, PYL, ASX and GLX), for some capping groups (ACE/NH2) and the nucleic acids. If the element can't be determined or is unknown, a negative radius is returned. It classes all carbons as <em>apolar</em> and all other known atoms as <em>polar</em>.</p>
 <p>Early versions of FreeSASA used the atomic radii by Ooi et al. (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC304812/">PNAS 1987, 84: -3086</a>, this classifier is still available through freesasa_classifier_oons().</p>
 <p>The default behavior of <a class="el" href="freesasa_8h.html#a4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a>, <a class="el" href="freesasa_8h.html#aebab3adaa53e9c1f371b1a29c6f4cd5e" title="Init array of structures from PDB. ">freesasa_structure_array()</a>, <a class="el" href="freesasa_8h.html#a62cd8d35cf36c596f0fa33b586a5f42f" title="Add individual atom to structure using default behavior. ">freesasa_structure_add_atom()</a> and <a class="el" href="freesasa_8h.html#a63b3588a640e46466192724140237571" title="Add individual atom to structure. ">freesasa_structure_add_atom_wopt()</a> is to first try the default classifier and then guess the radius if necessary (emitting warnings if this is done, uses VdW radii defined by [Mantina et al. J Phys Chem 2009, 113:5806](<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3658832/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3658832/</a>)).</p>
 <p>See the documentation for these functions for what parameters to use to change the default behavior. </p>
@@ -167,7 +167,7 @@ Specifying atomic radii and classes</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 7 2016 20:08:28 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 14 2016 20:35:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

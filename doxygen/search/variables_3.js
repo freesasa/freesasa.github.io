@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['free_5fconfig',['free_config',['../structfreesasa__classifier.html#a8db479e6e3ee0074bdfc3a504279b5a7',1,'freesasa_classifier']]],
-  ['freesasa_5fdef_5fnumber_5fthreads',['FREESASA_DEF_NUMBER_THREADS',['../freesasa_8h.html#a66e9737f6d48269f6f32422738b85a3f',1,'freesasa.h']]],
-  ['freesasa_5fdefault_5fclassifier',['freesasa_default_classifier',['../freesasa_8h.html#a42f02e1e55e6f6537da9833a11a0f497',1,'freesasa.h']]],
-  ['freesasa_5fdefault_5fparameters',['freesasa_default_parameters',['../freesasa_8h.html#ae9d9b203cc6df0d1c81afb6c4c15dff8',1,'freesasa.h']]],
-  ['freesasa_5foons_5fclassifier',['freesasa_oons_classifier',['../freesasa_8h.html#a2e94abebfc55994801a8b396d396516a',1,'freesasa.h']]]
+  ['debug',['debug',['../namespacefreesasa.html#aec3675a845cd4f38e76f2eee9111cedc',1,'freesasa']]],
+  ['defaultoptions',['defaultOptions',['../classfreesasa_1_1Structure.html#a5bca491345bf7b8270be7d0da8e2c17e',1,'freesasa::Structure']]],
+  ['defaultparameters',['defaultParameters',['../namespacefreesasa.html#af09309d59db501c29a40288f42c15f88',1,'freesasa']]],
+  ['defaultstructurearrayoptions',['defaultStructureArrayOptions',['../namespacefreesasa.html#a43391125465711aa303bb6d38a2ef8dd',1,'freesasa']]]
 ];
