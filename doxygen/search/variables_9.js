@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['radius',['radius',['../structfreesasa__classifier.html#a79175db3d78bccdfc681220c074d84e0',1,'freesasa_classifier']]]
+  ['unknown',['unknown',['../structfreesasa__nodearea.html#a8d2a0e38cbfdd9f231c9de7af15f03cb',1,'freesasa_nodearea']]]
 ];

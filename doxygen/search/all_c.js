@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['radius',['radius',['../structfreesasa__classifier.html#a79175db3d78bccdfc681220c074d84e0',1,'freesasa_classifier::radius()'],['../classfreesasa_1_1Classifier.html#aebc8cb0c6aeec10e43aed76d9659d7ca',1,'freesasa.Classifier.radius()'],['../classfreesasa_1_1Structure.html#ac3489cf2d4438989664c194a8dc2d8aa',1,'freesasa.Structure.radius()']]],
-  ['residuename',['residueName',['../classfreesasa_1_1Structure.html#a86d1e116183b6716315b687485778608',1,'freesasa::Structure']]],
-  ['residuenumber',['residueNumber',['../classfreesasa_1_1Structure.html#a03d1b07ff8bb0c1477236557be731a30',1,'freesasa::Structure']]],
-  ['result',['Result',['../classfreesasa_1_1Result.html',1,'freesasa']]]
+  ['sasa',['sasa',['../structfreesasa__result.html#ae6e423545739e2b1a04e20413e937994',1,'freesasa_result']]],
+  ['selectarea',['selectArea',['../namespacefreesasa.html#a641e4ee94823234e981f9f1cc08866e7',1,'freesasa']]],
+  ['selection',['Selection',['../group__selection.html',1,'(Global Namespace)'],['../Selection.html',1,'(Global Namespace)']]],
+  ['setalgorithm',['setAlgorithm',['../classfreesasa_1_1Parameters.html#a3f0034bcb0f6e95b5f5f7543ea346198',1,'freesasa::Parameters']]],
+  ['setnpoints',['setNPoints',['../classfreesasa_1_1Parameters.html#a2142eab5f806a93e106ed209d14a603a',1,'freesasa::Parameters']]],
+  ['setnslices',['setNSlices',['../classfreesasa_1_1Parameters.html#ad8ebea940632549c2e7205c724fff331',1,'freesasa::Parameters']]],
+  ['setnthreads',['setNThreads',['../classfreesasa_1_1Parameters.html#a53248204c7a346d55971aa4b20b1eb94',1,'freesasa::Parameters']]],
+  ['setproberadius',['setProbeRadius',['../classfreesasa_1_1Parameters.html#adef9336fab354a93cc677d5405538643',1,'freesasa::Parameters']]],
+  ['setradii',['setRadii',['../classfreesasa_1_1Structure.html#a5140774eec0409020a87e0d17431dd97',1,'freesasa::Structure']]],
+  ['setradiiwithclassifier',['setRadiiWithClassifier',['../classfreesasa_1_1Structure.html#a3ca0f7b4884ec2bd9fc08c7f9119d671',1,'freesasa::Structure']]],
+  ['setradius',['setRadius',['../classfreesasa_1_1Structure.html#a5c4078860227e406027a3d591e17eb9b',1,'freesasa::Structure']]],
+  ['setverbosity',['setVerbosity',['../namespacefreesasa.html#af1b4a1cf34b58ebde200b83a8fec997a',1,'freesasa']]],
+  ['shrake_5frupley_5fn_5fpoints',['shrake_rupley_n_points',['../structfreesasa__parameters.html#a38040605cf07275820a96d375d2252ef',1,'freesasa_parameters']]],
+  ['shrakerupley',['ShrakeRupley',['../namespacefreesasa.html#a9c75fbcf18a518c5235d5d058d9b97da',1,'freesasa']]],
+  ['side_5fchain',['side_chain',['../structfreesasa__nodearea.html#a0aeee47fbd8bb83586cfab82cc172a6e',1,'freesasa_nodearea']]],
+  ['silent',['silent',['../namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f',1,'freesasa']]],
+  ['structure',['Structure',['../classfreesasa_1_1Structure.html',1,'freesasa']]],
+  ['structure',['Structure',['../group__structure.html',1,'']]],
+  ['structurearray',['structureArray',['../namespacefreesasa.html#a99652d46934404acfeeb3272910e5122',1,'freesasa']]],
+  ['structurefrombiopdb',['structureFromBioPDB',['../namespacefreesasa.html#addfd3f46f7e650b5df565920b518ac91',1,'freesasa']]]
 ];
