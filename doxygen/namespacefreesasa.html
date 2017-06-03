@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">2.0.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -130,6 +130,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3995220def710bd01db8feac13805ee8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a3995220def710bd01db8feac13805ee8">calc</a></td></tr>
 <tr class="memdesc:a3995220def710bd01db8feac13805ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate SASA of <a class="el" href="classfreesasa_1_1Structure.html" title="Represents a protein structure, including its atomic radii. ">Structure</a>.  <a href="#a3995220def710bd01db8feac13805ee8">More...</a><br /></td></tr>
 <tr class="separator:a3995220def710bd01db8feac13805ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a03e0a11513c10219730e92ad7c00af"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a2a03e0a11513c10219730e92ad7c00af">calcCoord</a></td></tr>
+<tr class="memdesc:a2a03e0a11513c10219730e92ad7c00af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate SASA for a set of coordinates and radii.  <a href="#a2a03e0a11513c10219730e92ad7c00af">More...</a><br /></td></tr>
+<tr class="separator:a2a03e0a11513c10219730e92ad7c00af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b73da9dee7fef4b15a478203098147"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefreesasa.html#a11b73da9dee7fef4b15a478203098147">classifyResults</a></td></tr>
 <tr class="memdesc:a11b73da9dee7fef4b15a478203098147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break SASA result down into classes.  <a href="#a11b73da9dee7fef4b15a478203098147">More...</a><br /></td></tr>
 <tr class="separator:a11b73da9dee7fef4b15a478203098147"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,7 +255,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An array of Structures </dd></dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00560">560</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00583">583</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -296,7 +299,59 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00590">590</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00613">613</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a03e0a11513c10219730e92ad7c00af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def freesasa.calcCoord </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>radii</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parameters</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate SASA for a set of coordinates and radii. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coord</td><td>list of size 3*N with atomic coordinates (x1, y1, z1, x2, y2, z2, ..., x_N, y_N, z_N'. </td></tr>
+    <tr><td class="paramname">radii</td><td>array of size N with atomic radii (r_1, r_2, ..., r_N) </td></tr>
+    <tr><td class="paramname"><a class="el" href="classfreesasa_1_1Parameters.html" title="Stores parameter values to be used by calculation. ">Parameters</a></td><td>to use (if not specified, defaults are used) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AssertionError</td><td>mismatched array-sizes </td></tr>
+    <tr><td class="paramname">Exception</td><td>Out of memory </td></tr>
+    <tr><td class="paramname">Exception</td><td>something went wrong in calculation (see C library error messages) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00632">632</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -347,7 +402,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00608">608</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00666">666</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -398,7 +453,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00629">629</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00687">687</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -430,7 +485,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00647">647</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00705">705</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -450,7 +505,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <p>Get global verbosity. </p>
 <dl class="section return"><dt>Returns</dt><dd>Verbosity (<a class="el" href="namespacefreesasa.html#a21b87e6bd24c37d248af14563135f51f" title="int: Suppress all warnings and errors (used by setVerbosity()) ">freesasa.silent</a>, <a class="el" href="namespacefreesasa.html#a39779baa63e56efce2b098aaec808090" title="int: Suppress all warnings but not errors (used by setVerbosity()) ">freesasa.nowarnings</a> or <a class="el" href="namespacefreesasa.html#af11c7971fe3ffaf66e1f8544d7439640" title="int: Normal verbosity (used by setVerbosity()) ">freesasa.normal</a>) </dd></dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00654">654</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00712">712</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -502,7 +557,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00670">670</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00728">728</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -562,7 +617,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00720">720</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00778">778</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -609,7 +664,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <p>Default options for structureArray. </p>
 <p>Defined separately for Doxygen's sake. </p>
 
-<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00533">533</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8pyx_source.html#l00556">556</a> of file <a class="el" href="freesasa_8pyx_source.html">freesasa.pyx</a>.</p>
 
 </div>
 </div>
@@ -617,7 +672,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 17 2016 16:19:36 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 10:05:43 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>
