@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.1</span>
+   &#160;<span id="projectnumber">2.0.2</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -275,7 +275,7 @@ SEQ A    7 THR :   99.42
 ...
 </pre><h2><a class="anchor" id="CLI-RSA"></a>
 RSA</h2>
-<p>The CLI can also produce output similar to the RSA format from NACCESS. This format includes both absolute SASA values (ABS) and relative ones (REL) compared to a precalculated reference max value. The only significant difference between FreeSASA's RSA output format and that of NACCESS (except differences in areas due to different atomic radii), is that FreeSASA will print the value "N/A" where NACCESS prints "-99.9". </p><pre class="fragment">$ freesasa --format=rsa 3wbm.pdb
+<p>The CLI can also produce output similar to the RSA format from NACCESS. This format includes both absolute SASA values (ABS) and relative ones (REL) compared to a precalculated reference max value. The main difference between FreeSASA's RSA output format and that of NACCESS, is that FreeSASA will print the value "N/A" where NACCESS prints "-99.9", when the a reference value for REL is missing. </p><pre class="fragment">$ freesasa --format=rsa 3wbm.pdb
 REM  FreeSASA 2.0
 REM  Absolute and relative SASAs for 3wbm.pdb
 REM  Atomic radii and reference values for relative SASA: ProtOr
@@ -305,8 +305,10 @@ TOTAL         25190.8      21853.6       3337.2      11552.4      13638.4
 </pre><p>Note that each <code>RES</code> is a single residue, not a residue type as above (i.e. has the same meaning as <code>SEQ</code> above). This unfortunate confusion of labels is due to RSA support being added much later than the other options. Fixing it now would break the interface, and will thus earliest be dealt with in the next major release.</p>
 <h3><a class="anchor" id="RSA-naccess"></a>
 Using the NACCESS configuration</h3>
-<p>The reference values for the NACCESS configuration in FreeSASA are not exactly the same as those that ship with NACCESS, but have been calculated from scratch using the tripeptides that ship with FreeSASA. Calling </p><pre class="fragment">$ freesasa 3wbm.pdb --format=rsa --radii=naccess
-</pre><p>will give an RSA file where the ABS columns should be identical to NACCESS (if the latter is run with the flag <code>-b</code>). REL values will differ slightly, due to the differences in reference values. NACCESS also gives different results for the nucleic acid main-chain and side-chain (possibly due to a bug in NACCESS?). FreeSASA defines the (deoxy)ribose and phosphate groups as main-chain and the base as side-chain.</p>
+<p>The reference values for the NACCESS configuration in FreeSASA are not exactly the same as those that ship with NACCESS, but have been calculated from using the same Ala-X-Ala tripeptides (kindly donated by the creators of NACCESS). By default NACCESS defines amino acid CA atoms as side-chain, whereas FreeSASA defines them as main-chain. The flag <code>-b</code> defines CA as main-chain in NACCESS.</p>
+<p>Calling </p><pre class="fragment">$ freesasa 3wbm.pdb -n 20--format=rsa --radii=naccess
+</pre><p>will give an RSA file where the ABS columns should be identical to NACCESS with flag <code>-b</code>. All REL values will differ slightly because of round-off errors in the references. The difference will be large for side-/main-chain REL values, since the FreeSASA references were calculated with CA as main-chain. NACCESS also gives different results for the nucleic acid main-chain and side-chain. FreeSASA defines the (deoxy)ribose and phosphate groups as main-chain and the base as side-chain.</p>
+<p>Future versions might allow specifying what atoms are main-chain through the configuration file, and letting the user set their own reference values.</p>
 <h1><a class="anchor" id="CLI-select"></a>
 Selecting groups of atoms</h1>
 <p>The option <code>--select</code> can be used to define groups of atoms whose integrated SASA we are interested in. It uses a subset of the Pymol <code>select</code> command syntax, see <a class="el" href="Selection.html">Selection syntax</a> for full documentation. The following example shows how to calculate the sum of exposed surface areas of all aromatic residues and of the four chains A, B, C and D (just the sum of the areas above). </p><pre class="fragment">$ freesasa --select "aromatic, resn phe+tyr+trp+his+pro" --select "abcd, chain A+B+C+D" 3wbm.pdb
@@ -397,7 +399,7 @@ Separating and joining chains and models</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 10:05:43 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 22 2017 16:08:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>
