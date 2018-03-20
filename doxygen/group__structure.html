@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.2</span>
+   &#160;<span id="projectnumber">2.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -104,8 +103,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga3e881fb69c802a411ee4d71ec38c59f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__structure.html#ga3e881fb69c802a411ee4d71ec38c59f4">FREESASA_CONFLICTING_CLASSIFIERS</a>&#160;&#160;&#160;&quot;conflicting-classifiers&quot;</td></tr>
-<tr class="memdesc:ga3e881fb69c802a411ee4d71ec38c59f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">String returned by <a class="el" href="group__structure.html#ga16ef94c81d47ea9aef31de094c5b425a" title="Name of classifier used to generate structure. ">freesasa_structure_classifier_name()</a> when structure was initialized using several different classifiers.  <a href="#ga3e881fb69c802a411ee4d71ec38c59f4">More...</a><br /></td></tr>
+<tr class="memitem:ga3e881fb69c802a411ee4d71ec38c59f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3e881fb69c802a411ee4d71ec38c59f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__structure.html#ga3e881fb69c802a411ee4d71ec38c59f4">FREESASA_CONFLICTING_CLASSIFIERS</a>&#160;&#160;&#160;&quot;conflicting-classifiers&quot;</td></tr>
+<tr class="memdesc:ga3e881fb69c802a411ee4d71ec38c59f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">String returned by <a class="el" href="group__structure.html#ga16ef94c81d47ea9aef31de094c5b425a" title="Name of classifier used to generate structure. ">freesasa_structure_classifier_name()</a> when structure was initialized using several different classifiers. <br /></td></tr>
 <tr class="separator:ga3e881fb69c802a411ee4d71ec38c59f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -224,23 +224,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Representation of macromolecular structures. </p>
 <p>Interface for macromolecule structures, either instantiated directly from a PDB file (<a class="el" href="group__structure.html#ga4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a>) or atom by atom (<a class="el" href="group__structure.html#ga62cd8d35cf36c596f0fa33b586a5f42f" title="Add individual atom to structure using default behavior. ">freesasa_structure_add_atom()</a>). </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ga3e881fb69c802a411ee4d71ec38c59f4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FREESASA_CONFLICTING_CLASSIFIERS&#160;&#160;&#160;&quot;conflicting-classifiers&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>String returned by <a class="el" href="group__structure.html#ga16ef94c81d47ea9aef31de094c5b425a" title="Name of classifier used to generate structure. ">freesasa_structure_classifier_name()</a> when structure was initialized using several different classifiers. </p>
-
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00114">114</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="ga51552cd723c823de3704b0de94142093"></a>
 <div class="memitem">
@@ -255,7 +238,7 @@ Functions</h2></td></tr>
 <p>Struct for structure object. </p>
 <p>The struct includes the coordinates and radius of each atom, and its name, residue-name, etc. If it was initiated from a PDB file enough info will be stored so that a PDB-file can be printed using the original one as template. </p>
 
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00199">199</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00243">243</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -299,7 +282,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00144">144</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00170">170</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -1439,7 +1422,7 @@ Functions</h2></td></tr>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 22 2017 16:08:34 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>

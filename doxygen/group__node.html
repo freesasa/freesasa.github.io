@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.2</span>
+   &#160;<span id="projectnumber">2.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -110,9 +109,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gac7a00013807eca63024474367c11ea79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac7a00013807eca63024474367c11ea79"></a>
-typedef struct <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a></td></tr>
-<tr class="memdesc:gac7a00013807eca63024474367c11ea79"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node representing calculation results for a structure, chain, residue or atom in a structure (see <a class="el" href="group__node.html">Node</a>). <br /></td></tr>
+<tr class="memitem:gac7a00013807eca63024474367c11ea79"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a></td></tr>
+<tr class="memdesc:gac7a00013807eca63024474367c11ea79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result node.  <a href="#gac7a00013807eca63024474367c11ea79">More...</a><br /></td></tr>
 <tr class="separator:gac7a00013807eca63024474367c11ea79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -133,7 +131,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__node.html#ggad266e870143cf37393eb19fc22184b41aa3cb0f207f861d86fe465e8b72d7a143">FREESASA_SEQ</a> =1&lt;&lt;11, 
 <a class="el" href="group__node.html#ggad266e870143cf37393eb19fc22184b41a1b53aa703ad833395c8d8d69cb4a8895">FREESASA_OUTPUT_SKIP_REL</a> =1&lt;&lt;12
 <br />
- }<tr class="memdesc:gad266e870143cf37393eb19fc22184b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls output format, can be combined in options bitfield in <a class="el" href="group__node.html#gaf8df53f196be16eb2761f89a71decae8" title="Outputs result in format specified by options. ">freesasa_tree_export()</a>  <a href="group__node.html#gad266e870143cf37393eb19fc22184b41">More...</a><br /></td></tr>
+ }<tr class="memdesc:gad266e870143cf37393eb19fc22184b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output options.  <a href="group__node.html#gad266e870143cf37393eb19fc22184b41">More...</a><br /></td></tr>
 <tr class="separator:gad266e870143cf37393eb19fc22184b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </td></tr>
 <tr class="memitem:gabd01e64968b026186bcead19a28498fa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__node.html#gabd01e64968b026186bcead19a28498fa">freesasa_nodetype</a> { <br />
@@ -153,7 +151,7 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga5e5e0dc461c931288b05feb78f6895a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__node.html#ga5e5e0dc461c931288b05feb78f6895a6">freesasa_tree_new</a> (void)</td></tr>
-<tr class="memdesc:ga5e5e0dc461c931288b05feb78f6895a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates empty <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="A node representing calculation results for a structure, chain, residue or atom in a structure (see N...">freesasa_node</a> of type <a class="el" href="group__node.html#ggabd01e64968b026186bcead19a28498faaf37ee04968ef9f475d0a41de6b5a9c7b" title="Root node, wraps one or more unrelated results. ">FREESASA_NODE_ROOT</a>.  <a href="#ga5e5e0dc461c931288b05feb78f6895a6">More...</a><br /></td></tr>
+<tr class="memdesc:ga5e5e0dc461c931288b05feb78f6895a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates empty <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="Result node. ">freesasa_node</a> of type <a class="el" href="group__node.html#ggabd01e64968b026186bcead19a28498faaf37ee04968ef9f475d0a41de6b5a9c7b" title="Root node, wraps one or more unrelated results. ">FREESASA_NODE_ROOT</a>.  <a href="#ga5e5e0dc461c931288b05feb78f6895a6">More...</a><br /></td></tr>
 <tr class="separator:ga5e5e0dc461c931288b05feb78f6895a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaba612738b3f51e5cbd2cf762424f5194"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__node.html#gaba612738b3f51e5cbd2cf762424f5194">freesasa_tree_init</a> (const <a class="el" href="structfreesasa__result.html">freesasa_result</a> *result, const <a class="el" href="group__structure.html#ga51552cd723c823de3704b0de94142093">freesasa_structure</a> *structure, const char *name)</td></tr>
 <tr class="memdesc:gaba612738b3f51e5cbd2cf762424f5194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init tree based on result and structure.  <a href="#gaba612738b3f51e5cbd2cf762424f5194">More...</a><br /></td></tr>
@@ -253,6 +251,24 @@ Functions</h2></td></tr>
 </ul>
 <p>The tree can be traversed using <a class="el" href="group__node.html#ga88f401dd921a520d35a36a8fc773fe1e" title="The children of a node. ">freesasa_node_children()</a>, <a class="el" href="group__node.html#gafe179e0c93e80bfb0a31703adba1784d" title="Next sibling of a node. ">freesasa_node_next()</a> and <a class="el" href="group__node.html#ga78bc0bce75f1e56050f09bd905f0092f" title="The parent of a node. ">freesasa_node_parent()</a>. The type of a node is determined by <a class="el" href="group__node.html#ga5204762078ae0caf470fca7b20d50545" title="The type of a node. ">freesasa_node_type()</a>. There are some properties that are common to all or most levels of the tree. These accessors simply have the prefix <code>freesasa_node</code>, like for example <a class="el" href="group__node.html#ga10627933902bc5428eed987e59663b0a" title="The name of a node. ">freesasa_node_name()</a> and the above-mentioned functions. Other properties are specific to a special level, and then the prefix of the accessor functions will be <code>freesasa_node_atom</code> or <code>freesasa_node_structure</code>, etc. The class of an atom can for example be accessed using <a class="el" href="group__node.html#ga1238f82cb71fbc7278e8a8e33bdeab8e" title="Is atom polar. ">freesasa_node_atom_is_polar()</a>.</p>
 <p>The nodes of a tree are to be considered read-only, and changes are made only to the root node, initialized using <a class="el" href="group__node.html#ga5e5e0dc461c931288b05feb78f6895a6" title="Generates empty freesasa_node of type FREESASA_NODE_ROOT. ">freesasa_tree_new()</a> or <a class="el" href="group__node.html#gaba612738b3f51e5cbd2cf762424f5194" title="Init tree based on result and structure. ">freesasa_tree_init()</a>, and modified using <a class="el" href="group__node.html#ga31f56dda21e9d9d4e08b34980afffe9f" title="Add a new set of results to a tree. ">freesasa_tree_add_result()</a>, <a class="el" href="group__node.html#ga700f0b8ed5883b09a73730bb847e7d9b" title="Join two trees. ">freesasa_tree_join()</a>. The one exception where a lower level node can be modified is <a class="el" href="group__node.html#ga71d062a8db472c9a00c0475206428234" title="Add a selection result to a structure node. ">freesasa_node_structure_add_selection()</a>. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="gac7a00013807eca63024474367c11ea79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a> <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79">freesasa_node</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Result node. </p>
+<p>A node representing calculation results for a structure, chain, residue or atom in a structure (see <a class="el" href="group__node.html">Node</a>). </p>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00300">300</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="gad266e870143cf37393eb19fc22184b41"></a>
 <div class="memitem">
@@ -264,6 +280,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Output options. </p>
 <p>Controls output format, can be combined in options bitfield in <a class="el" href="group__node.html#gaf8df53f196be16eb2761f89a71decae8" title="Outputs result in format specified by options. ">freesasa_tree_export()</a> </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggad266e870143cf37393eb19fc22184b41a52387f3c12363a14ffb7de5a28124ae3"></a>FREESASA_OUTPUT_ATOM&#160;</td><td class="fielddoc">
@@ -282,7 +299,7 @@ Functions</h2></td></tr>
 <p>Simple plain text results. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ggad266e870143cf37393eb19fc22184b41ab41bf321de6bf49724c77f7280ca5004"></a>FREESASA_RSA&#160;</td><td class="fielddoc">
-<p>RSA output (not affected by atom, residue, etc above) </p>
+<p>RSA output (not affected by atom, residue, etc above). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ggad266e870143cf37393eb19fc22184b41a5c1931f05e0f36075080e5b0a40ba09c"></a>FREESASA_JSON&#160;</td><td class="fielddoc">
 <p>JSON output. </p>
@@ -291,7 +308,7 @@ Functions</h2></td></tr>
 <p>XML output. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ggad266e870143cf37393eb19fc22184b41a472d2cf78f7638780e08c105dff9df82"></a>FREESASA_PDB&#160;</td><td class="fielddoc">
-<p>PDB output (with B-factors replaced by SASA values, and occupancy by radius) </p>
+<p>PDB output (with B-factors replaced by SASA values, and occupancy by radius). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ggad266e870143cf37393eb19fc22184b41a7e20c3ca4410b78659439763c9f80728"></a>FREESASA_RES&#160;</td><td class="fielddoc">
 <p>A list of the integrated SASA of each residue type. </p>
@@ -304,7 +321,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00156">156</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00188">188</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -339,11 +356,11 @@ Functions</h2></td></tr>
 <p>Root node, wraps one or more unrelated results. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ggabd01e64968b026186bcead19a28498faa9cac906e5a27ee5be9f497c57c96ddaf"></a>FREESASA_NODE_NONE&#160;</td><td class="fielddoc">
-<p>for specifying not a valid node </p>
+<p>for specifying not a valid node. </p>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00231">231</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00282">282</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -362,10 +379,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates empty <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="A node representing calculation results for a structure, chain, residue or atom in a structure (see N...">freesasa_node</a> of type <a class="el" href="group__node.html#ggabd01e64968b026186bcead19a28498faaf37ee04968ef9f475d0a41de6b5a9c7b" title="Root node, wraps one or more unrelated results. ">FREESASA_NODE_ROOT</a>. </p>
+<p>Generates empty <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="Result node. ">freesasa_node</a> of type <a class="el" href="group__node.html#ggabd01e64968b026186bcead19a28498faaf37ee04968ef9f475d0a41de6b5a9c7b" title="Root node, wraps one or more unrelated results. ">FREESASA_NODE_ROOT</a>. </p>
 <p>To be populated by <a class="el" href="group__node.html#ga31f56dda21e9d9d4e08b34980afffe9f" title="Add a new set of results to a tree. ">freesasa_tree_add_result()</a>.</p>
 <p>The return value is dynamically allocated and should be freed using <a class="el" href="group__node.html#ga85d2ea683b1231965360c8d8928a2b28" title="Free tree. ">freesasa_node_free()</a>.</p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="A node representing calculation results for a structure, chain, residue or atom in a structure (see N...">freesasa_node</a>. <code>NULL</code> if memory allocation fails. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__node.html#gac7a00013807eca63024474367c11ea79" title="Result node. ">freesasa_node</a>. <code>NULL</code> if memory allocation fails. </dd></dl>
 
 </div>
 </div>
@@ -536,7 +553,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">output</td><td>Output file. </td></tr>
     <tr><td class="paramname">root</td><td>Structure tree containing results. Node of type <a class="el" href="group__node.html#ggabd01e64968b026186bcead19a28498faaf37ee04968ef9f475d0a41de6b5a9c7b" title="Root node, wraps one or more unrelated results. ">FREESASA_NODE_ROOT</a>. </td></tr>
-    <tr><td class="paramname">options</td><td>Bitfield specifying output format, see <a class="el" href="group__node.html#gad266e870143cf37393eb19fc22184b41" title="Controls output format, can be combined in options bitfield in freesasa_tree_export() ...">freesasa_output_options</a>. </td></tr>
+    <tr><td class="paramname">options</td><td>Bitfield specifying output format, see <a class="el" href="group__node.html#gad266e870143cf37393eb19fc22184b41" title="Output options. ">freesasa_output_options</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1171,7 +1188,7 @@ Functions</h2></td></tr>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 22 2017 16:08:34 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>

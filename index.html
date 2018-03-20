@@ -27,7 +27,7 @@
   <body>
     <div class="ui attached four item inverted menu">
       <div class="ui container">
-        <a class="item" href="freesasa-2.0.2.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');"><i class="ui icon download"></i>Download</a>
+        <a class="item" href="freesasa-2.0.3.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');"><i class="ui icon download"></i>Download</a>
         <a class="item" href="https://github.com/mittinatten/freesasa" id="github" onClick="ga('send', 'event', 'github', 'click');"><i class="ui icon code"></i>GitHub</a>
         <a class="item" href="doxygen/"><i class="ui icon book"></i>Docs</a>
         <a class="item" href="http://f1000research.com/articles/5-189/v1"><i class="ui icon student"></i>Citation</a>
@@ -44,7 +44,7 @@
         parameters and also use the C and Python APIs to perform
         calculations directly on arrays of coordinates.</p>
       <h2 class="ui header">Quick-start guide</h2>
-      <p>Download the <a href="freesasa-2.0.2.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');">latest tarball</a>, expand it and run</p>
+      <p>Download the <a href="freesasa-2.0.3.tar.gz" id="tarball" onClick="ga('send', 'event', 'tarball', 'click');">latest tarball</a>, expand it and run</p>
       <div class="ui secondary segment">
         <code>$ ./configure <br />
           $ make <br />
@@ -53,8 +53,6 @@
       </div>
 
       <p>This installs the binary <code>freesasa</code> to your path, the header <code>freesasa.h</code>, the library <code>libfreesasa</code> and a man page.</p>
-
-      <p>See <a href="doxygen/md_README.html">README</a> for how to build the Python module, and how to disable features you don't want or don't have the dependencies for.</p>
 
       <p>If you got the code directly from the git repo, first
         run <code>autoreconf -i</code> to create the configure script (this
@@ -71,11 +69,19 @@
 
       <div class="ui secondary segment"><code>$ man freesasa</code></div>
 
-      <h2 class="ui header">
-        <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+      <h2 class="ui header">Python bindings</h2>
+      From version 2.0.3 the Python bindings are released as a
+      <a href="https://github.com/freesasa/freesasa-python">separate module</a>.
+
+      They can be installed using
+      <div class="ui secondary segment"><code>pip install freesasa</code></div>
+
+      <h2 class="ui header">Documentation</h2>
       <p>The reference <a href="doxygen/" id="doxygen">documentation</a>
-        contains info the <a href="doxygen/CLI.html">CLI</a>, the <a href="doxygen/API.html">C</a> and <a href="doxygen/Python.html">Python</a> APIs and some
-        implementation details.</p>
+        contains info the <a href="doxygen/CLI.html">CLI</a> and the <a href="doxygen/API.html">C API</a>,
+        and some implementation details.
+        The <a href="https://github.com/freesasa/freesasa-python">Python module</a> is documented elsewhere.
+      </p>
 
       <h2 class="ui header">Citing FreeSASA</h2>
       <p>Simon Mitternacht (2016)  <a href="http://f1000research.com/articles/5-189/v1">FreeSASA: An open source C library for solvent accessible surface area calculation</a>. <emph>F1000Research</emph> 5:189 (doi: <a href="http://dx.doi.org/10.12688/f1000research.7931.1">10.12688/f1000research.7931.1</a>)</p>

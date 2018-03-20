@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.2</span>
+   &#160;<span id="projectnumber">2.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -128,7 +127,7 @@ Get polar and apolar area</h3>
 <h3><a class="anchor" id="API-Select"></a>
 Get area of custom groups of atoms</h3>
 <p>Groups of atoms can be defined using <a class="el" href="group__selection.html#gac4c9bce25ae71f777681abfac4d1e893" title="Get area of a selection. ">freesasa_selection_new()</a>, which takes a selection definition uses a subset of the Pymol select syntax</p>
-<div class="fragment"><div class="line"><a class="code" href="group__selection.html#ga9e86b116da9eb7aee83176898b89306b">freesasa_selection</a> *selection = </div>
+<div class="fragment"><div class="line"><a class="code" href="group__selection.html#ga9e86b116da9eb7aee83176898b89306b">freesasa_selection</a> *selection =</div>
 <div class="line">    <a class="code" href="group__selection.html#gac4c9bce25ae71f777681abfac4d1e893">freesasa_selection_new</a>(<span class="stringliteral">&quot;aromatic, resn phe+tyr+trp+his+pro&quot;</span>,</div>
 <div class="line">                           structure, result);</div>
 <div class="line">printf(<span class="stringliteral">&quot;Area of selection &#39;%s&#39;: %f A2\n&quot;</span>,</div>
@@ -167,7 +166,7 @@ Thread-safety</h2>
 <p>It should be clear from the documentation when the other functions have side effects such as memory allocation and I/O, and thread-safety should generally not be an issue (to the extent that your C library has threadsafe I/O and dynamic memory allocation). The SASA calculation itself can be parallelized by using a <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a> struct with <a class="el" href="structfreesasa__parameters.html#ac346f38e5d2102290ff5da97b2f66e5c" title="Number of threads to use, if compiled with thread-support. ">freesasa_parameters.n_threads</a> &gt; 1 (default is 2) where appropriate. This only gives a significant effect on performance for large proteins or at high precision, and because not all steps are parallelized it is usually not worth it to go beyond 2 threads.</p>
 <h1><a class="anchor" id="Customizing"></a>
 Customizing behavior</h1>
-<p>The types <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a> and <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1" title="Struct that can be used to determine classes (polar/apolar) and radii of atoms. ">freesasa_classifier</a> can be used to change the parameters of the calculations. Users who wish to use the defaults can pass <code>NULL</code> wherever pointers to these are requested.</p>
+<p>The types <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a> and <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1" title="Classifier struct. ">freesasa_classifier</a> can be used to change the parameters of the calculations. Users who wish to use the defaults can pass <code>NULL</code> wherever pointers to these are requested.</p>
 <h2><a class="anchor" id="Parameters"></a>
 Parameters</h2>
 <p>Calculation parameters can be stored in a <a class="el" href="structfreesasa__parameters.html" title="Struct to store parameters for SASA calculation. ">freesasa_parameters</a> object. It can be initialized to default by</p>
@@ -181,7 +180,7 @@ Parameters</h2>
 Specifying atomic radii and classes</h2>
 <p>Classifiers are used to determine which atoms are polar or apolar, and to specify atomic radii. In addition the three standard classifiers (see below) have reference values for the maximum areas of the 20 standard amino acids which can be used to calculate relative areas of residues, as in the RSA output.</p>
 <p>The default classifier is available through the const variable <a class="el" href="group__core.html#ga6e74796fee8013e6a5bf66939d0881bf" title="Default freesasa_classifier. ">freesasa_default_classifier</a>. This uses the <em>ProtOr</em> radii, defined in the paper by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for the standard amino acids (20 regular plus SEC, PYL, ASX and GLX), for some capping groups (ACE/NH2) and the standard nucleic acids. If the element can't be determined or is unknown, a zero radius is assigned. It classes all carbons as <em>apolar</em> and all other known atoms as <em>polar</em>.</p>
-<p>Early versions of FreeSASA used the atomic radii by Ooi et al. (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC304812/">PNAS 1987, 84: 3086-3090</a>), this classifier is still available through <a class="el" href="group__classifier.html#ga2e94abebfc55994801a8b396d396516a" title="Classifier using OONS radii and classes. ">freesasa_oons_classifier</a>.</p>
+<p>Early versions of FreeSASA used the atomic radii by Ooi et al. (<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC304812/">PNAS 1987, 84: 3086-3090</a>), this classifier is still available through <a class="el" href="group__classifier.html#ga2e94abebfc55994801a8b396d396516a" title="OONS classifier. ">freesasa_oons_classifier</a>.</p>
 <p>Users can provide their own classifiers through <a class="el" href="Config-file.html">Classifier configuration files</a>. At the moment these do not allow the user to specify reference values to calculate relative SASA values for RSA output.</p>
 <p>The default behavior of <a class="el" href="group__structure.html#ga4d7e46a577044c6154861bee291a9257" title="Init structure with coordinates from pdb-file. ">freesasa_structure_from_pdb()</a>, <a class="el" href="group__structure.html#gaebab3adaa53e9c1f371b1a29c6f4cd5e" title="Init array of structures from PDB. ">freesasa_structure_array()</a>, <a class="el" href="group__structure.html#ga62cd8d35cf36c596f0fa33b586a5f42f" title="Add individual atom to structure using default behavior. ">freesasa_structure_add_atom()</a> and <a class="el" href="group__structure.html#ga63b3588a640e46466192724140237571" title="Add individual atom to structure. ">freesasa_structure_add_atom_wopt()</a> is to first try the provided classifier and then guess the radius if necessary (emitting warnings if this is done, uses VdW radii defined by <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3658832/">Mantina et al. J Phys Chem 2009, 113:5806</a>).</p>
 <p>See the documentation for these functions for what parameters to use to change the default behavior. </p>
@@ -189,7 +188,7 @@ Specifying atomic radii and classes</h2>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 22 2017 16:08:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>

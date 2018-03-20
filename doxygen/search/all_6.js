@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['geometry_20of_20lee_20_26_20richards_27_20algorithm',['Geometry of Lee &amp; Richards&apos; algorithm',['../Geometry.html',1,'']]],
-  ['getverbosity',['getVerbosity',['../namespacefreesasa.html#af6f16cf5d79c29c9375f74ec7642d8ed',1,'freesasa']]]
+  ['lee_5frichards_5fn_5fslices',['lee_richards_n_slices',['../structfreesasa__parameters.html#aec8d2517335d90c4cb513162b9a8a687',1,'freesasa_parameters']]],
+  ['license',['license',['../md_license.html',1,'']]]
 ];

@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.2</span>
+   &#160;<span id="projectnumber">2.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -105,15 +104,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gab431aa0f337c6b9968dea85f023c1eb1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a></td></tr>
-<tr class="memdesc:gab431aa0f337c6b9968dea85f023c1eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that can be used to determine classes (polar/apolar) and radii of atoms.  <a href="#gab431aa0f337c6b9968dea85f023c1eb1">More...</a><br /></td></tr>
+<tr class="memdesc:gab431aa0f337c6b9968dea85f023c1eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier struct.  <a href="#gab431aa0f337c6b9968dea85f023c1eb1">More...</a><br /></td></tr>
 <tr class="separator:gab431aa0f337c6b9968dea85f023c1eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga460f4fad29cf9e4e354a13f8dda8d2d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga460f4fad29cf9e4e354a13f8dda8d2d2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2">freesasa_atom_class</a> { <b>FREESASA_ATOM_APOLAR</b> =0, 
+<tr class="memitem:ga460f4fad29cf9e4e354a13f8dda8d2d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2">freesasa_atom_class</a> { <b>FREESASA_ATOM_APOLAR</b> =0, 
 <b>FREESASA_ATOM_POLAR</b> =1, 
 <b>FREESASA_ATOM_UNKNOWN</b> =2
- }<tr class="memdesc:ga460f4fad29cf9e4e354a13f8dda8d2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atoms can be of the classes Apolar, Polar or Unknown. <br /></td></tr>
+ }<tr class="memdesc:ga460f4fad29cf9e4e354a13f8dda8d2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atom classes.  <a href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2">More...</a><br /></td></tr>
 <tr class="separator:ga460f4fad29cf9e4e354a13f8dda8d2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </td></tr>
 </table><table class="memberdecls">
@@ -132,7 +131,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafbbe2480c26ca8701fb296ee59045ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a classifier to determine the class of a given atom.  <a href="#gafbbe2480c26ca8701fb296ee59045ff4">More...</a><br /></td></tr>
 <tr class="separator:gafbbe2480c26ca8701fb296ee59045ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf3226467212c8ae9ab07a9ed58601719"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#gaf3226467212c8ae9ab07a9ed58601719">freesasa_classifier_class2str</a> (<a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2">freesasa_atom_class</a> atom_class)</td></tr>
-<tr class="memdesc:gaf3226467212c8ae9ab07a9ed58601719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names for <a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2" title="Atoms can be of the classes Apolar, Polar or Unknown. ">freesasa_atom_class</a>.  <a href="#gaf3226467212c8ae9ab07a9ed58601719">More...</a><br /></td></tr>
+<tr class="memdesc:gaf3226467212c8ae9ab07a9ed58601719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names for <a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2" title="Atom classes. ">freesasa_atom_class</a>.  <a href="#gaf3226467212c8ae9ab07a9ed58601719">More...</a><br /></td></tr>
 <tr class="separator:gaf3226467212c8ae9ab07a9ed58601719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd3c3c1cd07d5301a7a6f202d073bd83"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#gabd3c3c1cd07d5301a7a6f202d073bd83">freesasa_classifier_name</a> (const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a> *classifier)</td></tr>
 <tr class="memdesc:gabd3c3c1cd07d5301a7a6f202d073bd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of a classifier.  <a href="#gabd3c3c1cd07d5301a7a6f202d073bd83">More...</a><br /></td></tr>
@@ -140,17 +139,14 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga904f4e5089cd63ede9c7ff5956f5de0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga904f4e5089cd63ede9c7ff5956f5de0e"></a>
-const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga904f4e5089cd63ede9c7ff5956f5de0e">freesasa_protor_classifier</a></td></tr>
-<tr class="memdesc:ga904f4e5089cd63ede9c7ff5956f5de0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using ProtOr radii and classes. <br /></td></tr>
+<tr class="memitem:ga904f4e5089cd63ede9c7ff5956f5de0e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga904f4e5089cd63ede9c7ff5956f5de0e">freesasa_protor_classifier</a></td></tr>
+<tr class="memdesc:ga904f4e5089cd63ede9c7ff5956f5de0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ProtOr classifier.  <a href="#ga904f4e5089cd63ede9c7ff5956f5de0e">More...</a><br /></td></tr>
 <tr class="separator:ga904f4e5089cd63ede9c7ff5956f5de0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga03480a1dce0d9355524889d0f6d9d251"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga03480a1dce0d9355524889d0f6d9d251"></a>
-const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga03480a1dce0d9355524889d0f6d9d251">freesasa_naccess_classifier</a></td></tr>
-<tr class="memdesc:ga03480a1dce0d9355524889d0f6d9d251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using NACCESS radii and classes. <br /></td></tr>
+<tr class="memitem:ga03480a1dce0d9355524889d0f6d9d251"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga03480a1dce0d9355524889d0f6d9d251">freesasa_naccess_classifier</a></td></tr>
+<tr class="memdesc:ga03480a1dce0d9355524889d0f6d9d251"><td class="mdescLeft">&#160;</td><td class="mdescRight">NACCESS classifier.  <a href="#ga03480a1dce0d9355524889d0f6d9d251">More...</a><br /></td></tr>
 <tr class="separator:ga03480a1dce0d9355524889d0f6d9d251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e94abebfc55994801a8b396d396516a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2e94abebfc55994801a8b396d396516a"></a>
-const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga2e94abebfc55994801a8b396d396516a">freesasa_oons_classifier</a></td></tr>
-<tr class="memdesc:ga2e94abebfc55994801a8b396d396516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifier using OONS radii and classes. <br /></td></tr>
+<tr class="memitem:ga2e94abebfc55994801a8b396d396516a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__classifier.html#ga2e94abebfc55994801a8b396d396516a">freesasa_oons_classifier</a></td></tr>
+<tr class="memdesc:ga2e94abebfc55994801a8b396d396516a"><td class="mdescLeft">&#160;</td><td class="mdescRight">OONS classifier.  <a href="#ga2e94abebfc55994801a8b396d396516a">More...</a><br /></td></tr>
 <tr class="separator:ga2e94abebfc55994801a8b396d396516a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -166,10 +162,28 @@ const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1
       </table>
 </div><div class="memdoc">
 
-<p>Struct that can be used to determine classes (polar/apolar) and radii of atoms. </p>
-<p>Initiated from <a class="el" href="group__classifier.html#ga3f40dddd26a33063eabdf85a278c275d" title="Generate a classifier from a config-file. ">freesasa_classifier_from_file()</a>. The classifiers <a class="el" href="group__core.html#ga6e74796fee8013e6a5bf66939d0881bf" title="Default freesasa_classifier. ">freesasa_default_classifier</a>, <a class="el" href="group__classifier.html#ga904f4e5089cd63ede9c7ff5956f5de0e" title="Classifier using ProtOr radii and classes. ">freesasa_protor_classifier</a>, <a class="el" href="group__classifier.html#ga03480a1dce0d9355524889d0f6d9d251" title="Classifier using NACCESS radii and classes. ">freesasa_naccess_classifier</a> and <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1" title="Struct that can be used to determine classes (polar/apolar) and radii of atoms. ">freesasa_classifier</a> are const classifiers that can be used directly. </p>
+<p>Classifier struct. </p>
+<p>Struct that can be used to determine classes (polar/apolar) and radii of atoms. Initiated from <a class="el" href="group__classifier.html#ga3f40dddd26a33063eabdf85a278c275d" title="Generate a classifier from a config-file. ">freesasa_classifier_from_file()</a>. The classifiers <a class="el" href="group__core.html#ga6e74796fee8013e6a5bf66939d0881bf" title="Default freesasa_classifier. ">freesasa_default_classifier</a>, <a class="el" href="group__classifier.html#ga904f4e5089cd63ede9c7ff5956f5de0e" title="ProtOr classifier. ">freesasa_protor_classifier</a>, <a class="el" href="group__classifier.html#ga03480a1dce0d9355524889d0f6d9d251" title="NACCESS classifier. ">freesasa_naccess_classifier</a> and <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1" title="Classifier struct. ">freesasa_classifier</a> are const classifiers that can be used directly. </p>
 
-<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00266">266</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00322">322</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ga460f4fad29cf9e4e354a13f8dda8d2d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2">freesasa_atom_class</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atom classes. </p>
+<p>Atoms can be of the classes Apolar, Polar or Unknown. </p>
+
+<p>Definition at line <a class="el" href="freesasa_8h_source.html#l00155">155</a> of file <a class="el" href="freesasa_8h_source.html">freesasa.h</a>.</p>
 
 </div>
 </div>
@@ -326,7 +340,7 @@ const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1
       </table>
 </div><div class="memdoc">
 
-<p>Names for <a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2" title="Atoms can be of the classes Apolar, Polar or Unknown. ">freesasa_atom_class</a>. </p>
+<p>Names for <a class="el" href="group__classifier.html#ga460f4fad29cf9e4e354a13f8dda8d2d2" title="Atom classes. ">freesasa_atom_class</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">atom_class</td><td>The class. </td></tr>
@@ -362,11 +376,57 @@ const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ga904f4e5089cd63ede9c7ff5956f5de0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a> freesasa_protor_classifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ProtOr classifier. </p>
+<p>Classifier using ProtOr radii and classes. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga03480a1dce0d9355524889d0f6d9d251"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a> freesasa_naccess_classifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NACCESS classifier. </p>
+<p>Classifier using NACCESS radii and classes. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga2e94abebfc55994801a8b396d396516a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a> freesasa_oons_classifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OONS classifier. </p>
+<p>Classifier using OONS radii and classes. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 22 2017 16:08:34 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>

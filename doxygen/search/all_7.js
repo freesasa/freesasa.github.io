@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['lee_5frichards_5fn_5fslices',['lee_richards_n_slices',['../structfreesasa__parameters.html#aec8d2517335d90c4cb513162b9a8a687',1,'freesasa_parameters']]],
-  ['leerichards',['LeeRichards',['../namespacefreesasa.html#a4f60ffd32c3275eafbb31d644b981be5',1,'freesasa']]],
-  ['license',['license',['../md_license.html',1,'']]]
+  ['main_5fchain',['main_chain',['../structfreesasa__nodearea.html#a797062126856856125671c98290eff51',1,'freesasa_nodearea']]]
 ];

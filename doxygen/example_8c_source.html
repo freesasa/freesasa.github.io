@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.0.2</span>
+   &#160;<span id="projectnumber">2.0.3</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -52,7 +52,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -129,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">/* If there was an error at any step, we will end up here */</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        printf(<span class="stringliteral">&quot;Error calculating SASA\n&quot;</span>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/* Print results */</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    printf(<span class="stringliteral">&quot;Total  : %f A2\n&quot;</span>, area.<a class="code" href="structfreesasa__nodearea.html#a7e027ae87415b7515d1e37c649e38ffd">total</a>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    printf(<span class="stringliteral">&quot;Apolar : %f A2\n&quot;</span>, area.<a class="code" href="structfreesasa__nodearea.html#a5bb334d523e2486eaea4affb02b173b4">apolar</a>);</div>
@@ -141,25 +140,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="structfreesasa__nodearea_html_a7bbce5dad63755e82431c815bd56f839"><div class="ttname"><a href="structfreesasa__nodearea.html#a7bbce5dad63755e82431c815bd56f839">freesasa_nodearea::polar</a></div><div class="ttdeci">double polar</div><div class="ttdoc">Polar SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00225">freesasa.h:225</a></div></div>
+<div class="ttc" id="structfreesasa__nodearea_html_a7bbce5dad63755e82431c815bd56f839"><div class="ttname"><a href="structfreesasa__nodearea.html#a7bbce5dad63755e82431c815bd56f839">freesasa_nodearea::polar</a></div><div class="ttdeci">double polar</div><div class="ttdoc">Polar SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00273">freesasa.h:273</a></div></div>
 <div class="ttc" id="group__core_html_ga2b15ffade911e09fcf96f9837ed61333"><div class="ttname"><a href="group__core.html#ga2b15ffade911e09fcf96f9837ed61333">freesasa_calc_structure</a></div><div class="ttdeci">freesasa_result * freesasa_calc_structure(const freesasa_structure *structure, const freesasa_parameters *parameters)</div><div class="ttdoc">Calculates SASA based on a given structure. </div></div>
 <div class="ttc" id="group__structure_html_ga4d7e46a577044c6154861bee291a9257"><div class="ttname"><a href="group__structure.html#ga4d7e46a577044c6154861bee291a9257">freesasa_structure_from_pdb</a></div><div class="ttdeci">freesasa_structure * freesasa_structure_from_pdb(FILE *pdb, const freesasa_classifier *classifier, int options)</div><div class="ttdoc">Init structure with coordinates from pdb-file. </div></div>
-<div class="ttc" id="structfreesasa__nodearea_html_a7e027ae87415b7515d1e37c649e38ffd"><div class="ttname"><a href="structfreesasa__nodearea.html#a7e027ae87415b7515d1e37c649e38ffd">freesasa_nodearea::total</a></div><div class="ttdeci">double total</div><div class="ttdoc">Total SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00222">freesasa.h:222</a></div></div>
+<div class="ttc" id="structfreesasa__nodearea_html_a7e027ae87415b7515d1e37c649e38ffd"><div class="ttname"><a href="structfreesasa__nodearea.html#a7e027ae87415b7515d1e37c649e38ffd">freesasa_nodearea::total</a></div><div class="ttdeci">double total</div><div class="ttdoc">Total SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00270">freesasa.h:270</a></div></div>
 <div class="ttc" id="group__core_html_gaeba214b291cea883fc5e5f5df2e2ff7c"><div class="ttname"><a href="group__core.html#gaeba214b291cea883fc5e5f5df2e2ff7c">freesasa_result_free</a></div><div class="ttdeci">void freesasa_result_free(freesasa_result *result)</div><div class="ttdoc">Frees a freesasa_result object. </div></div>
 <div class="ttc" id="group__core_html_ga1fde9cec02156777eb54b1410e648584"><div class="ttname"><a href="group__core.html#ga1fde9cec02156777eb54b1410e648584">freesasa_result_classes</a></div><div class="ttdeci">freesasa_nodearea freesasa_result_classes(const freesasa_structure *structure, const freesasa_result *result)</div><div class="ttdoc">Results by classes. </div></div>
 <div class="ttc" id="group__structure_html_ga2400388cae0c527b0a3cd67f1af27cfd"><div class="ttname"><a href="group__structure.html#ga2400388cae0c527b0a3cd67f1af27cfd">freesasa_structure_free</a></div><div class="ttdeci">void freesasa_structure_free(freesasa_structure *structure)</div><div class="ttdoc">Free structure. </div></div>
-<div class="ttc" id="group__core_html_ga6e74796fee8013e6a5bf66939d0881bf"><div class="ttname"><a href="group__core.html#ga6e74796fee8013e6a5bf66939d0881bf">freesasa_default_classifier</a></div><div class="ttdeci">#define freesasa_default_classifier</div><div class="ttdoc">Default freesasa_classifier. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00109">freesasa.h:109</a></div></div>
-<div class="ttc" id="group__classifier_html_gab431aa0f337c6b9968dea85f023c1eb1"><div class="ttname"><a href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a></div><div class="ttdeci">struct freesasa_classifier freesasa_classifier</div><div class="ttdoc">Struct that can be used to determine classes (polar/apolar) and radii of atoms. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00266">freesasa.h:266</a></div></div>
-<div class="ttc" id="structfreesasa__nodearea_html_a5bb334d523e2486eaea4affb02b173b4"><div class="ttname"><a href="structfreesasa__nodearea.html#a5bb334d523e2486eaea4affb02b173b4">freesasa_nodearea::apolar</a></div><div class="ttdeci">double apolar</div><div class="ttdoc">Apolar SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00226">freesasa.h:226</a></div></div>
-<div class="ttc" id="structfreesasa__nodearea_html"><div class="ttname"><a href="structfreesasa__nodearea.html">freesasa_nodearea</a></div><div class="ttdoc">Struct to store integrated SASA values for either a full structure or a subset thereof. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00220">freesasa.h:220</a></div></div>
+<div class="ttc" id="group__core_html_ga6e74796fee8013e6a5bf66939d0881bf"><div class="ttname"><a href="group__core.html#ga6e74796fee8013e6a5bf66939d0881bf">freesasa_default_classifier</a></div><div class="ttdeci">#define freesasa_default_classifier</div><div class="ttdoc">Default freesasa_classifier. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00116">freesasa.h:116</a></div></div>
+<div class="ttc" id="group__classifier_html_gab431aa0f337c6b9968dea85f023c1eb1"><div class="ttname"><a href="group__classifier.html#gab431aa0f337c6b9968dea85f023c1eb1">freesasa_classifier</a></div><div class="ttdeci">struct freesasa_classifier freesasa_classifier</div><div class="ttdoc">Classifier struct. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00322">freesasa.h:322</a></div></div>
+<div class="ttc" id="structfreesasa__nodearea_html_a5bb334d523e2486eaea4affb02b173b4"><div class="ttname"><a href="structfreesasa__nodearea.html#a5bb334d523e2486eaea4affb02b173b4">freesasa_nodearea::apolar</a></div><div class="ttdeci">double apolar</div><div class="ttdoc">Apolar SASA. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00274">freesasa.h:274</a></div></div>
+<div class="ttc" id="structfreesasa__nodearea_html"><div class="ttname"><a href="structfreesasa__nodearea.html">freesasa_nodearea</a></div><div class="ttdoc">Struct to store integrated SASA values for either a full structure or a subset thereof. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00268">freesasa.h:268</a></div></div>
 <div class="ttc" id="freesasa_8h_html"><div class="ttname"><a href="freesasa_8h.html">freesasa.h</a></div><div class="ttdoc">Functions and datatypes for performing and analyzing SASA calculations. </div></div>
-<div class="ttc" id="structfreesasa__result_html"><div class="ttname"><a href="structfreesasa__result.html">freesasa_result</a></div><div class="ttdoc">Struct to store results of SASA calculation. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00202">freesasa.h:202</a></div></div>
-<div class="ttc" id="group__structure_html_ga51552cd723c823de3704b0de94142093"><div class="ttname"><a href="group__structure.html#ga51552cd723c823de3704b0de94142093">freesasa_structure</a></div><div class="ttdeci">struct freesasa_structure freesasa_structure</div><div class="ttdoc">Struct for structure object. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00199">freesasa.h:199</a></div></div>
+<div class="ttc" id="structfreesasa__result_html"><div class="ttname"><a href="structfreesasa__result.html">freesasa_result</a></div><div class="ttdoc">Struct to store results of SASA calculation. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00250">freesasa.h:250</a></div></div>
+<div class="ttc" id="group__structure_html_ga51552cd723c823de3704b0de94142093"><div class="ttname"><a href="group__structure.html#ga51552cd723c823de3704b0de94142093">freesasa_structure</a></div><div class="ttdeci">struct freesasa_structure freesasa_structure</div><div class="ttdoc">Struct for structure object. </div><div class="ttdef"><b>Definition:</b> <a href="freesasa_8h_source.html#l00243">freesasa.h:243</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 22 2017 16:08:33 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>
