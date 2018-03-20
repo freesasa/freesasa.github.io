@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; FreeSASA Python Module 2.0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="FreeSASA Python Module 2.0.3 documentation" href="index.html"/>
+        <link rel="next" title="Functions" href="functions.html"/>
+        <link rel="prev" title="FreeSASA Python Module" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FreeSASA Python Module
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-calculations">Basic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-atom-classification">Customizing atom classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bio-pdb">Bio.PDB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FreeSASA Python Module</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This package provides Python bindings for the <a class="reference external" href="https://github.com/mittinatten/freesasa">FreeSASA C Library</a>.</p>
+<p>It can be installed using</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">freesasa</span>
+</pre></div>
+</div>
+<p>Binaries are available for Python 2.7, 3.4, 3.5 and 3.6 for Mac OS X
+and Windows, in addition to the source distribution.</p>
+<div class="section" id="basic-calculations">
+<h2>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
+<p>Using defaults everywhere a simple calculation can be carried out as
+follows (assuming the file <code class="docutils literal notranslate"><span class="pre">1ubq.pdb</span></code> is available)</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">freesasa</span>
+
+<span class="n">structure</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">Structure</span><span class="p">(</span><span class="s2">&quot;1ubq.pdb&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+<span class="n">area_classes</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">classifyResults</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">structure</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="s2">&quot;Total : </span><span class="si">%.2f</span><span class="s2"> A2&quot;</span> <span class="o">%</span> <span class="n">result</span><span class="o">.</span><span class="n">totalArea</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">area_classes</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;: </span><span class="si">%.2f</span><span class="s2"> A2&quot;</span> <span class="o">%</span> <span class="n">area_classes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Which would give the following output</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="p">:</span> <span class="mf">4804.06</span> <span class="n">A2</span>
+<span class="n">Polar</span> <span class="p">:</span> <span class="mf">2504.22</span> <span class="n">A2</span>
+<span class="n">Apolar</span> <span class="p">:</span> <span class="mf">2299.84</span> <span class="n">A2</span>
+</pre></div>
+</div>
+<p>The following does a high precision L&amp;R calculation</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span>
+                       <span class="n">freesasa</span><span class="o">.</span><span class="n">Parameters</span><span class="p">({</span><span class="s1">&#39;algorithm&#39;</span> <span class="p">:</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">LeeRichards</span><span class="p">,</span>
+                                            <span class="s1">&#39;n-slices&#39;</span> <span class="p">:</span> <span class="mi">100</span><span class="p">}))</span>
+</pre></div>
+</div>
+<p>Using the results from a calculation we can also integrate SASA over a selection of
+atoms, using a subset of the Pymol <a class="reference external" href="http://freesasa.github.io/doxygen/Selection.html">selection syntax</a>:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">selections</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">selectArea</span><span class="p">((</span><span class="s1">&#39;alanine, resn ala&#39;</span><span class="p">,</span> <span class="s1">&#39;r1_10, resi 1-10&#39;</span><span class="p">),</span>
+                                 <span class="n">structure</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">selections</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;: </span><span class="si">%.2f</span><span class="s2"> A2&quot;</span> <span class="o">%</span> <span class="n">selections</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which gives the output</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alanine</span> <span class="p">:</span> <span class="mf">120.08</span> <span class="n">A2</span>
+<span class="n">r1_10</span> <span class="p">:</span> <span class="mf">634.31</span> <span class="n">A2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizing-atom-classification">
+<h2>Customizing atom classification<a class="headerlink" href="#customizing-atom-classification" title="Permalink to this headline">¶</a></h2>
+<p>This uses the NACCESS parameters (the file <code class="docutils literal notranslate"><span class="pre">naccess.config</span></code> is
+available in the <code class="docutils literal notranslate"><span class="pre">share/</span></code> directory of the repository).</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">Classifier</span><span class="p">(</span><span class="s2">&quot;naccess.config&quot;</span><span class="p">)</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">Structure</span><span class="p">(</span><span class="s2">&quot;1ubq.pdb&quot;</span><span class="p">,</span> <span class="n">classifier</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+<span class="n">area_classes</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">classifyResults</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">classifier</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Classification can be customized also by extending the <a class="reference internal" href="classes.html#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a>
+interface. The code below is an illustration of a classifier that
+classes nitrogens separately, and assigns radii based on element only
+(and crudely).</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">freesasa</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">class</span> <span class="nc">DerivedClassifier</span><span class="p">(</span><span class="n">Classifier</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">residueName</span><span class="p">,</span> <span class="n">atomName</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\s*N&#39;</span><span class="p">,</span> <span class="n">atomName</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s1">&#39;Nitrogen&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Not-nitrogen&#39;</span>
+
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">residueName</span><span class="p">,</span> <span class="n">atomName</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\s*N&#39;</span><span class="p">,</span><span class="n">atomName</span><span class="p">):</span> <span class="c1"># Nitrogen</span>
+            <span class="k">return</span> <span class="mf">1.6</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\s*C&#39;</span><span class="p">,</span><span class="n">atomName</span><span class="p">):</span> <span class="c1"># Carbon</span>
+            <span class="k">return</span> <span class="mf">1.7</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\s*O&#39;</span><span class="p">,</span><span class="n">atomName</span><span class="p">):</span> <span class="c1"># Oxygen</span>
+            <span class="k">return</span> <span class="mf">1.4</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;\s*S&#39;</span><span class="p">,</span><span class="n">atomName</span><span class="p">):</span> <span class="c1"># Sulfur</span>
+            <span class="k">return</span> <span class="mf">1.8</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>                     <span class="c1"># everything else (Hydrogen, etc)</span>
+
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">DerivedClassifier</span><span class="p">()</span>
+
+<span class="c1"># use the DerivedClassifier to calculate atom radii</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">Structure</span><span class="p">(</span><span class="s2">&quot;1ubq.pdb&quot;</span><span class="p">,</span> <span class="n">classifier</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+
+<span class="c1"># use the DerivedClassifier to classify atoms</span>
+<span class="n">area_classes</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">classifyResults</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">structure</span><span class="p">,</span><span class="n">classifier</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, this example is somewhat contrived, if we only want the
+integrated area of nitrogen atoms, the simpler choice would be</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">selection</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">selectArea</span><span class="p">(</span><span class="s1">&#39;nitrogen, symbol n&#39;</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, extending <a class="reference internal" href="classes.html#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a>, as illustrated above, allows
+classification to arbitrary complexity and also lets us redefine the
+radii used in the calculation.</p>
+</div>
+<div class="section" id="bio-pdb">
+<h2>Bio.PDB<a class="headerlink" href="#bio-pdb" title="Permalink to this headline">¶</a></h2>
+<p>FreeSASA can also calculate the SASA of a <code class="docutils literal notranslate"><span class="pre">Bio.PDB</span></code> structure from BioPython</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio.PDB</span> <span class="k">import</span> <span class="n">PDBParser</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">()</span>
+<span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;Ubiquitin&quot;</span><span class="p">,</span> <span class="s2">&quot;1ubq.pdb&quot;</span><span class="p">)</span>
+<span class="n">result</span><span class="p">,</span> <span class="n">sasa_classes</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calcBioPDB</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If one needs more control over the analysis the structure can be
+converted to a <a class="reference internal" href="classes.html#freesasa.Structure" title="freesasa.Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> using <a class="reference internal" href="functions.html#freesasa.structureFromBioPDB" title="freesasa.structureFromBioPDB"><code class="xref py py-func docutils literal notranslate"><span class="pre">structureFromBioPDB()</span></code></a>
+and the calculation can be performed the normal way using this
+structure.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="FreeSASA Python Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Simon Mitternacht.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.0.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
