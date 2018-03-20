@@ -93,8 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://zenodo.org/badge/latestdoi/18467/mittinatten/freesasa">![DOI](https://zenodo.org/badge/18467/mittinatten/freesasa.svg)</a> <a href="https://travis-ci.org/mittinatten/freesasa">![Build Status](https://travis-ci.org/mittinatten/freesasa.svg?branch=master)</a> <a href="https://coveralls.io/github/mittinatten/freesasa?branch=master">![Coverage Status](https://coveralls.io/repos/github/mittinatten/freesasa/badge.svg?branch=master)</a></p>
-<p>C-library for calculating Solvent Accessible Surface Areas.</p>
-<p>License: MIT (see file LICENSE). Copyright: Simon Mitternacht 2013-2016.</p>
 <p>FreeSASA is a C library and command line tool for calculating Solvent Accessible Surface Area (SASA) of biomolecules. It is designed to be simple to use with defaults, but allows customization of all parameters of the calculation and provides a few different tools to analyze the results. Python bindings are also included in the repository.</p>
 <p>By default Lee &amp; Richards' algorithm is used, but Shrake &amp; Rupley's is also available. Both can be parameterized to arbitrary precision, and for high resolution versions of the algorithms, the calculations give identical results.</p>
 <p>FreeSASA assigns a radius and a class to each atom. The atomic radii are by default the <em>ProtOr</em> radii defined by Tsai et al. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/10388571">JMB 1999, 290: 253</a>) for standard amino acids and nucleic acids, and the van der Waals radius of the element for other atoms. Each atom is also classified as either polar or apolar.</p>
@@ -121,7 +119,7 @@ make &amp;&amp; make install
 </ul>
 <h2>Python module </h2>
 <p>The Python bindings are available from PyPi and can be installed using </p><pre class="fragment">pip install freesasa
-</pre><p>This module is found in a separate repository <a href="https://github.com/freesasa/freesasa-python">https://github.com/freesasa/freesasa-python</a> (the bindings included here will eventually be removed). The PyPi module has binaries for Mac OS X and Windows, for a number of Python versions.</p>
+</pre><p>This module is found in a separate repository <a href="https://github.com/freesasa/freesasa-python">https://github.com/freesasa/freesasa-python</a> The PyPi module has binaries for Mac OS X and Windows, for a number of Python versions and <a href="http://freesasa-python.readthedocs.io/en/latest/?">separate documentation</a>.</p>
 <h2>Documentation </h2>
 <p>Enabling Doxygen builds a <a href="http://freesasa.github.io/doxygen/">full reference manual</a>, documenting both CLI and API in the folder <code>doc/html/doxygen/</code>, also available on the web at <a href="http://freesasa.github.io/">http://freesasa.github.io/</a>.</p>
 <p>After building the package, calling </p><pre class="fragment">freesasa -h
@@ -139,7 +137,7 @@ make &amp;&amp; make install
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2018 12:33:06 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2018 13:28:31 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>
