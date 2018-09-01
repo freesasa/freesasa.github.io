@@ -228,6 +228,26 @@ Unrecognized atoms will get the class <code class="docutils literal notranslate"
 </table>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="freesasa.Classifier.getStandardClassifier">
+<em class="property">static </em><code class="descname">getStandardClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.getStandardClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a standard classifier (ProtOr, OONS or NACCESS)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>str</em>) – The type, can have values <code class="docutils literal notranslate"><span class="pre">'protor'</span></code>, <code class="docutils literal notranslate"><span class="pre">'oons'</span></code> or <code class="docutils literal notranslate"><span class="pre">'naccess'</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The requested classifier</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – If type not recognized</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="freesasa.Classifier.radius">
 <code class="descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.radius" title="Permalink to this definition">¶</a></dt>
@@ -750,14 +770,15 @@ x,y,z (float): coordinates</li>
 <dl class="method">
 <dt id="freesasa.Structure.residueNumber">
 <code class="descname">residueNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get residue number for given atom</p>
+<dd><p>Get residue number for given atom.</p>
+<p>Residue number will include the insertion code if there is one.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Residue number as 4-character string</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Residue number as 5-character string (last character is either whitespace or insertion code)</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
