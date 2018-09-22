@@ -1,0 +1,5 @@
+{
+  "main.js": "bundle.js",
+  "freesasa.wasm": "cfcf7be8f3f36d6a03c8a2fa12061ec6.wasm",
+  "index.html": "index.html"
+}
