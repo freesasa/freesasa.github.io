@@ -144,5 +144,6 @@ var searchData=
   ['freesasa_5fverbosity',['freesasa_verbosity',['../freesasa_8h.html#a844352ce587326a78a765f1ec5119fc0',1,'freesasa.h']]],
   ['freesasa_5fwarn',['FREESASA_WARN',['../freesasa_8h.html#a73d4ba1da4f773acd1f0eaa60ed96656a38bd3fd2af7bc6bcb9fad27e5e036810',1,'freesasa.h']]],
   ['freesasa_5fxml',['FREESASA_XML',['../group__node.html#ggad266e870143cf37393eb19fc22184b41a39717994d2f24823ba379d7126f35e6b',1,'freesasa.h']]],
+  ['freesasa',['FreeSASA',['../index.html',1,'']]],
   ['freesasa',['FreeSASA',['../md_README.html',1,'']]]
 ];
