@@ -12,7 +12,7 @@ It can be installed using
 
    pip install freesasa
 
-Binaries are available for Python 2.7, 3.4, 3.5 and 3.6 for Mac OS X
+Binaries are available for Python 2.7, 3.5, 3.6 and 3.7 for Mac OS X
 and Windows, in addition to the source distribution.
 
 
@@ -92,7 +92,10 @@ classes nitrogens separately, and assigns radii based on element only
     import freesasa
     import re
 
-    class DerivedClassifier(Classifier):
+    class DerivedClassifier(freesasa.Classifier):
+        # this must be set explicitly in all derived classifiers
+        purePython = True
+
         def classify(self, residueName, atomName):
             if re.match('\s*N', atomName):
                 return 'Nitrogen'
@@ -107,7 +110,7 @@ classes nitrogens separately, and assigns radii based on element only
                 return 1.4
             if re.match('\s*S',atomName): # Sulfur
                 return 1.8
-        return 0;                     # everything else (Hydrogen, etc)
+            return 0;                     # everything else (Hydrogen, etc)
 
     classifier = DerivedClassifier()
 

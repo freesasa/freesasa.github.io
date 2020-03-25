@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classes &mdash; FreeSASA Python Module 2.0.3 documentation</title>
+  <title>Classes &mdash; FreeSASA Python Module 2.0.4 documentation</title>
   
 
   
@@ -17,41 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="FreeSASA Python Module 2.0.3 documentation" href="index.html"/>
-        <link rel="prev" title="Functions" href="functions.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Functions" href="functions.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -106,7 +100,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">FreeSASA Python Module</a>
@@ -114,9 +108,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -164,7 +159,7 @@
 <h2>Classifier<a class="headerlink" href="#classifier" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="freesasa.Classifier">
-<em class="property">class </em><code class="descclassname">freesasa.</code><code class="descname">Classifier</code><a class="headerlink" href="#freesasa.Classifier" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Classifier</code><a class="headerlink" href="#freesasa.Classifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns class and radius to atom by residue and atom name.</p>
 <p>Subclasses derived from <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> can be used to define custom
 atomic radii and/or classes. Can also be initialized from
@@ -173,106 +168,95 @@ atomic radii and/or classes. Can also be initialized from
 <p>Derived classifiers must set the member <code class="xref py py-attr docutils literal notranslate"><span class="pre">purePython</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <p>Residue names should be of the format <code class="docutils literal notranslate"><span class="pre">&quot;ALA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ARG&quot;</span></code>, etc.
 Atom names should be of the format <code class="docutils literal notranslate"><span class="pre">&quot;CA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;N&quot;</span></code>, etc.</p>
-<dl class="attribute">
+<dl class="method">
 <dt id="freesasa.Classifier.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#freesasa.Classifier.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
 <p>If no file is provided the default classifier is used.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fileName</strong> (<em>str</em>) – Name of file with classifier configuration.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code> – Problem opening/reading file</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – Problem parsing provided configuration or
-initializing defaults</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fileName</strong> (<em>str</em>) – Name of file with classifier configuration.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IOError</strong> – Problem opening/reading file</p></li>
+<li><p><strong>Exception</strong> – Problem parsing provided configuration or
+    initializing defaults</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Classifier.__new__">
-<code class="descname">__new__</code><span class="sig-paren">(</span><em>S</em>, <em>...</em><span class="sig-paren">)</span> &#x2192; a new object with type S, a subtype of T<a class="headerlink" href="#freesasa.Classifier.__new__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Classifier.classify">
-<code class="descname">classify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.classify" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">classify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.classify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class of atom.</p>
 <p>Depending on the configuration these classes can be
 anything, but typically they will be <code class="docutils literal notranslate"><span class="pre">&quot;Polar&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Apolar&quot;</span></code>.
 Unrecognized atoms will get the class <code class="docutils literal notranslate"><span class="pre">&quot;Unknown&quot;</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>residueName</strong> (<em>str</em>) – Residue name (<cite>“ALA”</cite>, <cite>“ARG”</cite>,…).</li>
-<li><strong>atomName</strong> (<em>str</em>) – Atom name (<cite>“CA”</cite>, <cite>“C”</cite>,…).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>residueName</strong> (<em>str</em>) – Residue name (<cite>“ALA”</cite>, <cite>“ARG”</cite>,…).</p></li>
+<li><p><strong>atomName</strong> (<em>str</em>) – Atom name (<cite>“CA”</cite>, <cite>“C”</cite>,…).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Class name</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Class name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="method">
 <dt id="freesasa.Classifier.getStandardClassifier">
-<em class="property">static </em><code class="descname">getStandardClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.getStandardClassifier" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">getStandardClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.getStandardClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a standard classifier (ProtOr, OONS or NACCESS)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<em>str</em>) – The type, can have values <code class="docutils literal notranslate"><span class="pre">'protor'</span></code>, <code class="docutils literal notranslate"><span class="pre">'oons'</span></code> or <code class="docutils literal notranslate"><span class="pre">'naccess'</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The requested classifier</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – If type not recognized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<em>str</em>) – The type, can have values <code class="docutils literal notranslate"><span class="pre">'protor'</span></code>, <code class="docutils literal notranslate"><span class="pre">'oons'</span></code> or <code class="docutils literal notranslate"><span class="pre">'naccess'</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The requested classifier</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – If type not recognized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Classifier.radius">
-<code class="descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.radius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Radius of atom.</p>
 <p>This allows the classifier to be used to calculate the atomic
 radii used in calculations. Unknown atoms will get a negative
 radius.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>residueName</strong> (<em>str</em>) – Residue name (<cite>“ALA”</cite>, <cite>“ARG”</cite>, …).</li>
-<li><strong>atomName</strong> (<em>str</em>) – Atom name (<cite>“CA”</cite>, <cite>“C”</cite>, …).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>residueName</strong> (<em>str</em>) – Residue name (<cite>“ALA”</cite>, <cite>“ARG”</cite>, …).</p></li>
+<li><p><strong>atomName</strong> (<em>str</em>) – Atom name (<cite>“CA”</cite>, <cite>“C”</cite>, …).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The radius in Å.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The radius in Å.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -282,193 +266,170 @@ radius.</p>
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="freesasa.Parameters">
-<em class="property">class </em><code class="descclassname">freesasa.</code><code class="descname">Parameters</code><a class="headerlink" href="#freesasa.Parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Parameters</code><a class="headerlink" href="#freesasa.Parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores parameter values to be used by calculation.</p>
-<dl class="attribute">
+<dl class="method">
 <dt id="freesasa.Parameters.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#freesasa.Parameters.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes Parameters object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>param</strong> (<em>dict</em>) – optional argument to specify parameter-values,
-see <code class="xref py py-attr docutils literal notranslate"><span class="pre">Parameters.defaultParameters</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – Invalid parameter values supplied</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – optional argument to specify parameter-values,
+see <code class="xref py py-attr docutils literal notranslate"><span class="pre">Parameters.defaultParameters</span></code>.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – Invalid parameter values supplied</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.__new__">
-<code class="descname">__new__</code><span class="sig-paren">(</span><em>S</em>, <em>...</em><span class="sig-paren">)</span> &#x2192; a new object with type S, a subtype of T<a class="headerlink" href="#freesasa.Parameters.__new__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.algorithm">
-<code class="descname">algorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.algorithm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">algorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.algorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Name of algorithm</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Name of algorithm</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.nPoints">
-<code class="descname">nPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get number of test points in Shrake &amp; Rupley algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of points.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of points.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.nSlices">
-<code class="descname">nSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nSlices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nSlices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of slices per atom in Lee &amp; Richards algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of slices.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of slices.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.nThreads">
-<code class="descname">nThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nThreads" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nThreads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of threads to use in calculations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of threads.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of threads.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.probeRadius">
-<code class="descname">probeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.probeRadius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">probeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.probeRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get probe radius.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Probe radius in Å</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Probe radius in Å</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.setAlgorithm">
-<code class="descname">setAlgorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setAlgorithm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setAlgorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>alg</strong> (<em>str</em>) – algorithm name, only allowed values are</li>
-<li><strong>:py:data:`freesasa.ShrakeRupley` and :py:data:`freesasa.LeeRichards`</strong></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alg</strong> (<em>str</em>) – algorithm name, only allowed values are</p></li>
+<li><p><strong>:py:data:`freesasa.ShrakeRupley` and :py:data:`freesasa.LeeRichards`</strong></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – unknown algorithm specified</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – unknown algorithm specified</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.setNPoints">
-<code class="descname">setNPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setNPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set number of test points in Shrake &amp; Rupley algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) – Number of points (&gt; 0).</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – n &lt;= 0.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Number of points (&gt; 0).</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – n &lt;= 0.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.setNSlices">
-<code class="descname">setNSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNSlices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setNSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNSlices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of slices per atom in Lee &amp; Richards algorithm.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) – Number of slices (&gt; 0)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – n &lt;= 0</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Number of slices (&gt; 0)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – n &lt;= 0</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.setNThreads">
-<code class="descname">setNThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNThreads" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setNThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNThreads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of threads to use in calculations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) – Number of points (&gt; 0)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – n &lt;= 0</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Number of points (&gt; 0)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – n &lt;= 0</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Parameters.setProbeRadius">
-<code class="descname">setProbeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setProbeRadius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setProbeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setProbeRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set probe radius.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r</strong> (<em>float</em>) – probe radius in Å (&gt;= 0)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – r &lt; 0</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>r</strong> (<em>float</em>) – probe radius in Å (&gt;= 0)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – r &lt; 0</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -478,42 +439,41 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 <h2>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="freesasa.Result">
-<em class="property">class </em><code class="descclassname">freesasa.</code><code class="descname">Result</code><a class="headerlink" href="#freesasa.Result" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Result</code><a class="headerlink" href="#freesasa.Result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores results from SASA calculation.</p>
 <p>The type of object returned by <a class="reference internal" href="functions.html#freesasa.calc" title="freesasa.calc"><code class="xref py py-func docutils literal notranslate"><span class="pre">freesasa.calc()</span></code></a>,
 not intended to be used outside of that context.</p>
-<dl class="attribute">
+<dl class="method">
 <dt id="freesasa.Result.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#freesasa.Result.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Result.__new__">
-<code class="descname">__new__</code><span class="sig-paren">(</span><em>S</em>, <em>...</em><span class="sig-paren">)</span> &#x2192; a new object with type S, a subtype of T<a class="headerlink" href="#freesasa.Result.__new__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Result.atomArea">
-<code class="descname">atomArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.atomArea" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">atomArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.atomArea" title="Permalink to this definition">¶</a></dt>
 <dd><p>SASA for a given atom.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – index of atom.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">SASA of atom i in Å^2.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>Raise:</dt>
-<dd><dl class="first last docutils">
-<dt>AssertionError: If no results have been associated</dt>
-<dd>with the object or if index is out of bounds</dd>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – index of atom.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASA of atom i in Å^2.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Raise:</dt><dd><dl class="simple">
+<dt>AssertionError: If no results have been associated</dt><dd><p>with the object or if index is out of bounds</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -521,34 +481,30 @@ not intended to be used outside of that context.</p>
 
 <dl class="method">
 <dt id="freesasa.Result.nAtoms">
-<code class="descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.nAtoms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.nAtoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of atoms in the results.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of atoms.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of atoms.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Result.totalArea">
-<code class="descname">totalArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.totalArea" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">totalArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.totalArea" title="Permalink to this definition">¶</a></dt>
 <dd><p>Total SASA.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The total area in Å^2.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – If no results have been associated with the object.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The total area in Å^2.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If no results have been associated with the object.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -558,66 +514,60 @@ not intended to be used outside of that context.</p>
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="freesasa.Structure">
-<em class="property">class </em><code class="descclassname">freesasa.</code><code class="descname">Structure</code><a class="headerlink" href="#freesasa.Structure" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Structure</code><a class="headerlink" href="#freesasa.Structure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a protein structure, including its atomic radii.</p>
 <p>Initialized from PDB-file. Calculates atomic radii using default
 classifier, or custom one provided as argument to initalizer</p>
 <p>Since it is intended to be a static structure the word ‘get’ is
 omitted in the getter-functions.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><strong>defaultOptions</strong> – Default options for reading structure from PDB.
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>defaultOptions</strong> – Default options for reading structure from PDB.
 By default ignore HETATM, Hydrogens, only use first
 model. For unknown atoms try to guess the radius, if
 this fails, assign radius 0 (to allow changing the
-radius later).</td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
+radius later).</p>
+</dd>
+</dl>
+<dl class="method">
 <dt id="freesasa.Structure.__init__">
-<code class="descname">__init__</code><a class="headerlink" href="#freesasa.Structure.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor</p>
 <p>If PDB file is provided, the structure will be constructed
 based on the file. If not, this simply initializes an empty
 structure and the other arguments are ignored. In this case
 atoms will have to be added manually using addAtom().</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fileName</strong> (<em>str</em>) – PDB file (if <cite>None</cite> empty structure generated).</li>
-<li><strong>classifier</strong> – An optional <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> to calculate atomic
-radii, uses default if none provided</li>
-<li><strong>options</strong> (<em>dict</em>) – specify which atoms and models to include, default is
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">Structure.defaultOptions</span></code></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<em>str</em>) – PDB file (if <cite>None</cite> empty structure generated).</p></li>
+<li><p><strong>classifier</strong> – An optional <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> to calculate atomic
+radii, uses default if none provided</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – specify which atoms and models to include, default is
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">Structure.defaultOptions</span></code></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code> – Problem opening/reading file.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – Problem parsing PDB file or calculating
-atomic radii.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – If option ‘halt-at-unknown’ selected and
-unknown atom encountered.</li>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IOError</strong> – Problem opening/reading file.</p></li>
+<li><p><strong>Exception</strong> – Problem parsing PDB file or calculating
+    atomic radii.</p></li>
+<li><p><strong>Exception</strong> – If option ‘halt-at-unknown’ selected and
+    unknown atom encountered.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.__new__">
-<code class="descname">__new__</code><span class="sig-paren">(</span><em>S</em>, <em>...</em><span class="sig-paren">)</span> &#x2192; a new object with type S, a subtype of T<a class="headerlink" href="#freesasa.Structure.__new__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.__new__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.addAtom">
-<code class="descname">addAtom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.addAtom" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">addAtom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.addAtom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add atom to structure.</p>
 <p>This function is meant to be used if the structure was not
 initialized from a PDB. Default radii will be assigned to each
@@ -627,222 +577,209 @@ atom. This can be overriden by calling
 the atom won’t be added if the default classifier doesn’t
 recognize the atom and also cannot deduce its element from the
 atom name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>atomName</strong> (<em>str</em>) – atom name (e.g. <cite>“CA”</cite>)</li>
-<li><strong>residueName</strong> (<em>str</em>) – residue name (e.g. <cite>“ALA”</cite>)</li>
-<li><strong>residueNumber</strong> (<em>str or int</em>) – residue number (e.g. <cite>‘12’</cite>)
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atomName</strong> (<em>str</em>) – atom name (e.g. <cite>“CA”</cite>)</p></li>
+<li><p><strong>residueName</strong> (<em>str</em>) – residue name (e.g. <cite>“ALA”</cite>)</p></li>
+<li><p><strong>residueNumber</strong> (<em>str or int</em>) – residue number (e.g. <cite>‘12’</cite>)
 or integer. Some PDBs have residue-numbers that aren’t
-regular numbers. Therefore treated as a string primarily.</li>
-<li><strong>chainLabel</strong> (<em>str</em>) – 1-character string with chain label (e.g. ‘A’)
-x,y,z (float): coordinates</li>
+regular numbers. Therefore treated as a string primarily.</p></li>
+<li><p><strong>chainLabel</strong> (<em>str</em>) – 1-character string with chain label (e.g. ‘A’)
+x,y,z (float): coordinates</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – Residue-number invalid</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – Residue-number invalid</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.atomName">
-<code class="descname">atomName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.atomName" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">atomName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.atomName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get atom name</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Atom name as 4-character string.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of range or Structure not properly initialized.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Atom index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Atom name as 4-character string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of range or Structure not properly initialized.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.chainLabel">
-<code class="descname">chainLabel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.chainLabel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">chainLabel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.chainLabel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get chain label for given atom.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Chain label as 1-character string.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of range or Structure not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Atom index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Chain label as 1-character string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of range or Structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.coord">
-<code class="descname">coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.coord" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get coordinates of given atom.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array of x, y, and z coordinates</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of range or Structure not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Atom index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array of x, y, and z coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of range or Structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.nAtoms">
-<code class="descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.nAtoms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.nAtoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of atoms.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of atoms</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of atoms</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – if not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.radius">
-<code class="descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.radius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Radius of atom.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Index of atom.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Radius in Å.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of bounds, object not properly initalized.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Index of atom.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Radius in Å.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of bounds, object not properly initalized.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.residueName">
-<code class="descname">residueName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueName" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">residueName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get residue name of given atom.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Residue name as 3-character string.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of range or Structure not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Atom index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Residue name as 3-character string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of range or Structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.residueNumber">
-<code class="descname">residueNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueNumber" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">residueNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get residue number for given atom.</p>
 <p>Residue number will include the insertion code if there is one.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>int</em>) – Atom index.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Residue number as 5-character string (last character is either whitespace or insertion code)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of range or Structure not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> (<em>int</em>) – Atom index.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Residue number as 5-character string (last character is either whitespace or insertion code)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of range or Structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.setRadii">
-<code class="descname">setRadii</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadii" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRadii</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set atomic radii from an array</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>radiusArray</strong> (<em>list</em>) – Array of atomic radii in Ångström, should
-have nAtoms() elements.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if radiusArray has wrong dimension, structure
-not properly initialized, or if the array contains
-negative radii (not properly classified?)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>radiusArray</strong> (<em>list</em>) – Array of atomic radii in Ångström, should
+have nAtoms() elements.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if radiusArray has wrong dimension, structure
+    not properly initialized, or if the array contains
+    negative radii (not properly classified?)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.setRadiiWithClassifier">
-<code class="descname">setRadiiWithClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadiiWithClassifier" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRadiiWithClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadiiWithClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign radii to atoms in structure using a classifier.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>classifier</strong> – A <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> to use to calculate radii.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if structure not properly initialized</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>classifier</strong> – A <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> to use to calculate radii.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="freesasa.Structure.setRadius">
-<code class="descname">setRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadius" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set radius for a given atom</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>atomIndex</strong> (<em>int</em>) – Index of atom</li>
-<li><strong>radius</strong> (<em>float</em>) – Value of radius</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atomIndex</strong> (<em>int</em>) – Index of atom</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – Value of radius</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code> – if index out of bounds, radius
-negative, or structure not properly initialized</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – if index out of bounds, radius
+    negative, or structure not properly initialized</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -852,16 +789,14 @@ negative, or structure not properly initialized</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="functions.html" class="btn btn-neutral" title="Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="functions.html" class="btn btn-neutral float-left" title="Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -870,11 +805,11 @@ negative, or structure not properly initialized</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Simon Mitternacht.
+        &copy; Copyright 2020, Simon Mitternacht
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -887,36 +822,15 @@ negative, or structure not properly initialized</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'2.0.3',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
   
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
