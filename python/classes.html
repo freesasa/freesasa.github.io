@@ -1,15 +1,18 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classes &mdash; FreeSASA Python Module 2.0.4 documentation</title>
+  <title>Classes &mdash; FreeSASA Python Module 2.1.0b1 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
 
   
   
@@ -17,7 +20,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Functions" href="functions.html" /> 
@@ -49,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> FreeSASA Python Module
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> FreeSASA Python Module
           
 
           
@@ -72,6 +73,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#classifier">Classifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#result">Result</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#residuearea">ResidueArea</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
 </ul>
 </li>
@@ -94,6 +97,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -132,7 +136,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Classes</li>
     
@@ -157,7 +161,7 @@
 <h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classifier">
 <h2>Classifier<a class="headerlink" href="#classifier" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="freesasa.Classifier">
 <em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Classifier</code><a class="headerlink" href="#freesasa.Classifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns class and radius to atom by residue and atom name.</p>
@@ -168,7 +172,7 @@ atomic radii and/or classes. Can also be initialized from
 <p>Derived classifiers must set the member <code class="xref py py-attr docutils literal notranslate"><span class="pre">purePython</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
 <p>Residue names should be of the format <code class="docutils literal notranslate"><span class="pre">&quot;ALA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ARG&quot;</span></code>, etc.
 Atom names should be of the format <code class="docutils literal notranslate"><span class="pre">&quot;CA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;N&quot;</span></code>, etc.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Classifier.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
@@ -187,13 +191,13 @@ Atom names should be of the format <code class="docutils literal notranslate"><s
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Classifier.__new__">
-<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.__new__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.__new__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Classifier.classify">
 <code class="sig-name descname">classify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.classify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class of atom.</p>
@@ -216,7 +220,7 @@ Unrecognized atoms will get the class <code class="docutils literal notranslate"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Classifier.getStandardClassifier">
 <em class="property">static </em><code class="sig-name descname">getStandardClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.getStandardClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a standard classifier (ProtOr, OONS or NACCESS)</p>
@@ -236,7 +240,7 @@ Unrecognized atoms will get the class <code class="docutils literal notranslate"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Classifier.radius">
 <code class="sig-name descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Classifier.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Radius of atom.</p>
@@ -264,11 +268,26 @@ radius.</p>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="freesasa.Parameters">
 <em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Parameters</code><a class="headerlink" href="#freesasa.Parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores parameter values to be used by calculation.</p>
-<dl class="method">
+<p>Default parameters are</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultParameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;algorithm&#39;</span>    <span class="p">:</span> <span class="n">LeeRichards</span><span class="p">,</span>
+    <span class="s1">&#39;probe-radius&#39;</span> <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">probe_radius</span><span class="p">,</span>
+    <span class="s1">&#39;n-points&#39;</span>     <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">shrake_rupley_n_points</span><span class="p">,</span>
+    <span class="s1">&#39;n-slices&#39;</span>     <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">lee_richards_n_slices</span><span class="p">,</span>
+    <span class="s1">&#39;n-threads&#39;</span>    <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">n_threads</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>defaultParamers</strong> (<em>dict</em>) – The default parameters</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt id="freesasa.Parameters.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes Parameters object.</p>
@@ -283,13 +302,13 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.__new__">
-<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.__new__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.__new__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.algorithm">
 <code class="sig-name descname">algorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.algorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get algorithm.</p>
@@ -303,7 +322,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.nPoints">
 <code class="sig-name descname">nPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get number of test points in Shrake &amp; Rupley algorithm.</p>
@@ -317,7 +336,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.nSlices">
 <code class="sig-name descname">nSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nSlices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of slices per atom in Lee &amp; Richards algorithm.</p>
@@ -331,7 +350,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.nThreads">
 <code class="sig-name descname">nThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.nThreads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of threads to use in calculations.</p>
@@ -345,7 +364,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.probeRadius">
 <code class="sig-name descname">probeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.probeRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get probe radius.</p>
@@ -359,7 +378,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.setAlgorithm">
 <code class="sig-name descname">setAlgorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set algorithm.</p>
@@ -376,7 +395,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.setNPoints">
 <code class="sig-name descname">setNPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set number of test points in Shrake &amp; Rupley algorithm.</p>
@@ -390,7 +409,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.setNSlices">
 <code class="sig-name descname">setNSlices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNSlices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of slices per atom in Lee &amp; Richards algorithm.</p>
@@ -404,7 +423,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.setNThreads">
 <code class="sig-name descname">setNThreads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setNThreads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of threads to use in calculations.</p>
@@ -418,7 +437,7 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Parameters.setProbeRadius">
 <code class="sig-name descname">setProbeRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Parameters.setProbeRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set probe radius.</p>
@@ -437,25 +456,13 @@ see <code class="xref py py-attr docutils literal notranslate"><span class="pre"
 </div>
 <div class="section" id="result">
 <h2>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="freesasa.Result">
 <em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Result</code><a class="headerlink" href="#freesasa.Result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores results from SASA calculation.</p>
 <p>The type of object returned by <a class="reference internal" href="functions.html#freesasa.calc" title="freesasa.calc"><code class="xref py py-func docutils literal notranslate"><span class="pre">freesasa.calc()</span></code></a>,
 not intended to be used outside of that context.</p>
-<dl class="method">
-<dt id="freesasa.Result.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="freesasa.Result.__new__">
-<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.__new__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Result.atomArea">
 <code class="sig-name descname">atomArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.atomArea" title="Permalink to this definition">¶</a></dt>
 <dd><p>SASA for a given atom.</p>
@@ -469,17 +476,14 @@ not intended to be used outside of that context.</p>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Raise:</dt><dd><dl class="simple">
-<dt>AssertionError: If no results have been associated</dt><dd><p>with the object or if index is out of bounds</p>
-</dd>
-</dl>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If no results have been associated
+    with the object or if index is out of bounds</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Result.nAtoms">
 <code class="sig-name descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.nAtoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of atoms in the results.</p>
@@ -493,7 +497,28 @@ not intended to be used outside of that context.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
+<dt id="freesasa.Result.residueAreas">
+<code class="sig-name descname">residueAreas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.residueAreas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get SASA for all residues including relative areas if available for the
+classifier used.</p>
+<p>Returns dictionary of results where first dimension is chain label and
+the second dimension residue number. I.e. <code class="docutils literal notranslate"><span class="pre">result[&quot;A&quot;][&quot;5&quot;]</span></code> gives the
+<a class="reference internal" href="#freesasa.ResidueArea" title="freesasa.ResidueArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResidueArea</span></code></a> of residue number 5 in chain A.</p>
+<p>Relative areas are normalized to 1, but can be &gt; 1 for
+residues in unusual conformations or at the ends of chains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If no results or structure has been associated
+    with the object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="freesasa.Result.totalArea">
 <code class="sig-name descname">totalArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Result.totalArea" title="Permalink to this definition">¶</a></dt>
 <dd><p>Total SASA.</p>
@@ -510,39 +535,87 @@ not intended to be used outside of that context.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="residuearea">
+<h2>ResidueArea<a class="headerlink" href="#residuearea" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="freesasa.ResidueArea">
+<em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">ResidueArea</code><a class="headerlink" href="#freesasa.ResidueArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores absolute and relative areas for a residue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>residueType</strong> (<em>str</em>) – Type of Residue</p></li>
+<li><p><strong>residueNumber</strong> (<em>str</em>) – Residue number</p></li>
+<li><p><strong>hasRelativeAreas</strong> (<em>bool</em>) – False if there was noe reference area to calculate relative areas from</p></li>
+<li><p><strong>total</strong> (<em>float</em>) – Total SASA of residue</p></li>
+<li><p><strong>polar</strong> (<em>float</em>) – Polar SASA</p></li>
+<li><p><strong>apolar</strong> (<em>float</em>) – Apolar SASA</p></li>
+<li><p><strong>mainChain</strong> (<em>float</em>) – Main chain SASA</p></li>
+<li><p><strong>sideChain</strong> (<em>float</em>) – Side chain SASA</p></li>
+<li><p><strong>relativeTotal</strong> (<em>float</em>) – Relative total SASA</p></li>
+<li><p><strong>relativePolar</strong> (<em>float</em>) – Relative polar SASA</p></li>
+<li><p><strong>relativeApolar</strong> (<em>float</em>) – Relative Apolar SASA</p></li>
+<li><p><strong>relativeMainChain</strong> (<em>float</em>) – Relative main chain SASA</p></li>
+<li><p><strong>relativeSideChain</strong> (<em>float</em>) – Relative side chain SASA</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="freesasa.Structure">
 <em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Structure</code><a class="headerlink" href="#freesasa.Structure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a protein structure, including its atomic radii.</p>
 <p>Initialized from PDB-file. Calculates atomic radii using default
-classifier, or custom one provided as argument to initalizer</p>
-<p>Since it is intended to be a static structure the word ‘get’ is
-omitted in the getter-functions.</p>
+classifier, or custom one provided as argument to initalizer.</p>
+<p>Default options are</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Structure</span><span class="o">.</span><span class="n">defaultOtions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;hetatm&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>          <span class="c1"># False: skip HETATM</span>
+                               <span class="c1"># True: include HETATM</span>
+
+    <span class="s1">&#39;hydrogen&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>        <span class="c1"># False: ignore hydrogens</span>
+                               <span class="c1"># True: include hydrogens</span>
+
+    <span class="s1">&#39;join-models&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>     <span class="c1"># False: Only use the first MODEL</span>
+                               <span class="c1"># True: Include all MODELs</span>
+
+    <span class="s1">&#39;skip-unknown&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>    <span class="c1"># False: Guess radius for unknown atoms</span>
+                               <span class="c1">#     based on element</span>
+                               <span class="c1"># True: Skip unknown atoms</span>
+
+    <span class="s1">&#39;halt-at-unknown&#39;</span> <span class="p">:</span> <span class="kc">False</span>  <span class="c1"># False: set radius for unknown atoms,</span>
+                               <span class="c1">#    that can not be guessed to 0.</span>
+                               <span class="c1"># True: Throw exception on unknown atoms.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
-<dd class="field-odd"><p><strong>defaultOptions</strong> – Default options for reading structure from PDB.
-By default ignore HETATM, Hydrogens, only use first
-model. For unknown atoms try to guess the radius, if
-this fails, assign radius 0 (to allow changing the
-radius later).</p>
+<dd class="field-odd"><p><strong>defaultOptions</strong> – Default options for reading structure from PDB.</p>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor</p>
-<p>If PDB file is provided, the structure will be constructed
+<p>If a PDB file is provided, the structure will be constructed
 based on the file. If not, this simply initializes an empty
-structure and the other arguments are ignored. In this case
-atoms will have to be added manually using addAtom().</p>
+structure with the given classifier and options. Atoms will then
+have to be added manually using <cite>:py:meth:</cite>.Structure.addAtom()`.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fileName</strong> (<em>str</em>) – PDB file (if <cite>None</cite> empty structure generated).</p></li>
 <li><p><strong>classifier</strong> – An optional <a class="reference internal" href="#freesasa.Classifier" title="freesasa.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a> to calculate atomic
-radii, uses default if none provided</p></li>
+radii, uses default if none provided.
+This classifier will also be used in calls to <a class="reference internal" href="#freesasa.Structure.addAtom" title="freesasa.Structure.addAtom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Structure.addAtom()</span></code></a>
+but only if it’s the default classifier, one of the standard
+classifiers from <a class="reference internal" href="#freesasa.Classifier.getStandardClassifier" title="freesasa.Classifier.getStandardClassifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Classifier.getStandardClassifier()</span></code></a>,
+or defined by a config-file (i.e. if it uses the underlying
+C API).</p></li>
 <li><p><strong>options</strong> (<em>dict</em>) – specify which atoms and models to include, default is
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Structure.defaultOptions</span></code></p></li>
 </ul>
@@ -559,22 +632,24 @@ radii, uses default if none provided</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.__new__">
-<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.__new__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__new__</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.__new__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a new object.  See help(type) for accurate signature.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.addAtom">
 <code class="sig-name descname">addAtom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.addAtom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add atom to structure.</p>
 <p>This function is meant to be used if the structure was not
-initialized from a PDB. Default radii will be assigned to each
-atom. This can be overriden by calling
+initialized from a PDB. The options and classifier passed to
+the constructor for the <a class="reference internal" href="#freesasa.Structure" title="freesasa.Structure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Structure</span></code></a> will be used
+(see the documentation of the constructor for restrictions).
+The radii set by the classifier can be overriden by calling
 <a class="reference internal" href="#freesasa.Structure.setRadiiWithClassifier" title="freesasa.Structure.setRadiiWithClassifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Structure.setRadiiWithClassifier()</span></code></a> afterwards.</p>
 <p>There are no restraints on string lengths for the arguments, but
-the atom won’t be added if the default classifier doesn’t
+the atom won’t be added if the classifier doesn’t
 recognize the atom and also cannot deduce its element from the
 atom name.</p>
 <dl class="field-list simple">
@@ -590,12 +665,15 @@ x,y,z (float): coordinates</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>Exception</strong> – Residue-number invalid</p>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – Residue-number invalid</p></li>
+<li><p><strong>AssertionError</strong> – </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.atomName">
 <code class="sig-name descname">atomName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.atomName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get atom name</p>
@@ -615,7 +693,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.chainLabel">
 <code class="sig-name descname">chainLabel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.chainLabel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get chain label for given atom.</p>
@@ -635,7 +713,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.coord">
 <code class="sig-name descname">coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.coord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get coordinates of given atom.</p>
@@ -655,7 +733,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.nAtoms">
 <code class="sig-name descname">nAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.nAtoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of atoms.</p>
@@ -672,7 +750,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.radius">
 <code class="sig-name descname">radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Radius of atom.</p>
@@ -692,7 +770,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.residueName">
 <code class="sig-name descname">residueName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get residue name of given atom.</p>
@@ -712,7 +790,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.residueNumber">
 <code class="sig-name descname">residueNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.residueNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get residue number for given atom.</p>
@@ -733,7 +811,7 @@ x,y,z (float): coordinates</p></li>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.setRadii">
 <code class="sig-name descname">setRadii</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadii" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set atomic radii from an array</p>
@@ -750,7 +828,7 @@ have nAtoms() elements.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.setRadiiWithClassifier">
 <code class="sig-name descname">setRadiiWithClassifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadiiWithClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign radii to atoms in structure using a classifier.</p>
@@ -764,7 +842,7 @@ have nAtoms() elements.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="freesasa.Structure.setRadius">
 <code class="sig-name descname">setRadius</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.setRadius" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set radius for a given atom</p>
@@ -805,11 +883,19 @@ have nAtoms() elements.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Simon Mitternacht
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -820,7 +906,6 @@ have nAtoms() elements.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
