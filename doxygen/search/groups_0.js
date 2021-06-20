@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['classifier',['Classifier',['../group__classifier.html',1,'']]],
-  ['core',['Core',['../group__core.html',1,'']]]
+  ['classifier_337',['Classifier',['../group__classifier.html',1,'']]],
+  ['core_338',['Core',['../group__core.html',1,'']]]
 ];
