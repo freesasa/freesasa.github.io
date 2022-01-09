@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "f",
   7: "f",
   8: "cdns",
-  9: "cdfglps"
+  9: "cdfgps"
 };
 
 var indexSectionNames =

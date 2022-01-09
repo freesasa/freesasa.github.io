@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['python_20module_351',['Python Module',['../Python.html',1,'']]]
+  ['selection_20syntax_0',['Selection syntax',['../Selection.html',1,'']]]
 ];
