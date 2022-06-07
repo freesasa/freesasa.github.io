@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">2.1.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -88,11 +88,11 @@ $(function() {
 <p ><img src="../fig/lnr_circles.svg" alt="Overlap of circles" style="pointer-events: none;" class="inline"/></p>
 <p >The exposed arc lengths for each atom can be calculated exactly. For each pair of atoms \(i,j\), the distance between their centers projected on the slice is \(d_{ij}\) (independent of \(z\)). If \(d_{ij} &gt; R_i^\prime + R_j^\prime\), there is no overlap. If \(d_{ij} &lt; R_j^\prime - R_i^\prime\) circle \(i\) is completely inside \(j\) (and the other way around). If \(d_{ij}\) lies between these two cases the angle of circle \(i\) that is buried due to circle \(j\) is</p>
 <p class="formulaDsp">
-\[ \alpha = 2\arccos \bigl[({R*i^\prime}^2*{\,} - d*{ij}^2 - {R*{j}^\prime}^2*{\,})/(2R_i^\prime d*{ij})\bigr]. \]
+\[ \alpha = 2\arccos \bigl[({R_i^\prime}^2{\,} - d_{ij}^2 - {R_{j}^\prime}^2{\,})/(2R_i^\prime d_{ij})\bigr]. \]
 </p>
 <p >If the middle point of this arc on the circle is at an angle \(\beta\), the arc spans the interval \([\beta-\alpha/2,\beta+\alpha/2]\). By adding up these arcs and taking into account any overlap between them we get the total buried angle \(\gamma\) in this slices. The exposed arc angle for this atom and slice is thus \(2\pi-\gamma\) and the total SASA of that atom</p>
 <p class="formulaDsp">
-\[ A*i =R_i \delta \!\! \sum*{s\in\text{slices}} \!\! \left[2\pi-\gamma_s\right]\,. \]
+\[ A_i =R_i \delta \!\! \sum_{s\in\text{slices}} \!\! \left[2\pi-\gamma_s\right]\,. \]
 </p>
 <p >The angle is multiplied by \(R_i\) (not \(R_i^\prime\)) to give the area of a conical frustum circumscribing the sphere at the slice. Finally, the total area \(A\) is the sum of all \(A_i\).</p>
 <p >In FreeSASA, the L&amp;R SASA calculation begins by finding overlapping spheres and storing the contacts in an adjacency list. It then iterates through all the slices of each atom and checks for overlap with adjacent atoms in each slice, and adds up the exposed arcs to calculate the atom's contribution to the SASA of the slice. The calculations for each atom are completely independent and can thus be parallelized over an arbitrary number of threads, whereas the calculation of adjacency lists has not been parallelized. </p>
@@ -101,7 +101,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 9 2022 17:44:08 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 7 2022 14:16:20 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 Doxygen
 </a> 1.9.3
 </small></address>

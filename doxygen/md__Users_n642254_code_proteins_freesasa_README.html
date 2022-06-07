@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">FreeSASA
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">2.1.1</span>
    </div>
    <div id="projectbrief">Open source SASA calculations</div>
   </td>
@@ -128,7 +128,16 @@ Prerequisites for Ubuntu</h2>
 <p >The following command will install all dependencies needed, some of which most users will already have, for a minimal build of FreeSASA in Ubuntu (verified for version 16, 18 and 20). </p><pre class="fragment">apt-get update
 apt-get install git build-essential autoconf libc++-dev libc++abi-dev
 </pre><p> For a fully featured build, with ability to run unit tests, these additional packages are needed </p><pre class="fragment">apt-get install check libjson-c-dev libxml2-dev libxml2-utils
-</pre> <h1><a class="anchor" id="autotoc_md7"></a>
+</pre> <h2><a class="anchor" id="autotoc_md7"></a>
+Prerequisites for RHEL / CentOS</h2>
+<p ><em>Thanks to <a href="https://github.com/jvlehtonen">@jvlehtonen</a> for providing the following</em>:</p>
+<p >GNU Build System and git install on RHEL 7 and 8 -based systems (including CentOS 7, AlmaLinux, Rocky Linux, etc) as "yum group": </p><pre class="fragment">sudo yum install @development
+</pre><p> The additional dependencies can be installed on RHEL-based systems with: </p><pre class="fragment">sudo yum install json-c-devel libxml2-devel
+</pre><p> The system GCC in RHEL 7 (and hence CentOS 7) does not support required C++ standard.Later version of GCC are available via Software Collections (SCL). RHEL 7 has its method to enable SCL. CentOS 7 enables SCL repo with: </p><pre class="fragment">sudo yum install centos-release-scl-rh
+</pre><p> "Toolchain" from Developer Toolset is sufficient for building with GCC. For example: </p><pre class="fragment">sudo yum install devtoolset-9-toolchain
+</pre><p> In order to use programs from SCL one has to enable environment: </p><pre class="fragment">scl enable devtoolset-9 bash
+</pre><p> The bash that starts above does have gcc version 9 on PATH. The built freesasa binary does not require the environment.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Citing FreeSASA</h1>
 <p >FreeSASA can be cited using the following publication</p>
 <ul>
@@ -140,7 +149,7 @@ Citing FreeSASA</h1>
 <!-- HTML footer for doxygen 1.8.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 9 2022 17:44:08 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 7 2022 14:16:20 for FreeSASA by &#160;<a href="http://www.doxygen.org/index.html">
 Doxygen
 </a> 1.9.3
 </small></address>
