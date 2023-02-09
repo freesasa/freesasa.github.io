@@ -6,7 +6,7 @@ body {
   width: 100%;
   font-family: Sans-serif;
   font-size: 1.05rem;
-  --width: 80ch;
+  --width: 400px;
   --light-color: hsl(214, 54%, 97%);
   --dark-color: hsl(214, 20%, 15%);
   --medium-color: hsl(212, 19%, 72%);
@@ -44,7 +44,7 @@ header {
 header nav {
   display: flex;
   justify-content: space-between;
-  max-width: var(--width);
+  width: var(--width);
   margin: auto;
   font-size: clamp(0.85rem, 3vw, 1rem);
 }
@@ -56,9 +56,52 @@ h1 {
 
 main {
   flex: 1;
-  max-width: var(--width);
   margin: min(10px, 5vh) auto;
   padding: 10px 20px;
+}
+
+form#pdb-form {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+input#pdb-input {
+  width: 120px;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  flex: 1;
+  border-radius: 4px;
+  border: 1px solid var(--medium-color);
+  background-color: var(--light-gray-bg);
+}
+
+input[type="text"]:focus::placeholder {
+  opacity: 0.3;
+}
+
+button {
+  border: 0;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1.05rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 4px;
+  will-change: transform;
+  transition: transform 200ms, background-color 100ms;
+}
+
+button:hover {
+  transition: transform 400ms;
+  background-color: hsl(215, 15%, 24%);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(-2px);
+  transition: transform 100ms, background-color 100ms;
 }
 
 footer {

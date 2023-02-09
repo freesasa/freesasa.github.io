@@ -29,13 +29,11 @@
     </noscript>
     <main>
       <form id="pdb-form">
-        <label>
-          PDB code
-          <input id="pdb-input" type="text" />
-        </label>
+        <label for="pdb-input"> PDB code </label>
+        <input id="pdb-input" type="text" placeholder="1UBQ" />
         <button id="submit" disabled="true">Calculate</button>
       </form>
-      <div id="output">
+      <div id="output" aria-live="polite">
         <p>Loading FreeSASA ...</p>
       </div>
     </main>
