@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; FreeSASA Python Module 2.1.0b1 documentation</title>
+  <title>Introduction &mdash; FreeSASA Python Module 2.2.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Functions" href="functions.html" />
-    <link rel="prev" title="FreeSASA Python Module" href="index.html" /> 
+    <link rel="prev" title="FreeSASA Python Module 2.2.0" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -59,6 +59,10 @@
 
           
             
+            
+              <div class="version">
+                2.2.0
+              </div>
             
           
 
@@ -87,6 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#basic-calculations">Basic calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customizing-atom-classification">Customizing atom classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bio-pdb">Bio.PDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-a-freesasa-pdb">Writing a FreeSASA PDB</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
@@ -163,7 +168,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">freesasa</span>
 </pre></div>
 </div>
-<p>Binaries are available for Python 2.7, 3.5, 3.6 and 3.7 for Mac OS X
+<p>Binaries are available for Python 3.7-3.11 for Mac OS X
 and Windows, in addition to the source distribution.</p>
 <div class="section" id="basic-calculations">
 <h2>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this headline">¶</a></h2>
@@ -276,6 +281,18 @@ converted to a <a class="reference internal" href="classes.html#freesasa.Structu
 and the calculation can be performed the normal way using this
 structure.</p>
 </div>
+<div class="section" id="writing-a-freesasa-pdb">
+<h2>Writing a FreeSASA PDB<a class="headerlink" href="#writing-a-freesasa-pdb" title="Permalink to this headline">¶</a></h2>
+<p>Here is a simple example on how to turn a calculated result into a PDB file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">freesasa</span>
+
+<span class="n">structure</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">Structure</span><span class="p">(</span><span class="s1">&#39;2ubq.pdb&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">freesasa</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">write_pdb</span><span class="p">(</span><span class="s1">&#39;2ubq.sasa.pdb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This only works if the input file was parsed with <cite>Freesasa.Structure()</cite>.</p>
+</div>
 </div>
 
 
@@ -289,7 +306,7 @@ structure.</p>
         <a href="functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="FreeSASA Python Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="FreeSASA Python Module 2.2.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -333,15 +350,6 @@ structure.</p>
     
   
  
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66397346-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-66397346-1');
-</script>
 
 
 </body>

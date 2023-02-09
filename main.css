@@ -1,0 +1,140 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Sans-serif;
+  font-size: 1.05rem;
+  --width: 80ch;
+  --light-color: hsl(214, 54%, 97%);
+  --dark-color: hsl(214, 20%, 15%);
+  --medium-color: hsl(212, 19%, 72%);
+  --light-gray-bg: hsl(214, 56%, 94%);
+  --medium-gray-bg: hsl(212, 33%, 90%);
+
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: auto;
+}
+
+header,
+footer {
+  padding: 10px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  filter: drop-shadow(0 0 5px hsla(214 10% 50% / 0.5));
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--width);
+  margin: auto;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+}
+
+header a,
+footer a {
+  color: var(--light-color);
+}
+
+header a:hover,
+footer a:hover {
+  color: var(--light-color);
+  filter: drop-shadow(0px 0px 6px hsla(0deg 0% 100% / 0.5));
+}
+
+header a {
+  display: block;
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 10px;
+  text-decoration: none;
+  transition: border 200ms;
+  border: 2px solid transparent;
+  max-width: 10ch;
+}
+
+header a:hover {
+  border-bottom: 2px solid white;
+  transition: border 400ms;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 1rem + 3vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+}
+
+main {
+  max-width: var(--width);
+  margin: min(10px, 5vh) auto;
+  padding: 10px 20px;
+}
+
+main a {
+  color: var(--dark-color);
+  padding: 5px;
+  margin: -5px;
+  border-radius: 3px;
+  will-change: transform;
+}
+
+main a:hover {
+  color: black;
+}
+
+code {
+  color: black;
+  background-color: var(--light-gray-bg);
+  padding: 0 4px;
+  border-radius: 3px;
+  border: 1px solid var(--medium-color);
+}
+
+.code-container {
+  border: 1px solid var(--medium-color);
+  border-radius: 3px;
+  background-color: var(--light-gray-bg);
+  padding: 10px;
+  box-shadow: inset 0px 0px 2px var(--medium-color);
+}
+
+.code-container code {
+  border: none;
+  display: block;
+}
+
+footer {
+  color: var(--medium-color);
+}
+
+.footer-contents {
+  margin: auto;
+  max-width: var(--width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+}
+.footer-contents .column p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}

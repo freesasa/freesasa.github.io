@@ -1,98 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <title>FreeSASA</title>
-    <meta name="author" content="Simon Mitternacht">
-    <meta name="description" content="Open source C library for solvent accessible surface area (SASA) calculations">
-    <meta name="og:title" content="FreeSASA">
-    <meta name="og:description" content="Open source C library for SASA calculations">
-    <link rel="stylesheet" href="semantic-ui/semantic.min.css">
-    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="Simon Mitternacht" />
+    <meta
+      name="description"
+      content="Open source C library for solvent accessible surface area (SASA) calculations"
+    />
+    <meta name="og:title" content="FreeSASA" />
+    <meta
+      name="og:description"
+      content="Open source C library for SASA calculations"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://assets-cdn.github.com/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header class="ui attached four item inverted menu">
-      <nav class="ui container">
-        <a class="item" href="freesasa-2.1.2.zip"><i class="ui icon download"></i>Download</a>
-        <a class="item" href="https://github.com/mittinatten/freesasa" id="github"><i class="ui icon code"></i>GitHub</a>
-        <a class="item" href="doxygen/"><i class="ui icon book"></i>Docs</a>
-        <a class="item" href="demo/"><i class="ui icon play"></i>Demo</a>
-        <a class="item" href="http://f1000research.com/articles/5-189/v1"><i class="ui icon student"></i>Citation</a>
+    <header>
+      <nav>
+        <a href="freesasa-2.1.2.zip">Download</a>
+        <a href="https://github.com/mittinatten/freesasa" id="github">Code</a>
+        <a href="doxygen/">Docs</a>
+        <a href="demo/">Demo</a>
+        <a href="http://f1000research.com/articles/5-189/v1">Paper</a>
       </nav>
     </header>
-    <main class="ui main text container">
-      <p>&nbsp;</p>
-      <h1 class="ui header">FreeSASA</h1>
-      <p>FreeSASA is a command line tool, C-library and Python module
-        for calculating solvent accessible surface areas
-        (SASA). Casual users can calculate SASA directly from a PDB
-        file with no configuration overhead using sensible default
-        parameters. Advanced users can configure all calculation
-        parameters and also use the C and Python APIs to perform
-        calculations directly on arrays of coordinates.</p>
-      <h2 class="ui header">Quick-start guide</h2>
-      <p>Download the <a href="freesasa-2.1.2.zip">latest archive</a>, expand it, and run</p>
-      <div class="ui secondary segment">
-        <code>$ ./configure <br />
+    <main>
+      <h1>FreeSASA</h1>
+      <p>
+        FreeSASA is a command line tool, C-library and Python module for
+        calculating solvent accessible surface areas (SASA). Casual users can
+        calculate SASA directly from a PDB file with no configuration overhead
+        using sensible default parameters. Advanced users can configure all
+        calculation parameters and also use the C and Python APIs to perform
+        calculations directly on arrays of coordinates.
+      </p>
+      <h2>Quick-start guide</h2>
+      <p>
+        Download the <a href="freesasa-2.1.2.zip">latest archive</a>, expand it,
+        and run
+      </p>
+      <div class="code-container">
+        <code>
+          $ ./configure <br />
           $ make <br />
           $ sudo make install
         </code>
       </div>
 
-      <p>This installs the binary <code>freesasa</code> to your path, the header <code>freesasa.h</code>, the library <code>libfreesasa</code> and a man page.</p>
+      <p>
+        This installs the binary <code>freesasa</code> to your path, the header
+        <code>freesasa.h</code>, the library <code>libfreesasa</code> and a man
+        page.
+      </p>
 
-      <p>If you got the code directly from the git repo, first
-        run <code>autoreconf -i</code> to create the configure script (this
-        requires autotools).</p>
+      <p>
+        If you got the code directly from the git repo, first run
+        <code>autoreconf -i</code> to create the configure script (this requires
+        autotools).
+      </p>
 
-      <p>Tarballs for older versions are attached to
-        the <a href="https://github.com/mittinatten/freesasa/releases">GitHub-releases</a></p>
+      <p>
+        Tarballs for older versions are attached to the
+        <a href="https://github.com/mittinatten/freesasa/releases"
+          >GitHub-releases</a
+        >
+      </p>
 
       <p>After building the package, calling</p>
 
-      <div class="ui secondary segment"><code>$ freesasa -h</code></div>
+      <div class="code-container"><code>$ freesasa -h</code></div>
 
-      <p>explains how the command line interface (CLI) can be used. If the man pages are installed more info is available through</p>
-
-      <div class="ui secondary segment"><code>$ man freesasa</code></div>
-
-      <h2 class="ui header">Demo</h2>
-      <p>Test FreeSASA using web assembly in the browser at the <a href="/demo">demo page</a>.</p>
-
-      <h2 class="ui header">Python bindings</h2>
-      From version 2.0.3 the Python bindings are released as a
-      <a href="https://github.com/freesasa/freesasa-python">separate module</a>.
-
-      They can be installed using
-      <div class="ui secondary segment"><code>pip install freesasa</code></div>
-
-      <h2 class="ui header">Documentation</h2>
-      <p>There is <a href="doxygen/" id="doxygen">reference documentation</a>
-        for the <a href="doxygen/CLI.html">CLI</a> and the <a href="doxygen/API.html">C API</a>,
-        and some implementation details, and for the <a href="python/">Python module</a>.
+      <p>
+        explains how the command line interface (CLI) can be used. If the man
+        pages are installed more info is available through
       </p>
 
-      <h2 class="ui header">Citing FreeSASA</h2>
-      <p>Simon Mitternacht (2016)  <a href="http://f1000research.com/articles/5-189/v1">FreeSASA: An open source C library for solvent accessible surface area calculation</a>. <emph>F1000Research</emph> 5:189 (doi: <a href="http://dx.doi.org/10.12688/f1000research.7931.1">10.12688/f1000research.7931.1</a>)</p>
+      <div class="code-container"><code>$ man freesasa</code></div>
 
-      <h2 class="ui header">Legacy versions</h2>
-      <p>Version 2 breaks a few parts of the interface. Tarballs for most
-        older versions can be downloaded from
-        the <a href="https://github.com/mittinatten/freesasa/releases">GitHub releases</a>. The <a href="1.1/index.html">documentation</a>
-        and <a href="freesasa-1.1.tar.gz">tarball</a> for v1.1 are
-        available at this site.</p>
+      <h2>Demo</h2>
+      <p>
+        Test FreeSASA using web assembly in the browser at the
+        <a href="/demo">demo page</a>.
+      </p>
+
+      <h2>Python bindings</h2>
+      <p>
+        From version 2.0.3 the Python bindings are released as a
+        <a href="https://github.com/freesasa/freesasa-python">separate module</a
+        >. They can be installed using
+      </p>
+
+      <div class="code-container">
+        <code>pip install freesasa</code>
+      </div>
+
+      <h2>Documentation</h2>
+      <p>
+        There is <a href="doxygen/" id="doxygen">reference documentation</a> for
+        the <a href="doxygen/CLI.html">CLI</a> and the
+        <a href="doxygen/API.html">C API</a>, and some implementation details,
+        and for the <a href="python/">Python module</a>.
+      </p>
+
+      <h2>Citing FreeSASA</h2>
+      <p>
+        Simon Mitternacht (2016)
+        <a href="http://f1000research.com/articles/5-189/v1"
+          >FreeSASA: An open source C library for solvent accessible surface
+          area calculation</a
+        >. <emph>F1000Research</emph> 5:189 (doi:
+        <a href="http://dx.doi.org/10.12688/f1000research.7931.1"
+          >10.12688/f1000research.7931.1</a
+        >)
+      </p>
+
+      <h2>Legacy versions</h2>
+      <p>
+        Version 2 breaks a few parts of the interface. Tarballs for most older
+        versions can be downloaded from the
+        <a href="https://github.com/mittinatten/freesasa/releases"
+          >GitHub releases</a
+        >. The <a href="1.1/index.html">documentation</a> and
+        <a href="freesasa-1.1.tar.gz">tarball</a> for v1.1 are available at this
+        site.
+      </p>
       <p>&nbsp;</p>
     </main>
-    <footer class="ui attached center aligned inverted footer segment">
-      <div class="ui centered stackable grid container">
-        <div class="ui row">
-          <div class="ui two wide column">License: <a href="https://opensource.org/licenses/MIT" id="license">MIT</a>.</div>
-          <div class="ui four wide column">Copyright: Simon Mitternacht 2013-2017.</div>
-          <div class="ui four wide column">This project is maintained by <a href="https://github.com/mittinatten" id="github-user">mittinatten</a>.</div>
+    <footer>
+      <div class="footer-contents">
+        <div class="column">
+          <p>
+            License:
+            <a href="https://opensource.org/licenses/MIT" id="license">MIT</a>.
+          </p>
+          <p>Copyright: Simon Mitternacht 2013-2023.</p>
+          <p>
+            This project is maintained by
+            <a href="https://github.com/mittinatten" id="github-user"
+              >mittinatten</a
+            >.
+          </p>
         </div>
-        <div class="ui four wide column"><small>Hosted on GitHub Pages</small></div>
+        <div class="column"><small>Hosted on GitHub Pages</small></div>
+      </div>
     </footer>
     <script src="javascripts/scale.fix.js"></script>
   </body>

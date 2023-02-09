@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classes &mdash; FreeSASA Python Module 2.1.0b1 documentation</title>
+  <title>Classes &mdash; FreeSASA Python Module 2.2.0 documentation</title>
   
 
   
@@ -58,6 +58,10 @@
 
           
             
+            
+              <div class="version">
+                2.2.0
+              </div>
             
           
 
@@ -273,7 +277,7 @@ radius.</p>
 <em class="property">class </em><code class="sig-prename descclassname">freesasa.</code><code class="sig-name descname">Parameters</code><a class="headerlink" href="#freesasa.Parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores parameter values to be used by calculation.</p>
 <p>Default parameters are</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultParameters</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Parameters</span><span class="o">.</span><span class="n">defaultParameters</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;algorithm&#39;</span>    <span class="p">:</span> <span class="n">LeeRichards</span><span class="p">,</span>
     <span class="s1">&#39;probe-radius&#39;</span> <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">probe_radius</span><span class="p">,</span>
     <span class="s1">&#39;n-points&#39;</span>     <span class="p">:</span> <span class="n">freesasa_default_parameters</span><span class="o">.</span><span class="n">shrake_rupley_n_points</span><span class="p">,</span>
@@ -572,7 +576,7 @@ residues in unusual conformations or at the ends of chains.</p>
 <p>Initialized from PDB-file. Calculates atomic radii using default
 classifier, or custom one provided as argument to initalizer.</p>
 <p>Default options are</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Structure</span><span class="o">.</span><span class="n">defaultOtions</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Structure</span><span class="o">.</span><span class="n">defaultOptions</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;hetatm&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>          <span class="c1"># False: skip HETATM</span>
                                <span class="c1"># True: include HETATM</span>
 
@@ -669,6 +673,28 @@ x,y,z (float): coordinates</p></li>
 <li><p><strong>Exception</strong> – Residue-number invalid</p></li>
 <li><p><strong>AssertionError</strong> – </p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="freesasa.Structure.addAtoms">
+<code class="sig-name descname">addAtoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#freesasa.Structure.addAtoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple atoms to structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atomNames</strong> (<em>list</em>) – list of atom name (e.g. <cite>[“CA”]</cite>)</p></li>
+<li><p><strong>residueNames</strong> (<em>list</em>) – list of residue name (e.g. <cite>[“ALA”]</cite>)</p></li>
+<li><p><strong>residueNumbers</strong> (<em>list</em>) – list of residue number (e.g. <cite>[‘12’]</cite>)
+or integer. Some PDBs have residue-numbers that aren’t
+regular numbers. Therefore treated as a string primarily.</p></li>
+<li><p><strong>chainLabels</strong> (<em>list</em>) – list of 1-character string with chain label (e.g. [‘A’])
+xs,ys,zs (list): list of coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – inconsistent size of input args</p>
 </dd>
 </dl>
 </dd></dl>
@@ -918,15 +944,6 @@ have nAtoms() elements.</p>
     
   
  
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66397346-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-66397346-1');
-</script>
 
 
 </body>
